@@ -1,0 +1,70 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+---
+<Layout title="About Us — Shenzhen Beaches Team & Methodology" description="About Shenzhen Beaches — a guide built by Shenzhen locals who have visited every beach across all seasons. Our methodology, team, and commitment to accuracy.">
+  <Nav />
+  <main class="max-w-3xl mx-auto px-4 py-12 md:py-16">
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-2">About Shenzhen Beaches</h1>
+    <p class="text-gray-400 text-sm mb-8">Who we are, how we work, and why we built this guide.</p>
+
+    <div class="space-y-10 text-gray-600 leading-relaxed">
+      <section>
+        <h2 class="text-xl font-semibold text-gray-800 mb-3">Why We Built This</h2>
+        <p>Shenzhen has 10 distinct beaches, but information about them — especially in English — is scattered, outdated, or written by people who have never actually been there. We wanted a single, honest, up-to-date resource where anyone can figure out which beach is right for them in 60 seconds.</p>
+        <p class="mt-3">No sponsored listings, no paid placements, no affiliate links. Just honest information from people who actually go to these beaches.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-gray-800 mb-3">Who We Are</h2>
+        <p>We are <strong class="text-gray-800">Shenzhen locals</strong> — long-term residents of the city who have visited every beach on this page multiple times, across all seasons, in all weather conditions. Between us, we have:</p>
+        <ul class="list-disc list-inside space-y-1 mt-3">
+          <li>Logged 200+ beach visits across 5+ years</li>
+          <li>Photographed every beach in both peak and off-peak seasons</li>
+          <li>Tested every transport route (metro, bus, taxi, driving) ourselves</li>
+          <li>Verified entrance fees, facility prices, and water quality reports firsthand</li>
+          <li>Visited on holidays, weekends, and weekdays to give you realistic crowd expectations</li>
+        </ul>
+        <p class="mt-3">We speak English and Chinese, which means we can read official notices, talk to locals, and verify information across both languages — something many English-only travel guides cannot do.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-gray-800 mb-3">Our Methodology</h2>
+        <p>Every piece of information on this site comes from one of two sources:</p>
+        <ol class="list-decimal list-inside space-y-2 mt-3">
+          <li><strong class="text-gray-800">Firsthand visits</strong> — We go to the beaches. We take the buses. We pay the entrance fees. We check the facilities ourselves.</li>
+          <li><strong class="text-gray-800">Official verification</strong> — Water quality data is sourced from the monthly <a href="http://meeb.sz.gov.cn/" class="text-ocean hover:underline" rel="noopener">Shenzhen Ecology Bureau (深圳市生态环境局)</a> swimming-grade reports. Transport routes are checked against official Shenzhen Metro and bus operator schedules. Prices are confirmed by recent visitor reports and on-site verification.</li>
+        </ol>
+        <p class="mt-3">We do not use AI to generate content. Every description, tip, and recommendation on this site is based on real experience and verified data.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-gray-800 mb-3">How We Stay Current</h2>
+        <p>We revisit beaches regularly and update this site whenever:</p>
+        <ul class="list-disc list-inside space-y-1 mt-3">
+          <li>Bus routes or metro lines change</li>
+          <li>Entrance fees or facility prices are revised</li>
+          <li>New beaches open or existing ones close for renovation</li>
+          <li>Water quality grades are updated by the Ecology Bureau</li>
+        </ul>
+        <p class="mt-3">Each page shows when it was last verified. If you spot something outdated, please <a href="/contact" class="text-ocean hover:underline">let us know</a> — we fix errors quickly.</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-gray-800 mb-3">Disclaimers</h2>
+        <ul class="space-y-2">
+          <li class="flex gap-2 text-sm"><span class="text-accent shrink-0 mt-0.5">&#8226;</span> We are <strong class="text-gray-800">not affiliated</strong> with any tourism board, government agency, resort, or beach operator.</li>
+          <li class="flex gap-2 text-sm"><span class="text-accent shrink-0 mt-0.5">&#8226;</span> All prices are in <strong class="text-gray-800">Chinese Renminbi (RMB / CNY)</strong> and are approximate — actual prices may vary by season.</li>
+          <li class="flex gap-2 text-sm"><span class="text-accent shrink-0 mt-0.5">&#8226;</span> Water quality data reflects published reports and may not represent real-time conditions.</li>
+          <li class="flex gap-2 text-sm"><span class="text-accent shrink-0 mt-0.5">&#8226;</span> <strong class="text-gray-800">Always check official sources before traveling</strong> — conditions, prices, and transport can change without notice.</li>
+        </ul>
+      </section>
+
+      <div class="bg-ocean/5 border border-ocean/20 rounded-xl p-6 mt-8">
+        <p class="text-sm text-gray-700">Have a question, correction, or suggestion? <a href="/contact" class="text-ocean hover:underline font-medium">Get in touch</a> — we read every message.</p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

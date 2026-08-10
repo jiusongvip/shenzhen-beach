@@ -1,0 +1,64 @@
+---
+---
+<nav id="quicknav" class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-200/60 shadow-sm transition-transform duration-300 -translate-y-full">
+  <div class="max-w-7xl mx-auto px-4 h-12 flex items-center gap-1 overflow-x-auto scrollbar-none">
+    <a href="#quick-pick" class="flex-shrink-0 px-3 py-1.5 text-xs font-medium text-gray-600 hover:text-accent hover:bg-accent/5 rounded-md transition-colors no-underline">Quick Pick</a>
+    <span class="text-gray-300 text-xs">·</span>
+    <a href="#video" class="flex-shrink-0 px-3 py-1.5 text-xs font-medium text-gray-600 hover:text-accent hover:bg-accent/5 rounded-md transition-colors no-underline">Video</a>
+    <span class="text-gray-300 text-xs">·</span>
+    <a href="#map" class="flex-shrink-0 px-3 py-1.5 text-xs font-medium text-gray-600 hover:text-accent hover:bg-accent/5 rounded-md transition-colors no-underline">Map</a>
+    <span class="text-gray-300 text-xs">·</span>
+    <a href="#compare" class="flex-shrink-0 px-3 py-1.5 text-xs font-medium text-gray-600 hover:text-accent hover:bg-accent/5 rounded-md transition-colors no-underline">Compare</a>
+    <a href="#beaches" class="flex-shrink-0 px-3 py-1.5 text-xs font-medium text-gray-600 hover:text-accent hover:bg-accent/5 rounded-md transition-colors no-underline">Beaches</a>
+    <span class="text-gray-300 text-xs">·</span>
+    <a href="#cheatsheet" class="flex-shrink-0 px-3 py-1.5 text-xs font-medium text-gray-600 hover:text-accent hover:bg-accent/5 rounded-md transition-colors no-underline">Sheet</a>
+    <span class="text-gray-300 text-xs">·</span>
+    <a href="#transport" class="flex-shrink-0 px-3 py-1.5 text-xs font-medium text-gray-600 hover:text-accent hover:bg-accent/5 rounded-md transition-colors no-underline">Transport</a>
+    <span class="text-gray-300 text-xs">·</span>
+    <a href="#seasons" class="flex-shrink-0 px-3 py-1.5 text-xs font-medium text-gray-600 hover:text-accent hover:bg-accent/5 rounded-md transition-colors no-underline">Seasons</a>
+    <span class="text-gray-300 text-xs">·</span>
+    <a href="#faq" class="flex-shrink-0 px-3 py-1.5 text-xs font-medium text-gray-600 hover:text-accent hover:bg-accent/5 rounded-md transition-colors no-underline">FAQ</a>
+  </div>
+</nav>
+
+<script>
+  (function() {
+    const quicknav = document.getElementById("quicknav");
+    const hero = document.getElementById("quiz");
+    if (quicknav && hero) {
+      const observer = new IntersectionObserver(
+        ([e]) => {
+          quicknav.classList.toggle("-translate-y-full", e.isIntersecting);
+        },
+        { threshold: 0 }
+      );
+      observer.observe(hero);
+    }
+    // Scroll-spy: highlight current section in nav
+    const sections = ["video", "map", "compare", "beaches", "cheatsheet", "transport", "seasons", "faq"];
+    const navLinks = quicknav?.querySelectorAll("a") || [];
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(a => {
+            const href = a.getAttribute("href");
+            if (href === "#" + e.target.id) {
+              a.classList.add("text-accent", "bg-accent/5");
+            } else {
+              a.classList.remove("text-accent", "bg-accent/5");
+            }
+          });
+        }
+      });
+    }, { rootMargin: "-50% 0px -50% 0px" });
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) spy.observe(el);
+    });
+  })();
+</script>
+
+<style>
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+  .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+</style>

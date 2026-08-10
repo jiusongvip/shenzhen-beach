@@ -1,0 +1,266 @@
+{
+  "summary": {
+    "health_score": 67,
+    "business_type": "Travel / Destination Guide (Content Site)",
+    "top_findings": [
+      "Broken Best Time to Visit template on all 10 beach pages (displays gibberish)",
+      "Photo Spots section duplicated on all 10 beach pages",
+      "FAQ structured data uses raw bus numbers instead of helpful sentences",
+      "OG images missing on all 10 beach detail pages",
+      "Duplicate H1 on homepage"
+    ],
+    "quick_wins": [
+      "Fix BeachLayout.astro template bugs (~30 min)",
+      "Add <link rel=icon> to Layout.astro (2 min)",
+      "Pass ogImage prop from beach pages to BeachLayout (5 min)",
+      "Replace GA4 placeholder or remove script (5 min)",
+      "Fix duplicate H1 in CheatSheet (1 min)"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 72,
+      "what_works": [
+        "Astro static site with clean HTML, minimal JS",
+        "Proper canonical URLs on all pages",
+        "Sitemap via @astrojs/sitemap",
+        "robots.txt allows all crawlers including AI bots"
+      ],
+      "findings": [
+        {
+          "title": "Redirect pages use meta refresh instead of HTTP 301",
+          "severity": "Critical",
+          "description": "All 17 redirect paths use <meta http-equiv=refresh> with noindex. Meta refresh passes minimal link equity. Static hosts support proper 301 redirect configs.",
+          "recommendation": "Use hosting platform redirect config (_redirects file or equivalent) instead of Astro HTML meta-refresh pages."
+        },
+        {
+          "title": "No explicit favicon link in <head>",
+          "severity": "High",
+          "description": "Relies on /favicon.ico at root. Explicit <link rel=icon> ensures all crawlers and platforms pick it up.",
+          "recommendation": "Add <link rel=icon type=image/svg+xml href=/favicon.svg> and a .ico fallback link to Layout.astro."
+        },
+        {
+          "title": "CSS is render-blocking",
+          "severity": "Medium",
+          "description": "Leaflet CSS (~76 KB from unpkg CDN) and Tailwind CSS (42 KB) loaded synchronously in <head>. Delays LCP and FCP.",
+          "recommendation": "Use media=print onload trick for non-critical CSS; self-host Leaflet CSS."
+        },
+        {
+          "title": "GA4 uses placeholder ID G-XXXXXXXXXX",
+          "severity": "Medium",
+          "description": "All pages include the Google Analytics snippet with a dummy ID, adding ~1 KB inline JS and an extra network request.",
+          "recommendation": "Replace with real GA4 measurement ID or remove both script blocks."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 65,
+      "what_works": [
+        "Deep, original content on all 10 beach detail pages",
+        "Well-structured sections: Transport, Food, Stay, Clothing, Safety, Tips",
+        "Chinese names included for practical use",
+        "International visitor section with payment, visa, etiquette info"
+      ],
+      "findings": [
+        {
+          "title": "Broken Best Time to Visit section on all 10 beach pages",
+          "severity": "Critical",
+          "description": "Template outputs ' offers ideal conditions for . ' — no beach name, no content. Broken template literal in BeachLayout.astro.",
+          "recommendation": "Fix the template literal to include beach name and best season data."
+        },
+        {
+          "title": "Photo Spots section duplicated on all 10 beach pages",
+          "severity": "Critical",
+          "description": "Template has duplicate conditional blocks rendering the same section twice, causing duplicate content ID issues.",
+          "recommendation": "Remove the first incomplete conditional block in BeachLayout.astro."
+        },
+        {
+          "title": "Duplicate H1 on homepage",
+          "severity": "High",
+          "description": "Two <h1> tags: Hero (Shenzhen Beach Guide) and CheatSheet (Shenzhen Beach Cheat Sheet). The CheatSheet should be H2.",
+          "recommendation": "Change CheatSheet.astro h1 to h2."
+        },
+        {
+          "title": "llms.txt incomplete",
+          "severity": "Medium",
+          "description": "Only lists 3 of 10 beaches. Reduces AI discoverability for 70% of content.",
+          "recommendation": "Add all 10 beach detail pages with descriptions."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 70,
+      "what_works": [
+        "Clean keyword-rich <title> tags",
+        "Descriptive meta descriptions on all pages",
+        "Proper heading hierarchy on detail pages",
+        "Breadcrumb navigation with aria-label"
+      ],
+      "findings": [
+        {
+          "title": "OG images missing on all beach detail pages",
+          "severity": "High",
+          "description": "BeachLayout accepts ogImage prop but beach page files never pass it. Each beach has a dedicated WebP image that could be used.",
+          "recommendation": "Pass ogImage prop from each src/pages/beaches/*.astro to BeachLayout."
+        },
+        {
+          "title": "Nav uses hash links on non-homepage pages",
+          "severity": "Medium",
+          "description": "Nav links like /#compare work incorrectly on beach detail pages — they jump to homepage first.",
+          "recommendation": "Use conditional logic: on homepage use #section, on other pages use /#section."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 78,
+      "what_works": [
+        "TouristDestination, TouristAttraction, ImageObject, FAQPage schemas",
+        "GeoCoordinates, PostalAddress, AggregateRating",
+        "Chinese alternateName in all beach schemas",
+        "Proper @graph wrapping for multi-schema pages"
+      ],
+      "findings": [
+        {
+          "title": "FAQ structured data uses raw bus numbers as answers",
+          "severity": "Critical",
+          "description": "How do I get to Dameisha Beach? answer is '103, 387, M191, M362, M438, M465' — raw bus numbers with no context. Not helpful for Voice Search.",
+          "recommendation": "Rewrite FAQ answer generation to produce full natural-language sentences."
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 55,
+      "what_works": [
+        "WebP format for all served images",
+        "width/height attributes on all img tags (CLS prevention)",
+        "loading=lazy on below-fold images",
+        "fetchpriority=high on hero image"
+      ],
+      "findings": [
+        {
+          "title": "Render-blocking CSS delays LCP",
+          "severity": "High",
+          "description": "Combined ~120 KB of CSS (Leaflet + Tailwind + Google Fonts) loaded synchronously in head. No font-display strategy.",
+          "recommendation": "Add font-display:swap to Google Fonts URL. Defer non-critical CSS with media=print onload trick."
+        },
+        {
+          "title": "No responsive images (srcset)",
+          "severity": "High",
+          "description": "All images serve a single resolution. Mobile users download desktop-sized images.",
+          "recommendation": "Use <picture> with srcset for smaller WebP variants on mobile."
+        },
+        {
+          "title": "Unused JPGs in dist/images wasting space",
+          "severity": "Medium",
+          "description": "~25 MB of .jpg files (2-3 MB each) exist in dist but are never referenced in HTML.",
+          "recommendation": "Remove JPGs from public/images or add build cleanup step."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 72,
+      "what_works": [
+        "llms.txt present at root",
+        "robots.txt explicitly allows GPTBot, Claude-Web, PerplexityBot",
+        "Good content depth with factual, citation-worthy claims",
+        "JSON-LD structured data makes content machine-readable"
+      ],
+      "findings": [
+        {
+          "title": "llms.txt lists only 3 of 10 beaches",
+          "severity": "Medium",
+          "description": "Missing 7 beach detail pages reduces AI training data visibility for 70% of content.",
+          "recommendation": "Add all 10 beach detail pages with descriptions to llms.txt."
+        },
+        {
+          "title": "No citation-friendly anchor IDs on facts",
+          "severity": "Low",
+          "description": "Individual facts/claims lack id attributes. Adding them improves passage-level citability.",
+          "recommendation": "Add id attributes to key data points for AI citation readiness."
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 65,
+      "what_works": [
+        "All images have alt text with both EN and CN names",
+        "WebP format throughout",
+        "loading=lazy on below-fold images",
+        "width and height attributes prevent CLS"
+      ],
+      "findings": [
+        {
+          "title": "No responsive images (srcset)",
+          "severity": "High",
+          "description": "Single resolution for all viewports. Mobile users download unnecessarily large images.",
+          "recommendation": "Implement <picture> with srcset for 400w, 800w, and full variants."
+        },
+        {
+          "title": "No image sitemap entries",
+          "severity": "Medium",
+          "description": "Google Image Search cannot easily discover beach photos without image sitemap entries.",
+          "recommendation": "Add <image:image> entries to sitemap config."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "Fix broken Best Time to Visit template in BeachLayout.astro",
+          "Remove duplicate Photo Spots section in BeachLayout.astro",
+          "Fix FAQ structured data answers (natural language)",
+          "Fix duplicate H1 in CheatSheet.astro",
+          "Replace or remove GA4 placeholder G-XXXXXXXXXX"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Add OG images to all 10 beach detail pages",
+          "Add explicit favicon link to Layout.astro",
+          "Convert redirects to proper 301 (hosting-level)",
+          "Add font-display:swap to Google Fonts URL",
+          "Optimize render-blocking CSS"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "Complete llms.txt with all 10 beaches",
+          "Add image sitemap entries",
+          "Implement responsive images (srcset/picture)",
+          "Remove unused JPGs from dist/images",
+          "Add citation-friendly anchor IDs to key facts"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "Set up Google Search Console post-deployment",
+          "Monitor CWV via CrUX when traffic arrives",
+          "Add more AI crawler bots to robots.txt",
+          "Consider hreflang for future Chinese-language pages",
+          "Track SEO drift with periodic re-audits"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": null
+  }
+}

@@ -1,0 +1,45 @@
+---
+---
+<section id="map" class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-2">Interactive Map</h2>
+    <p class="text-gray-600 mb-8">Color-coded by crowd level. Click a marker to jump to the beach guide.</p>
+    <div id="leaflet-map" class="w-full h-[500px] rounded-xl border border-gray-200 overflow-hidden z-0"></div>
+  </div>
+</section>
+<script>
+  (function initMap() {
+    const mapEl = document.getElementById("leaflet-map");
+    if (!mapEl) return;
+    if (typeof L === "undefined") {
+      const s = document.createElement("script");
+      s.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+      s.onload = startMap;
+      document.head.appendChild(s);
+    } else {
+      startMap();
+    }
+    function startMap() {
+      const map = L.map("leaflet-map").setView([22.55, 114.4], 11);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap"
+      }).addTo(map);
+      fetch("/beaches.json").then(r => r.json()).then(beaches => {
+        const colors = { busy: "#e0683a", moderate: "#e8a040", quiet: "#1a5f7a" };
+        beaches.forEach(b => {
+          const marker = L.marker(b.location, {
+            icon: L.divIcon({
+              className: "custom-marker",
+              html: "<div style=\"width:14px;height:14px;border-radius:50%;background:" + colors[b.crowdLevel] + ";border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.3)\"></div>",
+              iconSize: [14,14], iconAnchor: [7,7]
+            })
+          }).addTo(map);
+          marker.bindPopup("<strong>" + b.name + " (" + b.nameCN + ")</strong><br/><span class=\"text-sm text-gray-500\">" + b.crowdLabel + "</span><br/><a href=\"/beaches/" + b.slug + "\" class=\"inline-block mt-1 text-xs font-medium text-white rounded hover:opacity-90 transition-opacity\" style=\"background:#e0683a;padding:3px 10px;border-radius:4px;text-decoration:none;margin-top:4px;display:inline-block;\">View full guide &rarr;</a>");
+          marker.on("click", function() {
+            window.location.href = "/beaches/" + b.slug;
+          });
+        });
+      }).catch(function() { console.warn("Failed to load beaches.json"); });
+    }
+  })();
+</script>

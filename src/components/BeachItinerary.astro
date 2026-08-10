@@ -1,0 +1,75 @@
+---
+const itineraries = [
+  {
+    label: "Day Trip from the City",
+    desc: "Perfect for visitors staying in central Shenzhen. Take Metro Line 8.",
+    beaches: [
+      { name: "Dameisha", slug: "dameisha", time: "9:00 AM – 1:00 PM", note: "Morning swim while it's still quiet. Best on weekdays." },
+      { name: "Xiaomeisha", slug: "xiaomeisha", time: "1:30 PM – 5:00 PM", note: "Afternoon at the resort beach, 15 min taxi from Dameisha." },
+    ],
+    tip: "Start at Dameisha early, then hop over to Xiaomeisha for a resort afternoon. Both on Metro Line 8 — zero driving needed.",
+  },
+  {
+    label: "Weekend Surf & Hike",
+    desc: "The classic Dapeng adventure — one night, two beaches, and one epic coastal hike.",
+    beaches: [
+      { name: "Xichong", slug: "xichong", time: "Saturday: Arrive AM", note: "Surf in the morning, camp or stay overnight. Best surf in Shenzhen." },
+      { name: "Dongchong", slug: "dongchong", time: "Sunday: Hike over", note: "Hike the 9 km coastal trail from Xichong, 2-3 hours. Swim at Dongchong." },
+    ],
+    tip: "Stay overnight at a Xichong guesthouse. Start the coastal hike by 8 AM to beat the heat. Book surf lessons in advance on weekends.",
+  },
+  {
+    label: "Hidden Gem Explorer",
+    desc: "For those who want the quietest, most beautiful beaches in Shenzhen.",
+    beaches: [
+      { name: "Judiaosha", slug: "judiaosha", time: "Morning", note: "Crescent bay, almost empty. The most photogenic beach." },
+      { name: "Yangmeikeng", slug: "yangmeikeng", time: "Afternoon", note: "Rent a bike, ride the coastal path. Best at golden hour." },
+    ],
+    tip: "Judiaosha is free and next to a resort hotel that rarely fills its beach. Yangmeikeng's bike path starts at the beach — rent at the village entrance.",
+  },
+  {
+    label: "Weekday Local Escape",
+    desc: "For Shenzhen residents who can slip away on a Tuesday.",
+    beaches: [
+      { name: "Jinshawan", slug: "jinshawan", time: "Full day", note: "Luxury resort beach that's yours alone on weekdays." },
+      { name: "Shuitousha", slug: "shuitousha", time: "Sunset", note: "Tiny, secluded. Watch the sunset with maybe 10 other people." },
+    ],
+    tip: "Jinshawan's resort infrastructure makes a weekday visit feel like a private beach club. Drive or taxi is easiest — limited public transport.",
+  },
+];
+---
+<section id="itineraries" class="py-20 md:py-28 bg-stone-50 border-y border-gray-200">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="text-center mb-14">
+      <p class="text-sm font-semibold text-ocean uppercase tracking-wider mb-3">Plan Your Trip</p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">Beach Hopping Itineraries</h2>
+      <p class="mt-4 text-gray-500 max-w-lg mx-auto">Combine beaches based on your schedule — from a quick city escape to a full weekend on the Dapeng Peninsula.</p>
+    </div>
+    <div class="space-y-6">
+      {itineraries.map((itin) => (
+        <div class="rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+            <div>
+              <h3 class="text-xl font-display font-semibold text-gray-900">{itin.label}</h3>
+              <p class="text-sm text-gray-500 mt-1">{itin.desc}</p>
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            {itin.beaches.map((b) => (
+              <a href={`/beaches/${b.slug}`} class="group block rounded-xl border border-gray-100 bg-stone-50 p-5 hover:border-ocean/30 hover:shadow-sm transition-all no-underline">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-semibold text-gray-800 group-hover:text-ocean transition-colors">{b.name}</span>
+                  <span class="text-xs font-medium text-gray-400">{b.time}</span>
+                </div>
+                <p class="text-sm text-gray-500">{b.note}</p>
+              </a>
+            ))}
+          </div>
+          <div class="mt-4 pt-4 border-t border-gray-100">
+            <p class="text-xs text-ocean font-medium"><span class="text-gray-400">Tip:</span> {itin.tip}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

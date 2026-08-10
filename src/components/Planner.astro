@@ -1,0 +1,127 @@
+---
+const questions = [
+  {
+    id: "companion",
+    title: "Who are you going with?",
+    options: [
+      { label: "Solo", icon: "🧍", value: "solo" },
+      { label: "Couple", icon: "💑", value: "couple" },
+      { label: "Family", icon: "👨‍👩‍👧‍👦", value: "family" },
+      { label: "Friends", icon: "👥", value: "friends" },
+    ],
+  },
+  {
+    id: "vibe",
+    title: "What kind of beach day?",
+    options: [
+      { label: "Active & Adventure", icon: "🏄", value: "active" },
+      { label: "Relax & Unwind", icon: "😌", value: "relax" },
+      { label: "Resort & Luxury", icon: "🏨", value: "luxury" },
+      { label: "Local & Authentic", icon: "🦐", value: "local" },
+    ],
+  },
+  {
+    id: "crowds",
+    title: "How do you feel about crowds?",
+    options: [
+      { label: "Don't mind busy beaches", icon: "🏖️", value: "busy" },
+      { label: "Prefer moderate crowds", icon: "🌊", value: "moderate" },
+      { label: "Need total peace", icon: "🏝️", value: "quiet" },
+    ],
+  },
+];
+---
+
+<div id="beach-planner" class="bg-white rounded-2xl border-2 border-accent/20 p-6 md:p-8 shadow-sm">
+  <div class="flex items-center gap-3 mb-4">
+    <div class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-xl">🏖️</div>
+    <div>
+      <h3 class="text-lg font-bold text-gray-900">Beach Day Planner</h3>
+      <p class="text-xs text-gray-500">Answer 3 quick questions — get your perfect beach</p>
+    </div>
+  </div>
+
+  <div id="planner-steps">
+    {questions.map((q, qi) => (
+      <div class="planner-step" data-step={qi} style={qi > 0 ? "display:none" : ""}>
+        <p class="text-sm font-semibold text-gray-700 mb-3">{qi + 1}/3 — {q.title}</p>
+        <div class="grid grid-cols-2 gap-3">
+          {q.options.map(opt => (
+            <button class="planner-option text-left p-3 rounded-xl border-2 border-gray-200 bg-white hover:border-accent hover:bg-accent/5 transition-all cursor-pointer" data-question={q.id} data-value={opt.value}>
+              <span class="text-xl">{opt.icon}</span>
+              <span class="block text-sm font-medium text-gray-800 mt-1">{opt.label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div id="planner-result" style="display:none" class="bg-gradient-to-br from-ocean/5 to-accent/5 rounded-xl p-6 border border-accent/20">
+    <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-1">Your Perfect Beach</p>
+    <p class="text-2xl font-bold text-gray-900 mb-2" id="planner-beach-name"></p>
+    <p class="text-sm text-gray-600 mb-4" id="planner-reason"></p>
+    <a id="planner-link" href="#" class="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white text-sm font-medium rounded-lg hover:bg-accent-dark transition-colors no-underline">
+      View full guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+    <button id="planner-reset" class="ml-3 text-sm text-gray-500 hover:text-gray-700 underline cursor-pointer border-none bg-transparent">Start over</button>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const answers: Record<string, string> = {};
+    let step = 0;
+    const total = 3;
+    document.querySelectorAll(".planner-option").forEach(btn => {
+      btn.addEventListener("click", function() {
+        const el = this as HTMLElement;
+        const q = el.dataset.question!;
+        const v = el.dataset.value!;
+        answers[q] = v;
+        el.parentElement!.querySelectorAll("button").forEach(b => b.classList.remove("border-accent", "bg-accent/5"));
+        el.classList.add("border-accent", "bg-accent/5");
+        setTimeout(() => {
+          step++;
+          if (step < total) {
+            document.querySelectorAll(".planner-step").forEach((s: any) => (s as HTMLElement).style.display = "none");
+            (document.querySelector('.planner-step[data-step="' + step + '"]') as HTMLElement).style.display = "";
+          } else {
+            document.getElementById("planner-steps")!.style.display = "none";
+            const matrix: Record<string, any> = {
+              "family-busy": { beach: "Dameisha", slug: "dameisha", reason: "Easy metro, gentle waves, showers, food. No-stress family beach day. Free." },
+              "family-moderate": { beach: "Xiaomeisha", slug: "xiaomeisha", reason: "Managed resort beach with clean facilities. Family comfort, no compromise." },
+              "family-quiet": { beach: "Jinshawan", slug: "jinshawan", reason: "Resort-managed, fine sand, calm water. Safe for kids, peaceful for parents." },
+              "couple-busy": { beach: "Dameisha", slug: "dameisha", reason: "Scenic boardwalk for sunset walks. Seafood street nearby for dinner with a view." },
+              "couple-moderate": { beach: "Yangmeikeng", slug: "yangmeikeng", reason: "Coastal road, golden hour photography, cycling. Romance on two wheels." },
+              "couple-quiet": { beach: "Judiaosha", slug: "judiaosha", reason: "Crescent bay, white sand, almost private. Most romantic beach near Shenzhen." },
+              "solo-busy": { beach: "Dameisha", slug: "dameisha", reason: "Easy Metro Line 8. Swim, read, people-watch, grab street food. Solo freedom." },
+              "solo-moderate": { beach: "Xichong", slug: "xichong", reason: "Surf, hike, camp. The adventure beach. Perfect solo escape from the city." },
+              "solo-quiet": { beach: "Shuitousha", slug: "shuitousha", reason: "No facilities, barely anyone. Total solitude. Bring everything, take everything back." },
+              "friends-busy": { beach: "Dameisha", slug: "dameisha", reason: "BBQ pits, beach volleyball, plenty of food. Group-friendly, easy access." },
+              "friends-moderate": { beach: "Xichong", slug: "xichong", reason: "Surf lessons, camping, bonfires, hiking. Ultimate group adventure." },
+              "friends-quiet": { beach: "Dongchong", slug: "dongchong", reason: "Hike coastal trail, surf, camp under stars. Adventure with friends." },
+            };
+            let rec = matrix[answers.companion + "-" + answers.crowds];
+            if (answers.vibe === "luxury") rec = { beach: "Jinshawan", slug: "jinshawan", reason: "The most upscale beach. Fine sand, beach bar, resort-managed. Elegance without chaos." };
+            if (answers.vibe === "local") rec = { beach: "Nanao", slug: "nanao", reason: "Fresh seafood from the boats, fishing village vibes. The real Shenzhen, zero pretense." };
+            if (answers.vibe === "active") rec = { beach: "Xichong", slug: "xichong", reason: "Best surf in Shenzhen. Surf lessons, camping, coastal hike. Full adventure day." };
+            if (!rec) rec = { beach: "Dameisha", slug: "dameisha", reason: "The easiest choice. Metro Line 8, free entry, all basics covered." };
+            document.getElementById("planner-result")!.style.display = "";
+            document.getElementById("planner-beach-name")!.textContent = rec.beach;
+            document.getElementById("planner-reason")!.textContent = rec.reason;
+            (document.getElementById("planner-link") as HTMLAnchorElement).href = "/beaches/" + rec.slug;
+          }
+        }, 300);
+      });
+    });
+    document.getElementById("planner-reset")?.addEventListener("click", () => {
+      answers.companion = answers.vibe = answers.crowds = "";
+      step = 0;
+      document.getElementById("planner-steps")!.style.display = "";
+      document.getElementById("planner-result")!.style.display = "none";
+      document.querySelectorAll(".planner-step").forEach((s: any, i: number) => { (s as HTMLElement).style.display = i === 0 ? "" : "none"; });
+      document.querySelectorAll(".planner-option").forEach(b => b.classList.remove("border-accent", "bg-accent/5"));
+    });
+  })();
+</script>

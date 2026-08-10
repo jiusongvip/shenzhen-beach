@@ -1,0 +1,71 @@
+---
+import beaches from "../data/beaches.json";
+---
+<section id="compare" class="py-16">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-2">All 10 Beaches at a Glance</h2>
+    <p class="text-gray-600 mb-8">Sort and filter. Click any row to jump to details below.</p>
+    <div class="overflow-x-auto bg-white rounded-xl border border-gray-200 shadow-sm">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-gray-200 bg-gray-50 text-left">
+            <th class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent" data-sort="name">Beach <span class="sort-arrow text-xs ml-0.5"></span></th>
+            <th class="px-4 py-3 font-semibold hidden md:table-cell cursor-pointer select-none hover:text-accent" data-sort="distance">Distance <span class="sort-arrow text-xs ml-0.5"></span></th>
+            <th class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent" data-sort="fee">Fee <span class="sort-arrow text-xs ml-0.5"></span></th>
+            <th class="px-4 py-3 font-semibold hidden lg:table-cell">Best For</th>
+            <th class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent" data-sort="rating">Rating <span class="sort-arrow text-xs ml-0.5"></span></th>
+            <th class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent" data-sort="crowd">Crowds <span class="sort-arrow text-xs ml-0.5"></span></th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          {beaches.map(b => (
+            <tr class="beach-card hover:bg-gray-50 cursor-pointer" data-tags={b.bestFor.join(",")} data-id={b.id} onclick={`document.getElementById('card-${b.id}')?.scrollIntoView({behavior:'smooth'});setTimeout(()=>document.getElementById('card-${b.id}')?.classList.add('open'),300)`}>
+              <td class="px-4 py-3 font-medium">{b.name} <span class="text-gray-400 text-xs ml-1">{b.nameCN}</span></td>
+              <td class="px-4 py-3 hidden md:table-cell text-gray-600">{b.distance}</td>
+              <td class="px-4 py-3 text-gray-600">{b.fee}</td>
+              <td class="px-4 py-3 hidden lg:table-cell text-gray-600">{b.bestFor.slice(0,2).join(", ")}</td>
+              <td class="px-4 py-3"><span class="inline-flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="#e0683a"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>{b.rating}</span></td>
+              <td class="px-4 py-3"><span class={`inline-block w-2.5 h-2.5 rounded-full mr-1.5 ${b.crowdLevel==='busy'?'bg-accent':b.crowdLevel==='moderate'?'bg-amber-400':'bg-ocean'}`}></span><span class="text-gray-600 text-xs">{b.crowdLabel}</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<script is:inline>
+  (function() {
+    const tbody = document.querySelector("#compare tbody");
+    if (!tbody) return;
+    const headers = document.querySelectorAll("#compare th[data-sort]");
+    let sortDir = {};
+
+    function getVal(row, col) {
+      const cells = row.querySelectorAll("td");
+      if (col === "name") return (cells[0]?.textContent || "").trim();
+      if (col === "distance") { const t = (cells[1]?.textContent || "0").replace("min",""); return parseInt(t) || 0; }
+      if (col === "fee") { const t = (cells[2]?.textContent || "").toLowerCase(); return t.includes("free") ? 0 : (parseInt(t) || 999); }
+      if (col === "rating") return parseFloat(cells[4]?.textContent || "0");
+      if (col === "crowd") { const t = (cells[5]?.textContent || "").toLowerCase(); if (t.includes("busy")) return 3; if (t.includes("moderate")) return 2; return 1; }
+      return 0;
+    }
+
+    headers.forEach(th => {
+      th.addEventListener("click", function() {
+        const col = th.dataset.sort!;
+        sortDir[col] = !sortDir[col];
+        const asc = sortDir[col];
+        const rows = Array.from(tbody.querySelectorAll("tr"));
+        rows.sort((a, b) => {
+          const va = getVal(a, col), vb = getVal(b, col);
+          if (typeof va === "string" && typeof vb === "string") return asc ? va.localeCompare(vb) : vb.localeCompare(va);
+          return asc ? va - vb : vb - va;
+        });
+        rows.forEach(r => tbody.appendChild(r));
+        headers.forEach(h => { const arrow = h.querySelector(".sort-arrow"); if (arrow) arrow.textContent = ""; });
+        const arrow = th.querySelector(".sort-arrow");
+        if (arrow) arrow.textContent = asc ? "↑" : "↓";
+      });
+    });
+  })();
+</script>

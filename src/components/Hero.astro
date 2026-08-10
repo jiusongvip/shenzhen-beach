@@ -1,0 +1,73 @@
+---
+const activityLinks = [
+  { label: "Swimming", slug: "dameisha" },
+  { label: "Surfing", slug: "xichong" },
+  { label: "Family", slug: "dameisha" },
+  { label: "Camping", slug: "xichong" },
+  { label: "Hiking", slug: "dongchong" },
+  { label: "All beaches", slug: "", hash: true },
+];
+
+const quickPicks = [
+  { label: "Easiest", beach: "Dameisha", slug: "dameisha", img: "/images/dameisha.webp", desc: "Metro Line 8, free entry, great for first-timers and families" },
+  { label: "Best Overall", beach: "Xichong", slug: "xichong", img: "/images/hero-xichong.webp", desc: "Longest beach, best surf, cleanest water — the real gem" },
+  { label: "Quiet Escape", beach: "Judiaosha", slug: "judiaosha", img: "/images/judiaosha.webp", desc: "Crescent bay, white sand, almost empty even on weekends" },
+];
+---
+<section class="relative min-h-[100dvh] flex items-end pb-0">
+  <!-- Hero Background Image -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="/images/hero-xichong.webp"
+      srcset="/images/hero-xichong-400w.webp 400w, /images/hero-xichong-800w.webp 800w, /images/hero-xichong.webp 1920w"
+      sizes="100vw"
+      alt="Xichong Beach Shenzhen — golden sand stretching along the coastline with green hills and blue ocean"
+      class="w-full h-full object-cover"
+      width="1920"
+      height="1080"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/65"></div>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="relative z-10 w-full">
+    <div class="max-w-7xl mx-auto px-4 pb-8 lg:pb-12">
+      <div class="max-w-2xl pt-20 lg:pt-28">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-[1.05] mb-4 text-white drop-shadow-lg">
+          Shenzhen Beach Guide
+        </h1>
+        <p class="text-lg md:text-xl text-white/85 max-w-[48ch] mb-6 leading-relaxed drop-shadow">
+          Which beach is right for you? Compare 10 beaches in one place — real photos, honest advice, transport guides.
+        </p>
+        <div class="flex flex-wrap gap-2.5 mb-8">
+          {activityLinks.map(a => (
+            a.hash
+              ? <a href="#beaches" class="px-4 py-2.5 rounded-full bg-accent text-white text-sm font-medium hover:bg-accent-dark transition-colors no-underline shadow-lg">Show all 10 beaches</a>
+              : <a href={`/beaches/${a.slug}`} class="px-4 py-2.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-white text-sm font-medium hover:bg-white/25 transition-colors no-underline">{a.label}</a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Quick Answer Strip -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+        {quickPicks.map(q => (
+          <a href={`/beaches/${q.slug}`} class="group relative overflow-hidden rounded-xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 no-underline block">
+            <div class="flex items-center gap-4 p-3.5">
+              <div class="w-16 h-16 sm:w-14 sm:h-14 rounded-lg overflow-hidden flex-shrink-0">
+                <img src={q.img} alt={`${q.beach} Beach`} class="w-full h-full object-cover" width="80" height="80" loading="lazy" />
+              </div>
+              <div class="min-w-0">
+                <p class="text-xs font-semibold text-orange-200 uppercase tracking-wider mb-0.5">{q.label}</p>
+                <p class="text-sm font-bold text-white group-hover:text-white transition-colors">{q.beach}</p>
+                <p class="text-xs text-white/65 mt-0.5 leading-snug hidden sm:block">{q.desc}</p>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

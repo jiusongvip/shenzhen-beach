@@ -1,0 +1,44 @@
+---
+import beaches from "../data/beaches.json";
+---
+<section id="foreign" class="py-16">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-2">For International Visitors</h2>
+    <p class="text-gray-600 mb-8">Visiting from abroad? Here is what you need to know.</p>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="font-semibold text-ocean mb-3">Payment</h3>
+        <p class="text-sm text-gray-600">WeChat Pay and Alipay accepted everywhere. Set up <strong>Alipay TourPass</strong> before your trip. Most beach vendors do <strong>not</strong> accept international credit cards. Bring cash (RMB) as backup.</p>
+      </div>
+      <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="font-semibold text-ocean mb-3">Visa Note</h3>
+        <p class="text-sm text-gray-600">All Shenzhen beaches are within the <strong>144-hour visa-free transit zone</strong>. No additional permits required. Just bring your passport.</p>
+      </div>
+      <div class="bg-white rounded-xl border border-gray-200 p-6 md:col-span-2">
+        <h3 class="font-semibold text-ocean mb-3">Quick Beach Links</h3>
+        <p class="text-sm text-gray-600 mb-3">Jump to any beach guide &mdash; each page has the Chinese name to show a taxi driver:</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+          {beaches.map(b => (
+            <a
+              href={`/beaches/${b.slug}`}
+              class="text-left p-3 bg-sand rounded-lg border border-gray-200 hover:border-accent hover:bg-white transition-colors text-sm block"
+            >
+              <div class="text-lg font-semibold text-gray-900">{b.nameCN}</div>
+              <div class="text-gray-500 text-xs">{b.name}</div>
+            </a>
+          ))}
+        </div>
+      </div>
+      <div class="bg-white rounded-xl border border-gray-200 p-6 md:col-span-2">
+        <h3 class="font-semibold text-ocean mb-3">Beach Etiquette in China</h3>
+        <ul class="text-sm text-gray-600 space-y-2">
+          <li>Swimsuits (including bikinis) are fine on all Shenzhen beaches</li>
+          <li>No alcohol on most public beaches</li>
+          <li>Showers and changing rooms common; bring your own towel</li>
+          <li>Lifeguard hours vary; do not swim alone or outside marked zones</li>
+          <li>Some beaches require WeChat registration during peak season</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

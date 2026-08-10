@@ -1,0 +1,8 @@
+---
+---
+<div class="flex items-center gap-2 justify-center py-4">
+  <span class="text-xs text-gray-400 mr-1">Share:</span>
+  <button onclick="navigator.clipboard.writeText(window.location.href);this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',2000)" class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-gray-600 bg-white border border-gray-200 rounded-full hover:border-accent hover:text-accent transition-colors cursor-pointer">Copy link</button>
+  <a href="#" onclick="window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(document.title+' '+window.location.href),'_blank','width=550,height=420');return false" class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-gray-600 bg-white border border-gray-200 rounded-full hover:border-accent hover:text-accent transition-colors no-underline">X / Twitter</a>
+  <button onclick="window.print()" class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-gray-600 bg-white border border-gray-200 rounded-full hover:border-accent hover:text-accent transition-colors cursor-pointer">Print</button>
+</div>

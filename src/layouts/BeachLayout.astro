@@ -1,0 +1,330 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import beaches from "../data/beaches.json";
+
+interface Props {
+  id: string;
+  ogImage?: string;
+}
+
+const { id, ogImage } = Astro.props;
+const b = beaches.find(x => x.id === id);
+if (!b) throw new Error(`Beach not found: ${id}`);
+
+const imageMap: Record<string, string> = {
+  dameisha: "/images/dameisha.webp", xichong: "/images/hero-xichong.webp",
+  judiaosha: "/images/judiaosha.webp", dongchong: "/images/dongchong.webp",
+  yangmeikeng: "/images/yangmeikeng.webp", jinshawan: "/images/jinshawan.webp",
+  nanao: "/images/nanao.webp", xiaomeisha: "/images/xiaomeisha.webp",
+  shuitousha: "/images/shuitousha.webp", shangdong: "/images/shangdong.webp",
+};
+const beachImage = imageMap[b.id];
+
+const jsonLd = {
+  "@context": "https://schema.org", "@type": "TouristAttraction",
+  "name": `${b.name} Beach`, "alternateName": b.nameCN,
+  "description": b.longDescription || b.description,
+  "url": new URL(`/beaches/${b.slug}`, Astro.site).href,
+  "publicAccess": true, "isAccessibleForFree": b.feeNum === 0,
+  "touristType": b.bestFor,
+  "geo": { "@type": "GeoCoordinates", "latitude": b.location[0], "longitude": b.location[1] },
+  "address": { "@type": "PostalAddress", "addressLocality": "Shenzhen", "addressRegion": "Guangdong", "addressCountry": "CN" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": String(b.rating), "bestRating": "5", "reviewCount": "5" }
+};
+
+const imageObj = beachImage ? {
+  "@context": "https://schema.org", "@type": "ImageObject",
+  "contentUrl": new URL(beachImage, Astro.site).href,
+  "description": `${b.name} Beach (${b.nameCN})`, "representativeOfPage": true
+} : null;
+
+const faqLd = {
+  "@context": "https://schema.org", "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": `How do I get to ${b.name} Beach?`, "acceptedAnswer": { "@type": "Answer", "text": (() => {
+      const p = []; if (b.transport?.metro) p.push(`Take Metro ${b.transport.metro}`); if (b.transport?.metroExit) p.push(`to ${b.transport.metroExit} station.`); if (b.transport?.metroWalk) p.push(`It is a ${b.transport.metroWalk} walk from the station to the beach entrance.`); if (b.transport?.bus) p.push(`Bus routes serving ${b.name} Beach include ${b.transport.bus}.`); return p.length ? p.join(' ') : 'See the transport section for detailed directions.';
+    })().replace(/"/g, "'") } },
+    { "@type": "Question", "name": `What is the entrance fee for ${b.name} Beach?`, "acceptedAnswer": { "@type": "Answer", "text": `${b.fee}. ${b.feeNum === 0 ? "Free entry." : "Entry fee: " + b.feeNum + " RMB."}` } },
+    { "@type": "Question", "name": `What can I do at ${b.name} Beach?`, "acceptedAnswer": { "@type": "Answer", "text": b.bestFor?.join(", ") || "Swimming and relaxing." } },
+    { "@type": "Question", "name": `When is the best season for ${b.name} Beach?`, "acceptedAnswer": { "@type": "Answer", "text": b.features?.bestSeason ? `${b.features.bestSeason} is the best season for ${b.name} Beach (${b.nameCN}).` : "Check the seasonal guide on the homepage." } },
+    { "@type": "Question", "name": `Are there facilities at ${b.name} Beach?`, "acceptedAnswer": { "@type": "Answer", "text": (() => { const items = Object.entries(b.facilities || {}).filter(([_,v]) => v && v !== "None" && v !== "No"); if (!items.length) return `${b.name} Beach offers basic beach facilities.`; const list = items.map(([k,v]) => `${k.replace(/([A-Z])/g," $1").toLowerCase()} (${v})`).join(", "); return `${b.name} Beach offers: ${list}.`; })() } }
+  ]
+};
+
+const schema = imageObj ? [jsonLd, imageObj, faqLd] : [jsonLd, faqLd];
+const pageTitle = `${b.name} Beach (${b.nameCN}) - Transport, Food & Tips | Shenzhen Beaches`;
+const pageDesc = `Complete guide to ${b.name} Beach (${b.nameCN}): how to get there, entrance fee, food & dining, nearby hotels, activities, and tips. Rated ${b.rating}/5. Updated August 2026.`;
+
+const absoluteOgImage = ogImage ? new URL(ogImage, Astro.site).href : undefined;
+
+const transportEntries = [
+  ["Metro", b.transport?.metro], ["Metro Exit", b.transport?.metroExit], ["Metro Walk", b.transport?.metroWalk],
+  ["Bus", b.transport?.bus], ["Taxi from Futian", b.transport?.taxiFromFutian],
+  ["Taxi from Luohu", b.transport?.taxiFromLuohu], ["Taxi from Nanshan", b.transport?.taxiFromNanshan],
+  ["Driving", b.transport?.driveTime], ["Parking", b.transport?.parking],
+].filter(([, v]) => v);
+
+const facilityEntries = [
+  ["Showers", b.facilities?.showers], ["Lockers", b.facilities?.lockers],
+  ["Umbrellas/Chairs", b.facilities?.umbrellas], ["Lifeguards", b.facilities?.lifeguards],
+  ["Food/Drinks", b.facilities?.food], ["Restrooms", b.facilities?.restrooms],
+  ["Changing Rooms", b.facilities?.changingRooms], ["First Aid", b.facilities?.firstAid],
+].filter(([, v]) => v);
+
+const featureEntries = [
+  ["Sand Type", b.features?.sandType], ["Water Quality", b.features?.waterQuality],
+  ["Wave Type", b.features?.waveType], ["Best Season", b.features?.bestSeason],
+  ["Swimming Zone", b.features?.swimZone],
+].filter(([, v]) => v);
+
+const fullStars = Math.floor(b.rating);
+const halfStar = b.rating - fullStars >= 0.5;
+---
+
+<Layout title={pageTitle} description={pageDesc} ogImage={absoluteOgImage} jsonLd={schema}>
+  <Nav />
+  <main class="max-w-4xl mx-auto px-4 py-8 md:py-12">
+    <nav class="text-sm text-gray-400 mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-ocean">Shenzhen Beaches</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-600">{b.name} Beach</span>
+    </nav>
+
+    <div class="mb-10">
+      {beachImage && (
+        <div class="aspect-[21/9] rounded-xl overflow-hidden mb-6 bg-gray-100 shadow-md">
+          <img src={beachImage} srcset={`${beachImage.replace('.webp', '-400w.webp')} 400w, ${beachImage.replace('.webp', '-800w.webp')} 800w, ${beachImage} 1200w`} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 768px" alt={`${b.name} Beach (${b.nameCN})`} class="w-full h-full object-cover" width="1200" height="514" loading="eager" decoding="async" />
+        </div>
+      )}
+      <div class="flex flex-wrap items-baseline gap-3">
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">{b.name} Beach</h1>
+        <span class="text-xl text-gray-400">{b.nameCN}</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-4 mt-3 text-sm">
+        <span class="flex items-center gap-0.5">
+          {Array.from({length: 5}).map((_, i) => (
+            <svg width="14" height="14" viewBox="0 0 24 24" fill={i < fullStars ? "#e0683a" : (halfStar && i === fullStars ? "url(#hs)" : "#ddd")}>{halfStar && i === fullStars ? <defs><linearGradient id="hs"><stop offset="50%" stop-color="#e0683a"/><stop offset="50%" stop-color="#ddd"/></linearGradient></defs> : null}<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          ))}
+          <span class="ml-0.5 font-medium text-gray-700">{b.rating}</span>
+        </span>
+        <span class="text-gray-600">{b.distance}</span>
+        <span class="text-gray-600">{b.fee}</span>
+        <span class="text-gray-600">{b.crowdLabel}</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10 p-5 bg-sand rounded-xl border border-gray-200">
+      <div><span class="text-xs text-gray-400 uppercase block mb-1">Hours</span><span class="text-sm font-semibold text-gray-800">{b.openingHours || "Daylight"}</span></div>
+      <div><span class="text-xs text-gray-400 uppercase block mb-1">Entry Fee</span><span class="text-sm font-semibold text-gray-800">{b.fee}</span></div>
+      <div><span class="text-xs text-gray-400 uppercase block mb-1">Water Quality</span><span class="text-sm font-semibold text-gray-800">{b.features?.waterQuality || "—"}</span></div>
+      <div><span class="text-xs text-gray-400 uppercase block mb-1">Family Friendly</span><span class="text-sm font-semibold text-gray-800">{b.familyFriendly ? "Yes" : "Not ideal"}</span></div>
+    </div>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Overview</h2>
+      <div class="text-gray-600 leading-relaxed space-y-3">
+        {(b.longDescription || b.description).split("\n\n").filter(Boolean).map((para: string) => (
+          <p>{para.trim()}</p>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">How to Get to {b.name} Beach</h2>
+      <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+        <dl class="divide-y divide-gray-100">
+          {transportEntries.map(([label, value]) => (
+            <div class="grid grid-cols-3 px-5 py-3">
+              <dt class="text-sm font-medium text-gray-500">{label}</dt>
+              <dd class="col-span-2 text-sm text-gray-800">{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Food & Dining</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white border border-gray-200 rounded-xl p-5">
+          <h3 class="font-semibold text-ocean mb-2">At the Beach</h3>
+          <p class="text-sm text-gray-600">{b.food?.onSite || "Limited options."}</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-5">
+          <h3 class="font-semibold text-ocean mb-2">Nearby</h3>
+          <p class="text-sm text-gray-600">{b.food?.nearby || "Local restaurants nearby."}</p>
+        </div>
+      </div>
+      <div class="mt-4 bg-accent/5 border border-accent/20 rounded-xl p-5">
+        <h3 class="font-semibold text-accent mb-1">What to Try</h3>
+        <p class="text-sm text-gray-700">{b.food?.mustTry || "Fresh local seafood."}</p>
+        <p class="text-xs text-gray-500 mt-2">Price range: {b.food?.priceRange || "Varies."}</p>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Where to Stay</h2>
+      <div class="bg-white border border-gray-200 rounded-xl p-5">
+        <p class="text-sm text-gray-600">{b.accommodation?.nearby || "Guesthouses nearby."}</p>
+      </div>
+      {(b.accommodation?.camping && b.accommodation.camping !== "Not permitted.") && (
+        <div class="mt-3 bg-amber-50 border border-amber-200 rounded-xl p-5">
+          <h3 class="font-semibold text-amber-700 mb-1">Camping</h3>
+          <p class="text-sm text-gray-700">{b.accommodation.camping}</p>
+        </div>
+      )}
+      <p class="text-xs text-gray-400 mt-3">Price range: {b.accommodation?.priceRange || "Varies by season."}</p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">What to Wear & Bring</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white border border-gray-200 rounded-xl p-5">
+          <h3 class="font-semibold text-ocean mb-2">Summer (May-Oct)</h3>
+          <p class="text-sm text-gray-600">{b.clothing?.summer || "Swimsuit, sunscreen, hat."}</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-xl p-5">
+          <h3 class="font-semibold text-ocean mb-2">Winter (Nov-Apr)</h3>
+          <p class="text-sm text-gray-600">{b.clothing?.winter || "Light jacket for walks."}</p>
+        </div>
+      </div>
+      {b.clothing?.essentials?.length > 0 && (
+        <div class="mt-4 bg-white border border-gray-200 rounded-xl p-5">
+          <h3 class="font-semibold text-ocean mb-2">Packing Checklist</h3>
+          <ul class="grid sm:grid-cols-2 gap-2 text-sm text-gray-600">
+            {b.clothing.essentials.map((item: string) => (
+              <li class="flex gap-2"><span class="text-accent">&#10003;</span> {item}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </section>
+
+    {facilityEntries.length > 0 && (
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-4">Facilities</h2>
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <dl class="divide-y divide-gray-100">
+            {facilityEntries.map(([label, value]) => (
+              <div class="grid grid-cols-3 px-5 py-3">
+                <dt class="text-sm font-medium text-gray-500">{label}</dt>
+                <dd class="col-span-2 text-sm text-gray-800">{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+    )}
+
+    {featureEntries.length > 0 && (
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-4">Beach Features</h2>
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
+          <dl class="divide-y divide-gray-100">
+            {featureEntries.map(([label, value]) => (
+              <div class="grid grid-cols-3 px-5 py-3">
+                <dt class="text-sm font-medium text-gray-500">{label}</dt>
+                <dd class="col-span-2 text-sm text-gray-800">{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+    )}
+
+    {b.whenToAvoid && (
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-4">When to Avoid</h2>
+        <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+          <p class="text-sm text-gray-700 leading-relaxed">{b.whenToAvoid}</p>
+        </div>
+      </section>
+    )}
+
+    {b.activities?.length > 0 && (
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-4">Things to Do</h2>
+        <div class="space-y-4">
+          {b.activities.map((a: {name: string; desc: string}) => (
+            <div class="bg-white border border-gray-200 rounded-xl p-5">
+              <h3 class="font-semibold text-gray-800 mb-1">{a.name}</h3>
+              <p class="text-sm text-gray-600">{a.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Safety</h2>
+      <div class="bg-white border border-gray-200 rounded-xl p-5 space-y-3">
+        <div><span class="text-sm font-medium text-gray-500">Lifeguard: </span><span class="text-sm text-gray-800">{b.facilities?.lifeguards !== "No" && b.facilities?.lifeguards !== "None" ? "Available seasonally." : "No lifeguards on duty."}</span></div>
+        <div><span class="text-sm font-medium text-gray-500">Hazards: </span><span class="text-sm text-gray-800">Always check conditions before swimming. Watch for rip currents after storms. Strong UV — reapply sunscreen regularly.</span></div>
+        <div><span class="text-sm font-medium text-gray-500">Water Quality: </span><span class="text-sm text-gray-800">{b.features?.waterQuality || "Not formally tested."} — per Shenzhen Ecology Bureau.</span></div>
+        <div><span class="text-sm font-medium text-gray-500">Emergency: </span><span class="text-sm text-gray-800">Call 110 (police) or 120 (ambulance). Nearest hospital: Dapeng New District.</span></div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Best Time to Visit</h2>
+      <div class="bg-ocean/5 border border-ocean/20 rounded-xl p-5">
+        <p class="text-sm text-gray-700">
+          {b.features?.bestSeason ? `${b.name} Beach (${b.nameCN}) offers ideal conditions during ${b.features.bestSeason}.` : "See the seasonal guide for details."}
+        </p>
+      </div>
+    </section>
+
+    {b.photoSpots && (
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-4">Photo Spots</h2>
+        <div class="bg-white border border-gray-200 rounded-xl p-5">
+          <p class="text-sm text-gray-600 leading-relaxed">{b.photoSpots}</p>
+        </div>
+      </section>
+    )}
+
+    {b.history && (
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-4">History & Background</h2>
+        <div class="bg-sand border border-gray-200 rounded-xl p-5">
+          <p class="text-sm text-gray-600 leading-relaxed">{b.history}</p>
+        </div>
+      </section>
+    )}
+
+    {b.tips?.length > 0 && (
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-4">Visitor Tips</h2>
+        <ul class="space-y-2">
+          {b.tips.map((tip: string) => (
+            <li class="flex gap-2 text-sm text-gray-600"><span class="text-accent shrink-0 mt-0.5">&#8226;</span> {tip}</li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <section class="mb-12">
+          <h2 class="text-2xl font-bold mb-4">You Might Also Like</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        {beaches.filter(x => x.id !== b.id).slice(0, 3).map((other: any) => (
+          <a href={`/beaches/${other.slug}`} class="block bg-white border border-gray-200 rounded-xl p-4 hover:border-accent hover:shadow-sm transition-all no-underline">
+            <span class="font-semibold text-gray-800">{other.name}</span>
+            <span class="text-xs text-gray-400 ml-1">{other.nameCN}</span>
+            <p class="text-xs text-gray-500 mt-1">{other.bestFor?.slice(0,2).join(", ")}</p>
+            <p class="text-xs text-gray-400 mt-2">&#9733; {other.rating} &middot; {other.fee}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <div class="mt-12 pt-8 border-t border-gray-200">
+      <a href="/" class="text-sm text-ocean hover:underline inline-flex items-center gap-1">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to all Shenzhen beaches
+      </a>
+    </div>
+  </main>
+  <Footer />
+</Layout>

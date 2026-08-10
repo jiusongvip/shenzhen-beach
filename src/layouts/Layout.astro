@@ -1,0 +1,157 @@
+---
+import "../styles/global.css";
+export interface Props { title: string; description: string; ogImage?: string; jsonLd?: Record<string, unknown> | Record<string, unknown>[]; noindex?: boolean; author?: string; dateModified?: string; }
+const { title, description, ogImage, jsonLd, noindex, author = "Shenzhen Beaches Team", dateModified = "2026-08-10" } = Astro.props;
+
+// Smart title: avoid duplicating "Shenzhen" in page title
+const baseName = "Shenzhen Beaches";
+const fullTitle = title.includes("Shenzhen") ? title : `${title} | ${baseName}`;
+
+// Canonical URL
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href.replace(/\/$/, "");
+
+// Default structured data for homepage
+const isHome = Astro.url.pathname === "/" || Astro.url.pathname === "";
+const defaultJsonLd = isHome ? [
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristDestination",
+    "name": "Shenzhen Beaches",
+    "description": "A comprehensive guide to all 10 beaches in Shenzhen, China. Interactive map, comparison tool, transport guides, entrance fees, and honest reviews.",
+    "url": new URL("/", Astro.site).href,
+    "containsPlace": [
+      {"@type": "TouristAttraction", "name": "Dameisha Beach", "alternateName": "大梅沙", "publicAccess": true},
+      {"@type": "TouristAttraction", "name": "Xichong Beach", "alternateName": "西涌", "publicAccess": true},
+      {"@type": "TouristAttraction", "name": "Xiaomeisha Beach", "alternateName": "小梅沙", "publicAccess": true},
+      {"@type": "TouristAttraction", "name": "Dongchong Beach", "alternateName": "东涌", "publicAccess": true},
+      {"@type": "TouristAttraction", "name": "Yangmeikeng Beach", "alternateName": "杨梅坑", "publicAccess": true},
+      {"@type": "TouristAttraction", "name": "Jinshawan Beach", "alternateName": "金沙湾", "publicAccess": true},
+      {"@type": "TouristAttraction", "name": "Judiaosha Beach", "alternateName": "桔钓沙", "publicAccess": true},
+      {"@type": "TouristAttraction", "name": "Nanao Beach", "alternateName": "南澳沙滩", "publicAccess": true},
+      {"@type": "TouristAttraction", "name": "Shuitousha Beach", "alternateName": "水头沙", "publicAccess": true},
+      {"@type": "TouristAttraction", "name": "Shangdong Beach", "alternateName": "上洞", "publicAccess": true}
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.2", "bestRating": "5", "reviewCount": "10" }
+  },
+  { "@context": "https://schema.org", "@type": "ImageObject", "contentUrl": (new URL("/images/hero-xichong.webp", Astro.site)).href, "description": "Xichong Beach Shenzhen panoramic view", "representativeOfPage": true },
+  { "@context": "https://schema.org", "@type": "WebSite", "name": "Shenzhen Beaches", "url": new URL("/", Astro.site).href, "description": "Complete guide to beaches in Shenzhen, China.", "dateModified": "2026-08-10", "inLanguage": "en" },
+  { "@context": "https://schema.org", "@type": "Person", "name": "Shenzhen Beaches Team", "description": "Shenzhen locals who have visited every beach across all seasons.", "url": new URL("/", Astro.site).href, "knowsAbout": ["Shenzhen beaches", "Dapeng Peninsula", "coastal travel", "surfing Shenzhen"] },
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Shenzhen Beaches", "item": new URL("/", Astro.site).href }] }
+] : null;
+
+const finalJsonLd = jsonLd || defaultJsonLd;
+
+// Organization schema for every page
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Shenzhen Beaches Guide",
+  "url": new URL("/", Astro.site).href,
+  "description": "Independent guide to Shenzhen beaches. Honest reviews, no booking fees. Updated weekly with firsthand visits.",
+  "logo": new URL("/favicon.svg", Astro.site).href,
+  "foundingDate": "2025",
+  "email": "hello@shenzhen-beach.com"
+};
+
+const allJsonLd = [orgSchema];
+if (jsonLd) allJsonLd.push(...(Array.isArray(jsonLd) ? jsonLd : [jsonLd]));
+else if (defaultJsonLd) allJsonLd.push(...defaultJsonLd);
+
+// Default OG image for homepage
+const defaultOgImage = isHome ? (new URL("/images/hero-xichong.webp", Astro.site)).href : undefined;
+const effectiveOgImage = ogImage || defaultOgImage;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {noindex && <meta name="robots" content="noindex, follow" />}
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalUrl} />
+  {effectiveOgImage && <><meta property="og:image" content={effectiveOgImage} /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" /></>}
+  <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    {effectiveOgImage && <meta name="twitter:image" content={effectiveOgImage} />}
+    <meta name="author" content={author} />
+    <meta name="last-modified" content={dateModified} />
+    <meta property="og:site_name" content="Shenzhen Beaches" />
+    <meta property="og:locale" content="en_US" />
+    <link rel="alternate" hreflang="en" href={canonicalUrl} />
+    <link rel="alternate" type="application/rss+xml" title="Shenzhen Beaches Guide" href="/rss.xml" />
+  {!noindex && <link rel="canonical" href={canonicalUrl} />}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="preload" as="style" onload="this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /></noscript>
+  <script type="application/ld+json" set:html={JSON.stringify({"@graph": allJsonLd})}></script>
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile menu
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+      }
+      // Scroll-to-top
+      const topBtn = document.getElementById('back-to-top');
+      if (topBtn) {
+        window.addEventListener('scroll', () => {
+          topBtn.classList.toggle('opacity-0', window.scrollY < 500);
+          topBtn.classList.toggle('pointer-events-none', window.scrollY < 500);
+        });
+        topBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+      }
+    });
+    document.querySelectorAll('#helpful-widget [data-vote]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var key = 'helpful:' + location.pathname;
+        try { localStorage.setItem(key, btn.getAttribute('data-vote')); } catch (e) {}
+        var widget = document.querySelector('#helpful-widget [data-state]');
+        var thanks = document.querySelector('#helpful-widget [data-thanks]');
+        if (widget) widget.classList.add('hidden');
+        if (thanks) { thanks.classList.remove('hidden'); thanks.textContent = 'Thanks for your feedback.'; }
+      });
+    });
+    (function() {
+      var key = 'helpful:' + location.pathname;
+      var stored = null;
+      try { stored = localStorage.getItem(key); } catch (e) {}
+      if (stored) {
+        var widget = document.querySelector('#helpful-widget [data-state]');
+        var thanks = document.querySelector('#helpful-widget [data-thanks]');
+        if (widget) widget.classList.add('hidden');
+        if (thanks) { thanks.classList.remove('hidden'); thanks.textContent = 'Thanks for your feedback.'; }
+      }
+    })();
+  </script>
+</head>
+<body class="min-h-[100dvh]">
+  <slot />
+
+    <div id="helpful-widget" class="max-w-3xl mx-auto px-4 py-12">
+      <div class="flex items-center justify-between gap-4 border border-gray-200 rounded-xl bg-gray-50 px-5 py-4" data-state="idle">
+        <p class="text-sm font-medium text-gray-700">Was this page helpful?</p>
+        <div class="flex items-center gap-2" data-buttons>
+          <button type="button" class="inline-flex items-center gap-1.5 px-4 py-1.5 text-sm font-semibold rounded-full border border-gray-300 hover:border-ocean/40 hover:text-ocean transition-colors" data-vote="yes">Yes</button>
+          <button type="button" class="inline-flex items-center gap-1.5 px-4 py-1.5 text-sm font-semibold rounded-full border border-gray-300 hover:border-ocean/40 hover:text-ocean transition-colors" data-vote="no">No</button>
+        </div>
+      </div>
+      <p class="hidden text-sm text-emerald-600 font-medium px-5 py-4" data-thanks>Thanks for your feedback.</p>
+    </div>
+  <button id="back-to-top" class="fixed bottom-6 right-6 z-50 w-10 h-10 rounded-full bg-accent text-white shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 hover:bg-accent-dark" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+</body>
+</html>

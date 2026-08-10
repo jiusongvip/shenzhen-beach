@@ -1,0 +1,39 @@
+---
+const videoId = "f0dDOZcnOAg";
+const videoTitle = "4K Shenzhen — Best Sandy Beaches Tour";
+const videoAuthor = "Authentic Land";
+const posterUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+---
+<section id="video" class="py-16 bg-ocean">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-2 text-white">See the Beaches</h2>
+    <p class="text-ocean-light/80 mb-8">Watch a 4K tour of Shenzhen beaches so you know exactly what to expect before you go.</p>
+    <div class="relative aspect-video rounded-xl overflow-hidden bg-black/30 shadow-2xl">
+      <div id="yt-poster" class="absolute inset-0 z-10 cursor-pointer group">
+        <img src={posterUrl} alt={videoTitle} class="w-full h-full object-cover" loading="lazy" />
+        <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+          <div class="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+            <svg class="w-7 h-7 ml-1 text-ocean" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+      </div>
+      <iframe
+        src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0`}
+        id="yt-frame"
+        title={videoTitle}
+        class="absolute inset-0 w-full h-full hidden"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+    <p class="text-white/50 text-xs mt-3 text-center">{videoTitle} · by {videoAuthor} on YouTube · Not affiliated — all beach information on this page is independently verified.</p>
+  </div>
+</section>
+<script>
+  document.getElementById('yt-poster').addEventListener('click', function() {
+    this.style.display = 'none';
+    document.getElementById('yt-frame').classList.remove('hidden');
+  });
+</script>

@@ -1,17 +1,58 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import QuickNav from "../components/QuickNav.astro";
+import QuickFacts from "../components/QuickFacts.astro";
+import VideoSection from "../components/VideoSection.astro";
+import WhatIs from "../components/WhatIs.astro";
+import PersonaPicker from "../components/PersonaPicker.astro";
+import Planner from "../components/Planner.astro";
+import MapSection from "../components/MapSection.astro";
+import ComparisonTable from "../components/ComparisonTable.astro";
+import CheatSheet from "../components/CheatSheet.astro";
+import BeachCard from "../components/BeachCard.astro";
+import CrowdCalendar from "../components/CrowdCalendar.astro";
+import TransportTabs from "../components/TransportTabs.astro";
+import SeasonalGuide from "../components/SeasonalGuide.astro";
+import NearbyAttractions from "../components/NearbyAttractions.astro";
+import VsHongKong from "../components/VsHongKong.astro";
+import ForeignVisitors from "../components/ForeignVisitors.astro";
+import FAQ from "../components/FAQ.astro";
+import TrustSignals from "../components/TrustSignals.astro";
+import ExperienceTimeline from "../components/ExperienceTimeline.astro";
+import BeachItinerary from "../components/BeachItinerary.astro";
+import ShareBar from "../components/ShareBar.astro";
+import Footer from "../components/Footer.astro";
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="Shenzhen Beach Guide - Which Beach Is Best for You?"
+  description="Compare all 10 Shenzhen beaches with our interactive map, photos, transport, fees, and reviews. Find your perfect Shenzhen beach in 60 seconds."
+>
+  <Nav />
+  <main>
+    <Hero />
+    <QuickNav />
+    <QuickFacts />
+    <VideoSection />
+    <WhatIs />
+    <ExperienceTimeline />
+    <PersonaPicker />
+    <Planner />
+    <MapSection />
+    <ComparisonTable />
+    <CheatSheet />
+    <BeachCard />
+    <BeachItinerary />
+    <CrowdCalendar />
+    <TransportTabs />
+    <SeasonalGuide />
+    <NearbyAttractions />
+    <VsHongKong />
+    <ForeignVisitors />
+    <FAQ />
+    <TrustSignals />
+    <ShareBar />
+  </main>
+  <Footer />
+</Layout>

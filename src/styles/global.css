@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #e0683a;
+  --color-accent-dark: #c45230;
+  --color-ocean: #1a5f7a;
+  --color-ocean-light: #2980a3;
+  --color-sand: #f7f8f9;
+  --color-sand-dark: #e8eaed;
+  --font-sans: "Geist", "Geist Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-sand);
+    color: #1a1a1a;
+  }
+  ::selection {
+    background-color: rgba(224, 104, 58, 0.2);
+  }
+}
+
+@layer utilities {
+  .bg-radial-glow {
+    background: radial-gradient(ellipse at center, rgba(224,104,58,0.12) 0%, transparent 70%);
+  }
+}
+
+@media print {
+  nav, footer, #back-to-top, #quicknav, #planner-steps, #planner-result, #share-bar,
+  iframe, .no-print { display: none !important; }
+  body { font-size: 12pt; color: #000; background: #fff; }
+  a { color: #000; text-decoration: underline; }
+  .bg-ocean, .bg-accent { background: none !important; color: #000 !important; }
+  .text-white { color: #000 !important; }
+  section { page-break-inside: avoid; margin-bottom: 1rem !important; padding: 0.5rem 0 !important; }
+  h1 { font-size: 20pt; }
+  h2 { font-size: 14pt; }
+  .max-w-7xl, .max-w-4xl, .max-w-3xl { max-width: 100% !important; }
+}

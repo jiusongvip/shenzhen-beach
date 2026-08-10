@@ -1,0 +1,7 @@
+---
+import BeachLayout from "../../layouts/BeachLayout.astro";
+const beach = (await import("../../data/beaches.json")).default;
+const b = beach.find(x => x.id === "jinshawan");
+---
+
+<BeachLayout id="jinshawan" ogImage="/images/jinshawan.webp" />

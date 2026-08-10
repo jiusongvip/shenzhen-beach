@@ -1,0 +1,45 @@
+---
+const personaMap: Record<string, string> = {
+  Swimming: "dameisha",
+  Surfing: "xichong",
+  Family: "dameisha",
+  Photography: "yangmeikeng",
+  Hiking: "dongchong",
+  Romantic: "judiaosha",
+  "Resort vibes": "xiaomeisha",
+  "Quiet retreat": "shuitousha",
+  Luxury: "jinshawan",
+  "Local experience": "nanao",
+};
+
+const personas = [
+  { icon:"Swimming", label:"Swimmer", rec:"Dameisha", slug:"dameisha", desc:"Gentle waves, lifeguards, easy metro access" },
+  { icon:"Surfing", label:"Surfer", rec:"Xichong", slug:"xichong", desc:"Longest beach, consistent waves, board rentals" },
+  { icon:"Family", label:"Family", rec:"Dameisha", slug:"dameisha", desc:"Shallow entry, showers, food nearby" },
+  { icon:"Photography", label:"Photographer", rec:"Yangmeikeng", slug:"yangmeikeng", desc:"Scenic coastal road, golden hour light" },
+  { icon:"Hiking", label:"Hiker", rec:"Dongchong", slug:"dongchong", desc:"Dongchong-Xichong coastal trail, 3-4 hours" },
+  { icon:"Romantic", label:"Couple", rec:"Judiaosha", slug:"judiaosha", desc:"Crescent bay, white sand, quiet and intimate" },
+  { icon:"Resort vibes", label:"Resort-goer", rec:"Xiaomeisha", slug:"xiaomeisha", desc:"Managed beach, resort hotels, clean facilities" },
+  { icon:"Quiet retreat", label:"Peace-seeker", rec:"Shuitousha", slug:"shuitousha", desc:"Barely known, usually empty, total tranquility" },
+  { icon:"Luxury", label:"Luxury", rec:"Jinshawan", slug:"jinshawan", desc:"Resort-managed, fine sand, beach bars" },
+  { icon:"Local experience", label:"Foodie", rec:"Nanao", slug:"nanao", desc:"Fishing port, great seafood, local vibe" },
+];
+---
+<section id="personas" class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-center mb-2">What Kind of Beach Person Are You?</h2>
+    <p class="text-gray-500 text-center mb-10 max-w-lg mx-auto">Click your type for an instant recommendation and full guide.</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
+      {personas.map(p => (
+        <a
+          href={`/beaches/${p.slug}`}
+          class="text-left p-4 rounded-xl border border-gray-200 bg-white hover:border-accent hover:shadow-sm transition-all group block"
+        >
+          <div class="text-xs font-semibold text-accent mb-1">{p.label}</div>
+          <div class="text-sm font-bold text-gray-800 group-hover:text-accent transition-colors">{p.rec}</div>
+          <div class="text-xs text-gray-500 mt-1 leading-relaxed">{p.desc}</div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

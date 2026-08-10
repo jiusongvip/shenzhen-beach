@@ -1,0 +1,1108 @@
+[
+  {
+    "id": "dameisha",
+    "name": "Dameisha",
+    "nameCN": "大梅沙",
+    "distance": "30 min",
+    "fee": "Free",
+    "feeNum": 0,
+    "bestFor": [
+      "Swimming",
+      "Family",
+      "First-timers"
+    ],
+    "rating": 4.2,
+    "crowdLevel": "busy",
+    "crowdLabel": "Busy on weekends",
+    "location": [
+      22.5958,
+      114.3121
+    ],
+    "slug": "dameisha",
+    "description": "Shenzhen most popular and accessible beach. Wide sandy shore with gentle waves, walking distance from Metro Line 8. Perfect for families and first-timers.",
+    "longDescription": "Dameisha Beach (大梅沙, literally Big Meisha) is Shenzhen's most iconic and most visited public beach — a 1.8-kilometer stretch of fine yellow sand that has been the city's go-to seaside escape for decades. Located on the eastern coast of Yantian District and now directly served by Metro Line 8, Dameisha is the easiest beach to reach in Shenzhen and, for millions of residents and visitors, the first beach they ever visit.\n\nThe beach features a gentle slope into the water, making it ideal for casual swimming and families with children. A designated swimming area is marked by buoys and staffed by lifeguards during the summer season (typically 9 AM to 9 PM). The beach underwent a major renovation in the late 2010s that added modern showers, changing rooms, and a landscaped boardwalk that runs parallel to the sand.\n\nBehind the beach, a strip of convenience stores, snack stalls, and casual restaurants makes it easy to spend a full day without packing supplies. The adjacent Dameisha Village (大梅沙村) has dozens of seafood restaurants ranging from simple street-side grills to multi-story establishments with sea-view dining rooms. The Sheraton Dameisha Resort anchors the western end of the beach, and the OCT East theme park complex sits on the hill above.\n\nDameisha's greatest asset — accessibility — is also its greatest challenge. On summer weekends and national holidays, the beach can host over 100,000 visitors in a single day. The sand becomes a mosaic of umbrellas and the water a sea of inflatable rings. If you visit at the right time (weekday mornings, September weekdays, winter), Dameisha can be a pleasant, convenient beach experience. If you visit on a sunny Saturday in July, you will experience a level of density that rivals any urban beach in the world.\n\nDespite the crowds, Dameisha remains the best choice for many visitors: families who need facilities and safety, first-timers who want the easiest possible beach experience, and anyone who values metro access over seclusion. It is also the gateway to the greater Dameisha resort area and the OCT East theme park, making it a logical base for a multi-day Shenzhen beach trip.",
+    "openingHours": "06:00-22:00 (summer), 07:00-21:00 (winter)",
+    "familyFriendly": true,
+    "accessibility": "Wheelchair-accessible boardwalk and ramp to beach. Accessible restrooms available.",
+    "transport": {
+      "metro": "Line 8",
+      "metroExit": "Exit C",
+      "metroWalk": "10 min walk",
+      "bus": "103, 387, M191, M362, M438, M465",
+      "taxiFromFutian": "~80 RMB (40 min)",
+      "taxiFromLuohu": "~50 RMB (25 min)",
+      "taxiFromNanshan": "~110 RMB (50 min)",
+      "driveTime": "30-45 min from city center",
+      "parking": "Paid lot, ~20 RMB/day, ~200 spots. Fills by 10 AM on summer weekends."
+    },
+    "facilities": {
+      "showers": "10 RMB",
+      "lockers": "20 RMB",
+      "umbrellas": "50 RMB/day",
+      "lifeguards": "09:00-21:00 (summer)",
+      "food": "Convenience stores, snack stalls, BBQ pits",
+      "restrooms": "Free, multiple locations",
+      "changingRooms": "Free",
+      "firstAid": "On-site during summer"
+    },
+    "features": {
+      "sandType": "Fine yellow sand, 1.8 km long, 50-80m wide",
+      "waterQuality": "Grade II (swimmable, tested monthly by Shenzhen Ecology Bureau)",
+      "waveType": "Gentle, protected bay, safe for casual swimming",
+      "bestSeason": "May-October",
+      "swimZone": "Designated swimming area with lifeguards, marked by red/yellow buoys"
+    },
+    "food": {
+      "onSite": "Convenience stores (7-Eleven, Meiyijia) selling drinks, ice cream, and basic snacks. Several beachside snack stalls selling grilled squid, corn, sausages, and cold noodles (10-30 RMB each). BBQ pits available for rent in the designated area behind the beach.",
+      "nearby": "Dameisha Village (5 min walk) has dozens of seafood restaurants. Recommended: Dameisha Seafood Street (大梅沙海鲜街) for fresh catch. Western options: McDonald's, Starbucks within 10 min walk. OCT East resort area (10 min taxi) has upscale dining.",
+      "mustTry": "Grilled oysters (烤生蚝, ~15 RMB each), fresh coconut (椰子, ~10 RMB), seafood hotpot at village restaurants",
+      "priceRange": "On-beach snacks: 10-50 RMB. Restaurant meal: 80-200 RMB per person. Seafood dinner: 150-400 RMB per person."
+    },
+    "accommodation": {
+      "nearby": "Sheraton Dameisha Resort (5-star, from ~800 RMB/night, direct beach access, multiple pools and restaurants). Vienna Hotel Dameisha (3-star, from ~300 RMB/night, 5 min walk to beach). Dameisha Inn (budget guesthouse, from ~150 RMB/night). Several Airbnb apartments in nearby residential complexes offer sea views at mid-range prices.",
+      "camping": "Not permitted at Dameisha.",
+      "priceRange": "Budget guesthouse: 150-300 RMB. Mid-range hotel: 300-600 RMB. Resort: 800-1500 RMB."
+    },
+    "clothing": {
+      "summer": "Swimsuit, rash guard (sun protection), flip-flops, wide-brimmed hat, sunglasses. Bring a light cover-up for walking to restaurants. Sunscreen is essential — the Shenzhen sun is strong even on cloudy days.",
+      "winter": "Light jacket or hoodie (temps 15-20°C). Long pants recommended. Water is too cold for swimming without a wetsuit. Good season for beach walks and photography.",
+      "essentials": [
+        "Sunscreen (SPF 50+)",
+        "Towel",
+        "Water bottle (refill stations available)",
+        "Waterproof phone pouch",
+        "Cash (some vendors don't accept mobile payment for small purchases)",
+        "Insect repellent (summer evenings)"
+      ]
+    },
+    "activities": [
+      {
+        "name": "Swimming",
+        "desc": "Designated swimming zone with consistent lifeguard coverage in summer. Gentle waves and shallow entry make it the safest swimming beach in Shenzhen for casual swimmers and children."
+      },
+      {
+        "name": "Boardwalk Stroll",
+        "desc": "The landscaped boardwalk runs the full length of the beach. Popular for evening walks, people-watching, and sunset views. Well-lit and safe after dark."
+      },
+      {
+        "name": "Family Beach Day",
+        "desc": "With showers, changing rooms, food stalls, and lifeguards, Dameisha is the most family-ready beach in Shenzhen. Bring the kids, rent an umbrella, and spend the day."
+      },
+      {
+        "name": "OCT East Day Trip",
+        "desc": "The massive OCT East theme park is a 10-minute taxi ride up the hill. Water park, cable cars, tea valley, and themed villages. Combine with the beach for a full weekend."
+      },
+      {
+        "name": "Seafood Dinner",
+        "desc": "Dameisha Village (5 min walk) has a famous seafood street. Pick your seafood from the tanks and have it cooked to order. Grilled oysters are the local specialty."
+      }
+    ],
+    "safety": {
+      "lifeguardHours": "09:00-21:00 (May-October). No lifeguards in winter.",
+      "hazards": "Rip currents are rare due to the protected bay shape. Main risks: sunburn, dehydration on hot days, jellyfish during late summer (August-September).",
+      "waterQualitySource": "Shenzhen Ecology Bureau monthly swimming-grade report. Grade II = safe for swimming. Check latest report before swimming.",
+      "emergencyContact": "Shenzhen beach emergency: 110 (police), 120 (ambulance). On-site first aid station available during summer."
+    },
+    "photoSpots": "The boardwalk at sunset — palm trees and the bay in golden light. The beach from the eastern end looking west, capturing the full 1.8 km stretch. The Sheraton resort area for lifestyle shots. The OCT East cable cars in the background on clear days.",
+    "bestTimeToVisit": "Weekday mornings (any season) for empty beach. May and October for warm water + manageable crowds. September weekday mornings are the absolute sweet spot.",
+    "tips": [
+      "Take Metro Line 8 — it is the easiest beach access in Shenzhen and avoids weekend traffic",
+      "Arrive before 8 AM on summer weekends to claim a good spot before the crowds",
+      "Weekday visits are a completely different experience — 20-30% of weekend crowds",
+      "The seafood street in Dameisha Village is excellent and more affordable than Nanao"
+    ],
+    "history": "Dameisha has been Shenzhen's primary public beach since the city's early development in the 1980s. Originally a natural fishing beach, it was developed as a public recreation area as Shenzhen grew from a small border town into a megacity. The beach was renovated and modernized in the late 2010s with improved facilities, the boardwalk, and the Metro Line 8 extension that finally connected it directly to the city center.",
+    "whenToAvoid": "Summer weekends (Jul-Aug) — 100,000+ visitors per day. Golden Week (Oct 1-7) — gridlock on roads and beach at capacity. Labor Day (May 1-5) — similar to Golden Week. Chinese New Year — cold for swimming but roads still jammed."
+  },
+  {
+    "id": "xichong",
+    "name": "Xichong",
+    "nameCN": "西涌",
+    "distance": "75 min",
+    "fee": "30 RMB",
+    "feeNum": 30,
+    "bestFor": [
+      "Surfing",
+      "Camping",
+      "Photography"
+    ],
+    "rating": 4.5,
+    "crowdLevel": "quiet",
+    "crowdLabel": "Quiet on weekdays",
+    "location": [
+      22.4857,
+      114.5595
+    ],
+    "slug": "xichong",
+    "description": "Shenzhen longest beach at 4km, and its best surf spot. Untamed, scenic, and worth the extra travel time. Backed by green hills and home to a growing surf community.",
+    "longDescription": "Xichong Beach (西涌, also written as Xichong) is Shenzhen's crown jewel for anyone who wants more than a quick dip. At 4 kilometers long, it is by far the longest beach in the city, and its exposed position facing the South China Sea means it catches the best waves in the region.\n\nThis is where Shenzhen's surf culture lives. A dozen surf shops line the road behind the beach, offering board rentals (around 100 RMB per hour) and lessons for beginners. The best surf is during typhoon season (July through October), when distant storms send clean swells into the bay. On a good day, you will see 20-30 surfers in the water.\n\nThe beach itself is wilder than Dameisha or Xiaomeisha — coarser golden sand, fewer facilities, and a more natural feel. The hills behind the beach are covered in subtropical forest, and the lack of high-rise development means the night sky here is actually dark enough for stargazing. The beach has four entrance points (numbered 1 through 4), each with slightly different facilities and crowd levels — entrance 1 and 2 are busiest, while 3 and 4 offer more space and seclusion.\n\nCamping is one of Xichong's biggest draws. Designated camping areas near the beach allow tents, and several local operators rent gear if you do not have your own. Falling asleep to the sound of waves and waking up to an empty beach before the day-trippers arrive is worth the extra effort to get here.\n\nXichong is also the starting (or ending) point for the famous Dongchong-Xichong coastal hiking trail, a stunning 8 km clifftop path that ranks among the best day hikes near Shenzhen. The trail takes 3-4 hours one way and offers spectacular views of the coastline, hidden coves, and the open sea. Combine a morning hike with an afternoon surf session for the ultimate Xichong adventure day.",
+    "openingHours": "24 hours (beach area). Swimming recommended during daylight only.",
+    "familyFriendly": false,
+    "accessibility": "Limited. Sand is softer and harder to navigate. No wheelchair ramps. Not recommended for visitors with mobility challenges.",
+    "transport": {
+      "bus": "E11 express bus from downtown to Nanao (南澳) terminus (~1 hour, ~10 RMB), then transfer to M232 local bus to Xichong (~30 min, ~3 RMB)",
+      "taxiFromFutian": "~180 RMB (75 min)",
+      "taxiFromLuohu": "~140 RMB (60 min)",
+      "taxiFromNanshan": "~200 RMB (90 min)",
+      "driveTime": "60-75 min from city center",
+      "parking": "Several lots near the beach entrances (there are 4 entrance points). ~30 RMB/day. Fills on summer weekends by 10:30 AM."
+    },
+    "facilities": {
+      "showers": "15 RMB",
+      "lockers": "20 RMB",
+      "umbrellas": "60 RMB/day",
+      "lifeguards": "Seasonal, limited coverage. Flag system used.",
+      "food": "Beachside BBQ restaurants, local seafood. Small shops selling drinks and snacks.",
+      "restrooms": "Available near each entrance",
+      "changingRooms": "Basic, near shower areas",
+      "firstAid": "Limited. Nearest clinic in Xichong village (5 min drive)."
+    },
+    "features": {
+      "sandType": "Coarse golden sand, 4 km long stretch",
+      "waterQuality": "Grade I-II (generally very good, tested monthly)",
+      "waveType": "Moderate, suitable for surfing and bodyboarding. Best surf during typhoon season (Jul-Oct).",
+      "bestSeason": "May-October for swimming, July-October for surfing",
+      "swimZone": "Designated swimming areas marked by flags. Swim between the red and yellow flags."
+    },
+    "food": {
+      "onSite": "A strip of casual beachside restaurants and BBQ joints behind the beach. Fresh seafood is the specialty — most places have tanks where you pick your fish/crab/shrimp. Grilled skewers, fried rice, and cold beer are staples. Expect 80-150 RMB per person for a solid meal.",
+      "nearby": "Xichong village (5 min walk from the beach) has more local restaurants, noodle shops, and convenience stores. No Western chain restaurants in the area.",
+      "mustTry": "BBQ seafood platter (海鲜烧烤拼盘), salt and pepper squid (椒盐鱿鱼), cold Tsingtao beer watching the sunset",
+      "priceRange": "Beachside meal: 80-150 RMB per person. Seafood dinner: 150-300 RMB. Snacks and drinks: 10-40 RMB."
+    },
+    "accommodation": {
+      "nearby": "Xichong Surf Club guesthouse (from ~250 RMB/night, surf-themed, board storage). Several family-run guesthouses and B&Bs in the village (150-400 RMB/night). No international chain hotels.",
+      "camping": "Yes! Designated camping areas near the beach. Bring your own tent (~20 RMB camping fee) or rent from local operators (~80-150 RMB for tent + sleeping bag). Campfires generally not permitted. Book ahead on summer weekends.",
+      "priceRange": "Camping: 20-150 RMB. Guesthouse: 150-400 RMB. No luxury options in immediate area."
+    },
+    "clothing": {
+      "summer": "Surf gear if you're surfing (rash guard, board shorts). Otherwise: swimsuit, flip-flops, sun hat, sunglasses. Bring a light jacket for evening — it gets breezy. Reef-safe sunscreen recommended.",
+      "winter": "Warmer layers needed than city beaches. Coastal wind can be strong. Hoodie, windbreaker, long pants. Water temperature drops to 16-18°C — wetsuit needed for surfing.",
+      "essentials": [
+        "Sunscreen (SPF 50+, reef-safe)",
+        "Insect repellent (mosquitoes at dusk)",
+        "Cash (limited mobile payment in some shops)",
+        "Power bank (limited charging options)",
+        "Headlamp or flashlight (for camping and evening walks)",
+        "Water shoes (some rocky sections)",
+        "Tent if camping",
+        "Towel and change of clothes"
+      ]
+    },
+    "activities": [
+      {
+        "name": "Surfing",
+        "desc": "The best surf in Shenzhen. Multiple surf shops offering board rental (~100 RMB/hr) and lessons (~300-400 RMB for 2 hours). Best waves from July through October during typhoon season. Beginner-friendly sections near beach entrances 1 and 2, more experienced surfers head toward entrance 4."
+      },
+      {
+        "name": "Camping",
+        "desc": "Designated camping zones with basic facilities near the beach. Wake up to an empty beach and morning surf. Bring your own gear or rent locally (~80-150 RMB for tent and sleeping bag). Book ahead on summer weekends."
+      },
+      {
+        "name": "Coastal Hiking",
+        "desc": "The Dongchong-Xichong trail is one of the best day hikes near Shenzhen. 8 km, 3-4 hours one way, stunning cliff and ocean views. Moderately challenging with some steep sections — good hiking shoes are essential. Carry 2L+ of water per person."
+      },
+      {
+        "name": "Stargazing",
+        "desc": "Far from city lights, Xichong has the darkest skies near Shenzhen. On clear nights, the Milky Way is visible. Bring a blanket and lie on the beach after dark for a rare urban escape experience."
+      },
+      {
+        "name": "Photography",
+        "desc": "The long beach, hills behind, and surf break create incredible photographic opportunities. Best spots: rocky outcrop at the eastern end, hillside trail for elevated beach panoramas, and the surf break near entrance 2 for action shots at golden hour."
+      }
+    ],
+    "safety": {
+      "lifeguardHours": "Seasonal, typically 09:00-18:00 during summer. Flag system: swim between red and yellow flags only.",
+      "hazards": "Rip currents can occur, especially near the rocky ends of the beach. Jellyfish in late summer. Strong UV exposure — the open beach has no natural shade. Typhoons can create dangerous conditions — check weather before going.",
+      "waterQualitySource": "Shenzhen Ecology Bureau monthly report. Grade I-II = among the cleanest in Shenzhen. Water quality generally better than city beaches due to less runoff.",
+      "emergencyContact": "Nearest hospital: Dapeng New District People's Hospital (~30 min drive). Beach emergency: 110."
+    },
+    "photoSpots": "Eastern end near entrance 4 for sunrise and empty sand. The rocky headland at the far east for dramatic foreground. The hillside trail looking back at the beach for the classic 4 km panorama. Late afternoon light on the surf break near entrance 2. Milky Way astrophotography from the beach after dark.",
+    "bestTimeToVisit": "Weekdays for empty beach. September-October for best combo of warm water + clean waves + manageable crowds. July-August for best surf. Avoid summer weekends and all national holidays.",
+    "tips": [
+      "Go on a weekday for an empty beach — the contrast with weekends is dramatic",
+      "Take a surf lesson even if you have never surfed — Xichong is the best place to learn in the region",
+      "Camp overnight for the full experience — sunrise on an empty Xichong is unforgettable",
+      "If hiking Dongchong-Xichong, start early (before 8 AM) to avoid midday heat"
+    ],
+    "history": "Xichong was originally a small fishing and farming community before surfers discovered its reliable waves in the early 2000s. The surf culture grew organically as word spread among Shenzhen's expat and local surfing communities. Today, Xichong is recognized as the best surf beach in the Pearl River Delta region, hosting regular surf competitions and maintaining a year-round surf scene.",
+    "whenToAvoid": "Summer weekends — while less crowded than Dameisha, popular entrances (1 and 2) still get busy. Golden Week and Labor Day — camping areas fill completely. Typhoon direct hits — beach access is closed for safety. Check surf forecasts before going if you plan to surf."
+  },
+  {
+    "id": "xiaomeisha",
+    "name": "Xiaomeisha",
+    "nameCN": "小梅沙",
+    "distance": "40 min",
+    "fee": "50 RMB",
+    "feeNum": 50,
+    "bestFor": [
+      "Resort day",
+      "Families",
+      "Water activities"
+    ],
+    "rating": 4.1,
+    "crowdLevel": "moderate",
+    "crowdLabel": "Moderate year-round",
+    "location": [
+      22.6035,
+      114.3247
+    ],
+    "slug": "xiaomeisha",
+    "description": "A redeveloped resort beach next to Dameisha, with upgraded facilities and a more managed experience. Home to Xiaomeisha Sea World and several resort hotels.",
+    "longDescription": "Xiaomeisha Beach (小梅沙, literally Little Meisha) is Dameisha's more polished, resort-oriented sibling. Located just 2 kilometers east of Dameisha on the same stretch of coastline, Xiaomeisha has been developed into a managed resort beach with entry fees, maintained facilities, and a more controlled environment. Where Dameisha is free, public, and often chaotic, Xiaomeisha is paid, managed, and — crucially — less crowded.\n\nThe beach is about 800 meters of decent yellow sand, backed by a landscaped promenade and several resort hotels. The water quality is comparable to Dameisha (Grade II), but the beach itself is better maintained — sand is cleaned regularly, facilities are modern, and lifeguard coverage is consistent during the summer season. The entry fee (50 RMB) acts as a natural crowd filter, keeping numbers manageable even on summer weekends.\n\nXiaomeisha has positioned itself as a premium day-trip destination. Visitors pay for entry and in return get access to clean showers, changing rooms, lockers, umbrella rentals, and several beachside food options — essentially a turnkey beach experience. The adjacent Xiaomeisha Resort (小梅沙度假村) offers hotel rooms with beach access, swimming pools, and restaurants, making it one of the few places in Shenzhen where you can stay directly on the beach.\n\nThe beach is particularly popular with families who want facilities and safety without the extreme crowds of Dameisha, and with groups who want a hassle-free beach day where everything is provided. It is also the most accessible resort beach in Shenzhen — Metro Line 8 serves both Dameisha and Xiaomeisha, making it reachable without a car. For visitors who want a beach day with showers, food, and a cold drink within arm's reach, Xiaomeisha delivers reliably.",
+    "openingHours": "08:00-21:00 (summer), 08:30-18:00 (winter). Last entry 1 hour before closing.",
+    "familyFriendly": true,
+    "accessibility": "Good. Paved paths to the beach. Accessible restrooms. Beach wheelchairs available at resort reception.",
+    "transport": {
+      "metro": "Line 8",
+      "metroExit": "Exit B",
+      "metroWalk": "15 min walk or short taxi (starting fare)",
+      "bus": "103, 387, M362, M438",
+      "taxiFromFutian": "~90 RMB (45 min)",
+      "taxiFromLuohu": "~60 RMB (30 min)",
+      "taxiFromNanshan": "~120 RMB (55 min)",
+      "driveTime": "35-45 min from city center",
+      "parking": "Resort parking, ~30 RMB/day. More spaces than Dameisha. Underground parking available at InterContinental."
+    },
+    "facilities": {
+      "showers": "Included with entry fee",
+      "lockers": "30 RMB",
+      "umbrellas": "80 RMB/day (resort quality)",
+      "lifeguards": "09:00-21:00 (summer), well-staffed",
+      "food": "Resort restaurants, cafes, snack bars. Higher quality than Dameisha.",
+      "restrooms": "Clean, well-maintained, resort-standard",
+      "changingRooms": "Air-conditioned, included with entry",
+      "firstAid": "On-site medical station"
+    },
+    "features": {
+      "sandType": "Fine white sand, well-maintained and raked daily, ~800m long",
+      "waterQuality": "Grade II (regularly tested, good consistency)",
+      "waveType": "Gentle, very protected bay. Calmest of all Shenzhen beaches.",
+      "bestSeason": "Year-round, best May-October for swimming",
+      "swimZone": "Well-marked swimming areas. Multiple lifeguard stations."
+    },
+    "food": {
+      "onSite": "Resort cafes and beach bars serving Western and Chinese food. InterContinental resort has multiple restaurants (Chinese, international buffet, poolside grill). Beach vendors sell drinks, ice cream, and light snacks.",
+      "nearby": "Xiaomeisha commercial area (5 min walk) has more restaurants. Sea World complex has food courts and cafes. Dameisha's restaurant strip is 10 min walk away.",
+      "mustTry": "Poolside cocktails at the InterContinental. Resort dim sum brunch on weekends. Fresh coconut by the beach.",
+      "priceRange": "Beach snacks: 20-60 RMB. Resort restaurant: 150-400 RMB per person. InterContinental buffet: ~300 RMB per person."
+    },
+    "accommodation": {
+      "nearby": "Xiaomeisha Resort (4-star, from ~500 RMB/night, direct beach access, pool, multiple restaurants). Several mid-range hotels within walking distance. For budget options, Dameisha area (Metro one stop away) has guesthouses from 150 RMB/night. The Sheraton Dameisha (5-star, from ~800 RMB/night) is a 5-minute taxi ride.",
+      "camping": "Not permitted at Xiaomeisha.",
+      "priceRange": "Resort: 500-1000 RMB/night. Nearby hotel: 300-600 RMB/night. Guesthouse (Dameisha area): 150-300 RMB/night."
+    },
+    "clothing": {
+      "summer": "Swimsuit, cover-up for walking between beach and resort. Resort dress code is casual but not beachwear in restaurants. Flip-flops fine for beach, sandals or casual shoes for resort areas.",
+      "winter": "Light layers. Resort areas are well-sheltered from wind. Heated pools at some resorts extend the swimming season.",
+      "essentials": [
+        "Sunscreen",
+        "Swimsuit",
+        "Cover-up or light dress for resort areas",
+        "Phone/camera (safe environment for valuables)",
+        "Cash or mobile payment for beach vendors",
+        "Resort day pass if not staying overnight"
+      ]
+    },
+    "activities": [
+      {
+        "name": "Resort Beach Day",
+        "desc": "Pay the 50 RMB entry and enjoy a managed beach with all facilities. Sun loungers, umbrellas, showers, and food service all available. The most hassle-free beach experience in Shenzhen."
+      },
+      {
+        "name": "Swimming",
+        "desc": "Designated swimming area with consistent lifeguard coverage during summer (9 AM to 9 PM). Gentle waves in a protected bay — good for casual swimmers and families."
+      },
+      {
+        "name": "Beachside Dining",
+        "desc": "Several casual restaurants and snack bars directly on the beach promenade. No need to pack food — everything from fresh coconut water to full seafood dinners is available."
+      },
+      {
+        "name": "Nearby OCT East",
+        "desc": "The massive OCT East theme park (东部华侨城) is a 10-minute taxi ride uphill. Water park, tea valley, cable cars, and European-themed villages make for a full day trip combined with the beach."
+      }
+    ],
+    "safety": {
+      "lifeguardHours": "09:00-21:00 (year-round, reduced hours in winter)",
+      "hazards": "Very safe beach overall. Protected bay means minimal currents. Main risk is sun exposure — bring shade. Jellyfish rare but possible in late summer.",
+      "waterQualitySource": "Resort-managed water quality testing in addition to Shenzhen Ecology Bureau monitoring. Consistently Grade II.",
+      "emergencyContact": "On-site medical station. InterContinental has 24-hour doctor on call. Emergency: 110/120."
+    },
+    "photoSpots": "The landscaped promenade at sunset — palm trees and the bay in golden light. The resort pool area with the beach in the background. The beach at low tide when the wet sand creates reflection opportunities. The boardwalk looking back toward the hotels.",
+    "bestTimeToVisit": "Weekdays year-round for uncrowded resort feel. May and October for perfect weather. Avoid summer weekends and Chinese holidays. Resort day pass on a Tuesday in September is peak Xiaomeisha experience.",
+    "tips": [
+      "Pay the entry fee — the crowd filter alone is worth 50 RMB on a summer weekend",
+      "Metro Line 8 stops nearby — the only resort beach with metro access in Shenzhen",
+      "Combine with OCT East theme park (10 min taxi) for a two-day weekend trip",
+      "Arrive before 10 AM on summer weekends for the best lounger spots"
+    ],
+    "history": "Xiaomeisha was developed as Shenzhen's first managed beach resort in the 1990s, predating the broader Dapeng tourism boom. It was originally conceived as an upscale alternative to the free public beach at Dameisha, targeting visitors willing to pay for a more controlled and comfortable experience. The resort hotel complex expanded in the 2010s alongside the Metro Line 8 extension.",
+    "whenToAvoid": "Summer weekends (Jul-Aug) — while less crowded than Dameisha, it still fills up. Golden Week — the entry fee does not deter holiday crowds. Rainy season (May-Jun) — the experience is diminished when you cannot enjoy the outdoor facilities."
+  },
+  {
+    "id": "dongchong",
+    "name": "Dongchong",
+    "nameCN": "东涌",
+    "distance": "80 min",
+    "fee": "20 RMB",
+    "feeNum": 20,
+    "bestFor": [
+      "Hiking",
+      "Quiet escape",
+      "Nature"
+    ],
+    "rating": 4.3,
+    "crowdLevel": "quiet",
+    "crowdLabel": "Usually quiet",
+    "location": [
+      22.4972,
+      114.5806
+    ],
+    "slug": "dongchong",
+    "description": "A secluded gem next to Xichong, connected by a beautiful coastal hiking trail. Smaller and less developed, ideal for those who want peace and natural scenery.",
+    "longDescription": "Dongchong Beach (东涌, also written as Dongchong, meaning East Bay) is Xichong's quieter, wilder neighbor — a rugged 1.5-kilometer beach that feels like a frontier outpost compared to the more developed beaches to the west. Backed by steep green hills and facing the open South China Sea, Dongchong is a beach for adventurers, hikers, and anyone who prefers character over comfort.\n\nThe beach has a raw, natural beauty that distinguishes it from the resort beaches. Coarse golden sand, rocky outcrops breaking the shoreline, and the constant sound of waves crashing against the headlands. The water is clean (Grade I-II by Ecology Bureau standards) and the waves are surfable, though generally smaller and less consistent than at Xichong.\n\nDongchong is best known as the starting point for the Dongchong-Xichong coastal hiking trail, arguably the best day hike in the Shenzhen area. The 8-kilometer trail follows the clifftops between the two beaches, offering spectacular views of the coastline, hidden coves accessible only by foot, and a genuine sense of wilderness that is rare so close to a major city. The hike takes 3-4 hours one way and is moderately challenging — good shoes, water, and sun protection are essential.\n\nThe village behind the beach is small and relatively undeveloped compared to Xichong, with a handful of guesthouses, simple restaurants, and a laid-back atmosphere. Dongchong does not have the surf shop density of Xichong or the facilities of Dameisha, but it offers something they cannot: the feeling of being at the edge of the world, with nothing but sea and sky ahead.",
+    "openingHours": "Daylight hours. No formal closing time but facilities close by 18:00.",
+    "familyFriendly": false,
+    "accessibility": "Not accessible. Uneven paths, no ramps, basic facilities.",
+    "transport": {
+      "bus": "E11 express to Nanao (南澳) terminus, then M231 local bus to Dongchong (~40 min). Buses run less frequently than to Xichong.",
+      "taxiFromFutian": "~190 RMB (80 min)",
+      "taxiFromLuohu": "~150 RMB (65 min)",
+      "taxiFromNanshan": "~210 RMB (95 min)",
+      "driveTime": "65-80 min from city center",
+      "parking": "Small lot near beach, ~20 RMB/day. Very limited — maybe 30 spots. Park in the village and walk if full."
+    },
+    "facilities": {
+      "showers": "10 RMB (basic)",
+      "lockers": "Limited availability",
+      "lifeguards": "Seasonal, limited",
+      "food": "A few local seafood restaurants, basic snack shop",
+      "restrooms": "Basic, near entrance",
+      "changingRooms": "None",
+      "firstAid": "None on-site"
+    },
+    "features": {
+      "sandType": "Coarse sand with pebbles in some areas, ~1 km long",
+      "waterQuality": "Grade I (excellent, less runoff than other beaches)",
+      "waveType": "Moderate, less protected than Xichong",
+      "bestSeason": "April-November",
+      "swimZone": "Limited marked area"
+    },
+    "food": {
+      "onSite": "A handful of family-run seafood restaurants (3-4 options). Fresh catch of the day, simple preparation. A small shop selling drinks, instant noodles, and basic snacks.",
+      "nearby": "More restaurant options in Dongchong village (10 min walk). Nanao town (20 min drive) has the best seafood market and restaurants in the area.",
+      "mustTry": "Steamed fish with ginger and scallion (清蒸鱼), stir-fried clams with chili (辣炒花蛤), cold beer on the beach",
+      "priceRange": "Beach restaurant: 60-120 RMB per person. Very affordable compared to city beaches."
+    },
+    "accommodation": {
+      "nearby": "A few basic guesthouses in Dongchong village (100-250 RMB/night). No chain hotels. Some rooms in private homes available on Chinese booking platforms.",
+      "camping": "Possible but less organized than Xichong. Ask local guesthouse owners. Bring all gear.",
+      "priceRange": "Guesthouse: 100-250 RMB. Very budget-friendly."
+    },
+    "clothing": {
+      "summer": "Swimsuit, hiking shoes or sturdy sandals for the trail, sun hat, sunscreen. Quick-dry clothing if doing the hike. Bring a light jacket for the evening coastal breeze.",
+      "winter": "Windbreaker essential — exposed location. Layers for hiking. Water too cold for swimming without wetsuit. Great hiking weather.",
+      "essentials": [
+        "Sunscreen",
+        "Insect repellent",
+        "Cash (no ATMs, limited mobile payment)",
+        "Water (2L minimum for hiking)",
+        "Hiking shoes",
+        "Power bank",
+        "Snacks (limited purchase options)",
+        "First aid kit for hiking"
+      ]
+    },
+    "activities": [
+      {
+        "name": "Coastal Hiking",
+        "desc": "The Dongchong-Xichong trail is the signature activity. 8 km one way, 3-4 hours, stunning cliff and ocean views. The trailhead is clearly marked at the eastern end of the beach. Carry 2L+ water, wear proper shoes, and start before 8 AM to beat the heat."
+      },
+      {
+        "name": "Surfing",
+        "desc": "Smaller and less consistent than Xichong, but surfable on good days. Better for intermediate surfers who want uncrowded waves. A couple of small surf shops in the village offer board rental."
+      },
+      {
+        "name": "Camping",
+        "desc": "Designated camping areas available. Quieter and more rustic than Xichong's camping scene. Bring your own gear or rent from local operators."
+      },
+      {
+        "name": "Rock Pooling",
+        "desc": "The rocky sections at both ends of the beach create natural pools at low tide. Great for exploring marine life and cooling off without venturing into the open water."
+      }
+    ],
+    "safety": {
+      "lifeguardHours": "Limited and seasonal. Do not rely on lifeguard presence.",
+      "hazards": "Rip currents possible. Slippery rocks. Trail sections can be dangerous in wet weather. No mobile signal on some trail sections.",
+      "waterQualitySource": "Grade I = excellent. Best water quality among Shenzhen beaches.",
+      "emergencyContact": "Nearest medical help in Nanao (20 min drive). Carry a first aid kit. Emergency: 110/120."
+    },
+    "photoSpots": "The trailhead viewpoint looking back at Dongchong Beach from above. The rocky coastline at the eastern end for dramatic seascapes. Sunrise from the beach — Dongchong faces east with an unobstructed horizon. The hidden coves along the hiking trail accessible only on foot.",
+    "bestTimeToVisit": "Weekdays for solitude. April-May and October-November for best hiking weather. Avoid summer weekends. Winter weekdays for empty beach walks.",
+    "tips": [
+      "Start the Dongchong-Xichong hike early — before 8 AM to avoid midday heat on the exposed trail",
+      "Dongchong is the quieter starting point — if you want solitude, come here instead of Xichong",
+      "Pack food and water — village options are limited compared to Xichong",
+      "Wear proper hiking shoes on the trail — flip-flops will not cut it on the rocky sections"
+    ],
+    "history": "Dongchong was historically a fishing village, smaller and more isolated than Xichong. Its name, East Bay, reflects its position on the eastern side of the peninsula. The beach remained largely unknown to outsiders until the Dongchong-Xichong hiking trail gained popularity among Shenzhen's outdoor community in the 2010s. Today, while increasingly discovered, Dongchong retains a frontier character that distinguishes it from its more developed neighbors.",
+    "whenToAvoid": "Rainy days — the hiking trail becomes dangerously slippery. Summer midday hiking — no shade on the exposed trail. Typhoon conditions — beach access is restricted. Golden Week — even Dongchong gets busy during national holidays."
+  },
+  {
+    "id": "yangmeikeng",
+    "name": "Yangmeikeng",
+    "nameCN": "杨梅坑",
+    "distance": "70 min",
+    "fee": "Free",
+    "feeNum": 0,
+    "bestFor": [
+      "Scenery",
+      "Cycling",
+      "Photography"
+    ],
+    "rating": 4.4,
+    "crowdLevel": "moderate",
+    "crowdLabel": "Busy on holidays",
+    "location": [
+      22.5423,
+      114.5612
+    ],
+    "slug": "yangmeikeng",
+    "description": "Famous for its scenic coastal road. Popular with cyclists and photographers. The beach is small but the coastal views are unmatched.",
+    "longDescription": "Yangmeikeng (杨梅坑) is not your typical beach destination — and that is exactly why it has become one of Shenzhen's most photographed coastal spots. Located at the easternmost tip of the Dapeng Peninsula, Yangmeikeng is technically a coastal village with a small beach, but it is the dramatic scenery that draws visitors: a winding coastal road carved into seaside cliffs, turquoise water crashing against rocky shores below, and lush green hills that frame every view like a postcard.\n\nThe main attraction here is the Yangmeikeng Coastal Road (杨梅坑海岸线公路), a 5-kilometer stretch widely considered the most scenic drive or cycle route in Shenzhen. The road hugs the coastline closely, with the South China Sea on one side and subtropical forest on the other. Every bend reveals a new panorama — and on clear days, you can see all the way to the outlying islands. It is wildly popular with cyclists, photographers, and couples looking for that perfect golden-hour shot.\n\nThe beach itself is modest — a narrow strip of coarse sand backed by the road and a handful of seafood restaurants. Swimming is possible but secondary to the overall experience. Most visitors come to cycle, photograph, or simply soak in the coastal atmosphere. The village has a relaxed, slightly rustic vibe with family-run guesthouses, fresh seafood restaurants, and bike rental shops lining the main street.\n\nYangmeikeng also serves as the gateway to several hiking trails that lead into the surrounding hills, including routes that connect to the Dongchong-Xichong trail network. For those who want to combine coastal scenery with light adventure, renting a bike in the village and cycling the full coastal road (and back) is the quintessential Yangmeikeng experience — allow 2-3 hours with stops for photos.",
+    "openingHours": "24 hours (public road). Beach: daylight hours only.",
+    "familyFriendly": true,
+    "accessibility": "Coastal road is paved. Beach has uneven paths.",
+    "transport": {
+      "bus": "E11 express to Nanao, then local minibus to Yangmeikeng entrance (15 min, ~20 RMB)",
+      "taxiFromFutian": "~170 RMB (70 min)",
+      "taxiFromLuohu": "~130 RMB (55 min)",
+      "taxiFromNanshan": "~190 RMB (80 min)",
+      "driveTime": "55-70 min",
+      "parking": "Near entrance gate, ~25 RMB/day. Park and bike or walk the coastal road."
+    },
+    "facilities": {
+      "showers": "10 RMB (basic)",
+      "lockers": "None",
+      "umbrellas": "None",
+      "lifeguards": "Limited",
+      "food": "Seaside restaurants at entrance area",
+      "restrooms": "Near entrance",
+      "changingRooms": "None",
+      "firstAid": "None"
+    },
+    "features": {
+      "sandType": "Mixed sand and pebbles, ~300m",
+      "waterQuality": "Grade I-II",
+      "waveType": "Calm, protected inlet",
+      "bestSeason": "March-November",
+      "swimZone": "Informal swimming areas"
+    },
+    "food": {
+      "onSite": "Yangmeikeng village has a cluster of casual seafood restaurants right on the waterfront. Most have outdoor seating with sea views. The specialty is fresh-caught seafood displayed in tanks — pick your fish, shrimp, or crab and the kitchen prepares it to order. Grilled oysters (烤生蚝, ~15 RMB each), steamed fish with ginger and scallion, and salt-and-pepper squid are the local favorites. Several simple noodle shops and convenience stores round out the options. There are no Western chain restaurants.",
+      "nearby": "The village is the only dining hub in the immediate area. For more variety, drive 20 minutes to Nanao town (南澳) which has a larger seafood street and more restaurant choices. Jinshawan resort area (15 min drive) has upscale hotel restaurants if you want air-conditioned comfort.",
+      "mustTry": "Fresh steamed whole fish with ginger and scallion (清蒸鱼), grilled oysters (烤生蚝), cycling-friendly coconut water (新鲜椰子水, ~10 RMB), and the sunset seafood platter at any waterfront restaurant",
+      "priceRange": "Beachside meal: 80-150 RMB per person. Fresh seafood dinner: 150-300 RMB per person. Snacks and drinks: 10-50 RMB."
+    },
+    "accommodation": {
+      "nearby": "Yangmeikeng village has several family-run guesthouses (150-350 RMB/night). Most are simple but clean, and many have sea-view rooms. Popular options include Yangmeikeng Seaview Inn and several unnamed guesthouses along the main road. For a more upscale stay, the Jinshawan resort area (15 min drive) has resort hotels from 600 RMB/night.",
+      "camping": "Not officially permitted at Yangmeikeng itself. Nearby Xichong (30 min drive) has designated camping areas.",
+      "priceRange": "Guesthouse: 150-350 RMB. Resort (nearby Jinshawan): 600-1200 RMB."
+    },
+    "clothing": {
+      "summer": "Cycling gear: comfortable shorts, breathable top, sports shoes. Swimsuit if swimming. Sunscreen essential - coastal road has no shade.",
+      "winter": "Light jacket or windbreaker for cycling. Long pants. Cycling still pleasant in winter.",
+      "essentials": [
+        "Sunscreen",
+        "Sunglasses",
+        "Water bottle",
+        "Cash (small vendors)",
+        "Camera",
+        "Power bank",
+        "Bike rental cash (30-50 RMB)"
+      ]
+    },
+    "activities": [
+      {
+        "name": "Coastal Cycling",
+        "desc": "The main event. Rent a bike from any village shop (~30-50 RMB for a half day) and ride the 5 km coastal road. Flat terrain, stunning views, and endless photo stops. Best in the morning before the sun gets strong."
+      },
+      {
+        "name": "Photography",
+        "desc": "Yangmeikeng is a photographer's dream — golden hour light on the coastal cliffs, dramatic rock formations at low tide, and the winding road itself as a leading line. The most Instagram-famous spot is the bend where the road seems to disappear into the sea."
+      },
+      {
+        "name": "Seafood Dining",
+        "desc": "The waterfront restaurants are a destination in themselves. Pick your seafood from the tanks, enjoy a cold drink, and watch the sunset over the water."
+      },
+      {
+        "name": "Hiking",
+        "desc": "Several trails lead into the hills behind the village, connecting to the broader Dapeng trail network. Shorter routes (1-2 hours) offer panoramic views of the coastline."
+      }
+    ],
+    "safety": {
+      "lifeguardHours": "Not reliable. Swim at own risk.",
+      "hazards": "Sun exposure on shadeless road. Slippery rocks near water. Cliff edges at Lujiazui. Limited mobile signal.",
+      "waterQualitySource": "Grade I-II. Good quality from open ocean exposure.",
+      "emergencyContact": "Nearest clinic in Dapeng (20 min). Emergency: 110/120."
+    },
+    "photoSpots": "The famous coastal road bend at the halfway point (best at golden hour, 5-7 PM). The rocky shoreline at low tide for foreground texture. The elevated viewpoint from the hiking trail above the village. Sunset silhouettes with the road and sea in the frame.",
+    "bestTimeToVisit": "Clear weekday for empty roads. March-April for wildflowers. October-November for crisp air and golden light. Avoid summer weekends.",
+    "tips": [
+      "Arrive before 9 AM to avoid crowds and get the best light for photos",
+      "Rent a bike — the coastal road is the whole point of visiting",
+      "Bring a camera with a wide-angle lens if you have one",
+      "Combine with a visit to Jinshawan or Dongchong for a full Dapeng day trip"
+    ],
+    "history": "Yangmeikeng was a quiet fishing village for generations before being discovered by Shenzhen's cycling and photography communities in the 2010s. The coastal road was originally built for fishing boat access but became a scenic attraction as Shenzhen's outdoor recreation culture grew.",
+    "whenToAvoid": "Summer weekends (Jul-Aug) — the coastal road gets clogged with cars and the cycling experience suffers. Chinese New Year and Golden Week — roads to Dapeng are gridlocked. Rainy days — the coastal views lose their impact and the road can be slippery."
+  },
+  {
+    "id": "jinshawan",
+    "name": "Jinshawan",
+    "nameCN": "金沙湾",
+    "distance": "65 min",
+    "fee": "Free",
+    "feeNum": 0,
+    "bestFor": [
+      "Resort vibes",
+      "Sunbathing",
+      "Luxury"
+    ],
+    "rating": 4.3,
+    "crowdLevel": "moderate",
+    "crowdLabel": "Mostly resort guests",
+    "location": [
+      22.5782,
+      114.4658
+    ],
+    "slug": "jinshawan",
+    "description": "A newer, upscale beach area with international resort hotels. Cleaner and more curated than older beaches, with a relaxed atmosphere.",
+    "longDescription": "Jinshawan Beach (金沙湾, literally \"Golden Sand Bay\") is Shenzhen's most polished beach experience — a resort-managed stretch of fine golden sand that feels more like a Southeast Asian resort than a Chinese public beach. Located on the eastern Dapeng Peninsula between Judiaosha and Yangmeikeng, Jinshawan is part of a larger resort development that includes several high-end hotels, a beach club, and manicured grounds.\n\nThe beach itself is about 500 meters of imported fine sand — softer and more consistent than most Shenzhen beaches, which tend toward coarser natural sand. The water is calm and clear (Grade I-II by Ecology Bureau standards), protected by the natural curve of the bay. Unlike the wilder eastern beaches (Xichong, Dongchong), Jinshawan is controlled and maintained — the sand is raked daily, facilities are modern, and the overall atmosphere is more curated than rugged.\n\nJinshawan is the go-to choice for visitors who want beach comfort without sacrificing water quality. It offers the cleanliness and facilities of Dameisha but without the crushing crowds, and the scenic backdrop of the eastern peninsula without the rough edges of Xichong. The trade-off is that Jinshawan lacks the adventurous, wild character of Shenzhen's other eastern beaches — this is a beach for lounging, not exploring.\n\nThe resort development means there are proper beach bars, lounge chair rentals, and food service directly on the sand. Several hotels offer day passes that include beach access, pool use, and a food credit — a good option if you want a full resort day without staying overnight. The beach is particularly popular with couples, families with young children, and anyone seeking a relaxing beach day with minimal hassle.",
+    "openingHours": "24 hours (public beach). Resort facilities: check individual hours.",
+    "familyFriendly": true,
+    "accessibility": "Good. Resort-managed paths. Beach wheelchairs at Marriott.",
+    "transport": {
+      "bus": "E11 express to Dapeng center, then local bus or taxi (10 min) to Jinshawan",
+      "taxiFromFutian": "~160 RMB (65 min)",
+      "taxiFromLuohu": "~120 RMB (50 min)",
+      "taxiFromNanshan": "~180 RMB (75 min)",
+      "driveTime": "50-65 min",
+      "parking": "Resort parking, ~30-50 RMB/day."
+    },
+    "facilities": {
+      "showers": "Free (resort-managed)",
+      "lockers": "At resorts",
+      "umbrellas": "Resort rental, ~100 RMB/day",
+      "lifeguards": "Yes, resort-managed year-round",
+      "food": "Resort restaurants, beach bars, cafes",
+      "restrooms": "Resort-standard",
+      "changingRooms": "Air-conditioned, resort-standard",
+      "firstAid": "Resort medical station"
+    },
+    "features": {
+      "sandType": "Fine golden sand, well-groomed, ~1.5 km",
+      "waterQuality": "Grade II",
+      "waveType": "Gentle, protected bay",
+      "bestSeason": "Year-round, best April-October",
+      "swimZone": "Marked swimming areas"
+    },
+    "food": {
+      "onSite": "Resort restaurants from casual poolside grills to fine dining. Beach bars with cocktails and light bites. Quality noticeably higher than public beaches.",
+      "nearby": "Dapeng town (10 min drive) has local restaurants. Dapeng Fortress area has courtyard restaurants in Ming Dynasty buildings.",
+      "mustTry": "Poolside cocktails at sunset. Resort dim sum brunch. Grilled seafood platter at beach bar.",
+      "priceRange": "Beach bar: 60-150 RMB. Resort restaurant: 150-400 RMB per person."
+    },
+    "accommodation": {
+      "nearby": "Jinshawan Resort Hotel (5-star, from ~800 RMB/night, direct beach access, pool, restaurants). Several other resort hotels in the immediate area offer varying levels of luxury. For budget options, guesthouses in nearby Yangmeikeng village (15 min drive) start at 150 RMB/night.",
+      "camping": "Not permitted at Jinshawan.",
+      "priceRange": "Resort: 800-1500 RMB/night. Nearby guesthouse: 150-350 RMB/night. Day pass (some hotels): 200-400 RMB including pool and beach access."
+    },
+    "clothing": {
+      "summer": "Resort casual. Swimsuit, cover-up, sandals. Restaurants require cover-up and footwear. Nicer outfit for evening dining.",
+      "winter": "Light layers for beach walks. Resort pools may be heated.",
+      "essentials": [
+        "Sunscreen",
+        "Swimsuit",
+        "Cover-up",
+        "Resort day pass money (200-400 RMB)",
+        "Cash or card",
+        "Sunglasses and hat"
+      ]
+    },
+    "activities": [
+      {
+        "name": "Resort Lounging",
+        "desc": "Rent a sun lounger and umbrella (~80-120 RMB/day) and spend the day reading, napping, and swimming. Beach service available from the resort bars."
+      },
+      {
+        "name": "Beach Bar",
+        "desc": "Jinshawan has the only proper beach bar on the Dapeng Peninsula. Cocktails, cold beer, and light food served directly on the sand. Sunset happy hours are popular."
+      },
+      {
+        "name": "Swimming",
+        "desc": "Calm, clear water in a protected bay. Gentle slope into the water — good for casual swimming and families. Water quality is Grade I-II, among the best in Shenzhen."
+      },
+      {
+        "name": "Resort Pool Day",
+        "desc": "Several hotels offer day passes that include pool access. A good option for hot summer days when you want a break from salt water."
+      }
+    ],
+    "safety": {
+      "lifeguardHours": "Year-round, resort-managed. Most reliable lifeguard coverage.",
+      "hazards": "Very safe beach. Protected bay, minimal currents. Standard sun safety.",
+      "waterQualitySource": "Resort-managed testing + Ecology Bureau. Grade II.",
+      "emergencyContact": "Resort medical station on-site. Emergency: 110/120."
+    },
+    "photoSpots": "The eastern end of the beach at sunset — golden light on the resort and hills. The beach bar at magic hour with cocktails and sea in the frame. The manicured palm-lined entrance walkway for resort lifestyle shots.",
+    "bestTimeToVisit": "Weekdays for empty resort feel. May and October for perfect weather. Resort day pass on a Tuesday in shoulder season = peak Jinshawan.",
+    "tips": [
+      "Book a hotel day pass for the best value — beach + pool + food credit for 200-400 RMB",
+      "Arrive early on summer weekends — parking is limited and fills by 10 AM",
+      "The beach bar has sunset happy hour specials — best spot on the peninsula for a drink with a view",
+      "Combine with Yangmeikeng cycling (15 min away) for a beach + scenery day"
+    ],
+    "history": "Jinshawan was developed as part of Shenzhen's push to create high-end coastal tourism on the Dapeng Peninsula in the 2010s. Unlike the older public beaches (Dameisha, Xiaomeisha) which evolved organically, Jinshawan was planned from the start as a resort destination with imported sand and comprehensive facilities.",
+    "whenToAvoid": "Summer weekends (Jun-Aug) — the beach gets busy and parking is scarce. Golden Week and Chinese New Year — accommodation prices double and the beach reaches capacity. Typhoon season (Aug-Sep) — the resort may restrict beach access for safety."
+  },
+  {
+    "id": "judiaosha",
+    "name": "Judiaosha",
+    "nameCN": "桔钓沙",
+    "distance": "70 min",
+    "fee": "Free",
+    "feeNum": 0,
+    "bestFor": [
+      "Romantic",
+      "Photography",
+      "Quiet retreat"
+    ],
+    "rating": 4,
+    "crowdLevel": "quiet",
+    "crowdLabel": "Usually quiet",
+    "location": [
+      22.5567,
+      114.5438
+    ],
+    "slug": "judiaosha",
+    "description": "A crescent-shaped beach with fine white sand, surrounded by lush hills. One of the most aesthetically beautiful beaches near Shenzhen.",
+    "longDescription": "Judiaosha Beach (桔钓沙) is Shenzhen's best-kept secret — a pristine crescent bay with powder-white sand and crystal-clear turquoise water that looks like it belongs in the Philippines, not an hour from a megacity of 17 million people. Hidden away on the southeastern coast of the Dapeng Peninsula between Yangmeikeng and Jinshawan, Judiaosha is what Shenzhen beaches look like before the crowds discover them.\n\nThe beach is naturally sheltered by rocky headlands on both sides, creating a gentle, almost lagoon-like swimming area. The sand is unusually fine and pale for this part of China — closer to what you would find on a tropical island than a mainland beach. The water is consistently rated Grade I (the highest quality) by the Shenzhen Ecology Bureau, and on a clear day the visibility can reach several meters.\n\nAt about 400 meters long, Judiaosha is intimate without feeling cramped. The surrounding landscape is dramatic — steep green hills drop directly to the sea on both sides of the bay, and the rocky outcrops at each end provide natural photo frames and small tide pools to explore. There are no high-rises visible from the beach, no boardwalk crowds, and no blaring speakers — just the sound of waves, wind through the trees, and the occasional fishing boat passing offshore.\n\nJudiaosha is free to access and has minimal facilities — a few basic shower stalls, a couple of small drink vendors, and not much else. This is both its charm and its challenge: you need to bring what you need, but you are rewarded with a beach experience that feels genuinely undiscovered. It is especially popular with couples seeking a romantic escape, photographers chasing untouched coastal scenery, and anyone who has sworn off Dameisha after one too many crowded weekends.",
+    "openingHours": "Daylight hours. No lighting or facilities after dark.",
+    "familyFriendly": false,
+    "accessibility": "Not accessible. Uneven path. No ramps.",
+    "transport": {
+      "bus": "E11 to Nanao, then local bus or taxi (15 min). Buses infrequent.",
+      "taxiFromFutian": "~175 RMB (70 min)",
+      "taxiFromLuohu": "~135 RMB (55 min)",
+      "taxiFromNanshan": "~195 RMB (80 min)",
+      "driveTime": "55-70 min",
+      "parking": "Limited roadside parking. Free but fills on weekends."
+    },
+    "facilities": {
+      "showers": "Limited, basic (cold water only)",
+      "lockers": "None",
+      "umbrellas": "None",
+      "lifeguards": "Not always present",
+      "food": "None on the beach",
+      "restrooms": "Basic, one facility",
+      "changingRooms": "None",
+      "firstAid": "None"
+    },
+    "features": {
+      "sandType": "Fine white sand, crescent shape, ~400m",
+      "waterQuality": "Grade I (excellent)",
+      "waveType": "Calm, shallow entry",
+      "bestSeason": "April-October",
+      "swimZone": "No formal swim zone"
+    },
+    "food": {
+      "onSite": "Nothing. Zero food vendors. This is the most important thing to know.",
+      "nearby": "Nanao town (15 min drive) has excellent seafood. Pack a picnic.",
+      "mustTry": "DIY beach picnic. Stop at a market on the way. Fresh fruit, sandwiches, cold drinks eaten with feet in the sand.",
+      "priceRange": "BYO food. Nanao restaurant: 80-150 RMB per person."
+    },
+    "accommodation": {
+      "nearby": "Nearest guesthouses in Nanao (15 min drive, 150-300 RMB/night). No hotels near the beach.",
+      "camping": "Not officially permitted. Some camp discreetly with zero facilities.",
+      "priceRange": "Guesthouse: 150-300 RMB."
+    },
+    "clothing": {
+      "summer": "Swimsuit, full sun protection (no shade), water shoes for rocky edges. Bring umbrella or beach tent - no rentals.",
+      "winter": "Light layers for beach walks. Beautiful for photography and solitude.",
+      "essentials": [
+        "Everything. Seriously.",
+        "Water (2L+ per person)",
+        "Food (full picnic)",
+        "Sunscreen",
+        "Umbrella or beach tent",
+        "Trash bag",
+        "Cash",
+        "Camera",
+        "Towel"
+      ]
+    },
+    "activities": [
+      {
+        "name": "Swimming & Snorkeling",
+        "desc": "The clearest water on the peninsula makes Judiaosha the best spot for casual snorkeling in Shenzhen. Bring your own mask — there is no rental shop. The rocky edges of the bay have small fish and marine life. Visibility is best in autumn (Sep-Nov)."
+      },
+      {
+        "name": "Romantic Getaway",
+        "desc": "The crescent bay, white sand, and relative seclusion make Judiaosha the most romantic beach near Shenzhen. Bring a picnic, a blanket, and stay for sunset — the light on the bay is spectacular."
+      },
+      {
+        "name": "Tide Pooling",
+        "desc": "The rocky headlands on both sides of the bay have small tide pools at low tide. Great for kids and anyone curious about coastal marine life. Check tide tables before going."
+      },
+      {
+        "name": "Photography",
+        "desc": "The contrast between white sand, turquoise water, and green hills creates incredible photo opportunities. The eastern headland at golden hour is the signature shot. Drone photography is particularly rewarding here."
+      }
+    ],
+    "safety": {
+      "lifeguardHours": "Not guaranteed. Assume no lifeguards.",
+      "hazards": "No shade. No facilities. Swim with caution. Limited mobile signal.",
+      "waterQualitySource": "Grade I = cleanest rating. Excellent water quality.",
+      "emergencyContact": "Nearest help in Nanao (15 min). Carry first aid kit. Emergency: 110/120."
+    },
+    "photoSpots": "The eastern rocky headland at golden hour (5-7 PM) — climb up for a panorama of the entire crescent bay. The tide pools at low tide for foreground interest. Drone shots from above the bay showing the full crescent shape. Sunset silhouettes with the headlands framing the sea.",
+    "bestTimeToVisit": "Weekdays for solitude. October-November for best light + comfortable temp. Golden hour (4-7 PM) for photography. Avoid all summer weekends.",
+    "tips": [
+      "Go on a weekday for near-total solitude — you might be one of only 5-10 people on the entire beach",
+      "Bring snorkeling gear — the water clarity is the best in Shenzhen",
+      "No food vendors on the beach — pack a picnic or eat in Yangmeikeng village (5 min drive)",
+      "The access road is narrow and poorly signposted — use navigation and go slow on the final approach"
+    ],
+    "history": "Judiaosha was originally known only to local fishermen and a handful of adventurous Shenzhen residents. Its name means Orange Fishing Sand in Chinese, referencing the shape of the bay and its historical use as a fishing anchorage. The beach remained largely undiscovered until the mid-2010s when social media photos of its white sand began circulating among Shenzhen's outdoor community.",
+    "whenToAvoid": "Summer weekends — while never as crowded as Dameisha, the small beach means even 50 people feels busy. National holidays — the access road becomes a bottleneck. After heavy rain — runoff can temporarily reduce water clarity."
+  },
+  {
+    "id": "nanao",
+    "name": "Nanao Beach",
+    "nameCN": "南澳沙滩",
+    "distance": "60 min",
+    "fee": "Free",
+    "feeNum": 0,
+    "bestFor": [
+      "Local experience",
+      "Seafood",
+      "Casual visit"
+    ],
+    "rating": 3.8,
+    "crowdLevel": "moderate",
+    "crowdLabel": "Moderate on weekends",
+    "location": [
+      22.5368,
+      114.4982
+    ],
+    "slug": "nanao",
+    "description": "The main beach in Nanao town, a working fishing port. Local experience, excellent seafood.",
+    "longDescription": "Nanao Beach (南澳沙滩, also known as Nanao Bay) is not a beach in the traditional tourist sense — it is a working waterfront that happens to have sand and sea. Located in the heart of Nanao town, the administrative center of the Dapeng Peninsula, this is where Shenzhen's fishing community meets the coast. Colorful fishing boats bob in the harbor just offshore, nets are mended on the docks, and the air carries the unmistakable scent of the sea mixed with cooking seafood from nearby restaurants.\n\nThe beach itself is modest — a few hundred meters of coarse, natural sand backed by the town's main street. It is not manicured, not particularly photogenic, and certainly not where you would go for a resort-style beach day. But Nanao offers something that no other Shenzhen beach can: an authentic glimpse of coastal life in a Chinese fishing town that has not been sanitized for tourism.\n\nThe real draw of Nanao is the seafood. The town's waterfront is lined with restaurants — some grand and multi-story, others barely more than a few plastic tables and a wok — all serving fish, shrimp, crab, and shellfish that were swimming in the South China Sea that morning. The Nanao Seafood Street (南澳海鲜街) is famous throughout Shenzhen, and on weekend evenings the waterfront is packed with diners from across the city who have made the drive specifically for dinner.\n\nNanao is best approached as a food destination with a beach attached, rather than a beach destination with food nearby. Come for lunch, walk along the waterfront, watch the fishing boats come and go, and leave with a full stomach and a sense of having seen a side of Shenzhen that most visitors miss entirely. The beach is free, always accessible, and pleasantly uncrowded outside of meal times.",
+    "openingHours": "Always accessible (public town beach). Restaurants: 10:00-22:00.",
+    "familyFriendly": true,
+    "accessibility": "Town beach accessible via paved road. Market has steps.",
+    "transport": {
+      "bus": "E11 express bus directly to Nanao terminus (~1 hour, ~10 RMB). Most convenient bus access.",
+      "taxiFromFutian": "~150 RMB (60 min)",
+      "taxiFromLuohu": "~110 RMB (45 min)",
+      "taxiFromNanshan": "~170 RMB (70 min)",
+      "driveTime": "45-60 min",
+      "parking": "Town parking, ~20 RMB/day."
+    },
+    "facilities": {
+      "showers": "Basic public showers (cold, ~5 RMB)",
+      "lockers": "None",
+      "umbrellas": "None",
+      "lifeguards": "Seasonal, limited",
+      "food": "Excellent seafood restaurants throughout town",
+      "restrooms": "Public available",
+      "changingRooms": "None",
+      "firstAid": "Town clinic nearby"
+    },
+    "features": {
+      "sandType": "Mixed sand, some rocky areas",
+      "waterQuality": "Grade II-III (varies)",
+      "waveType": "Calm, harbor-protected",
+      "bestSeason": "May-October",
+      "swimZone": "Limited areas"
+    },
+    "food": {
+      "onSite": "The waterfront street is the main attraction. Nanao Seafood Street (南澳海鲜街) runs along the harbor and features dozens of seafood restaurants — from simple open-air stalls to large multi-story establishments. The standard practice is to select your seafood from tanks at the front of the restaurant, specify your preferred cooking method, and wait for it to arrive at your table. Grilled fish (烤鱼), steamed shrimp (清蒸虾), salt-and-pepper crab (椒盐蟹), and garlic scallops (蒜蓉扇贝) are local staples.",
+      "nearby": "The seafood street IS the nearby dining — everything is concentrated along the waterfront. For variety, Shuitousha Beach is a 10-minute walk away if you want a quiet spot to digest.",
+      "mustTry": "Salt-and-pepper mantis shrimp (椒盐濑尿虾), steamed whole fish with ginger and scallion (清蒸鱼), garlic vermicelli scallops (蒜蓉粉丝蒸扇贝), cold Tsingtao beer with a harbor view",
+      "priceRange": "Seafood lunch: 100-200 RMB per person. Full seafood dinner: 200-500 RMB per person. Simple noodle or rice meal: 20-40 RMB."
+    },
+    "accommodation": {
+      "nearby": "Nanao town has several mid-range hotels (200-400 RMB/night) and budget guesthouses (100-200 RMB/night). The town is the main service hub for the Dapeng Peninsula, so accommodation is more plentiful than at individual beaches. Sea-view rooms overlooking the harbor are available at the higher end.",
+      "camping": "Not permitted in Nanao town.",
+      "priceRange": "Budget guesthouse: 100-200 RMB/night. Mid-range hotel: 200-400 RMB/night. Sea-view room: 300-500 RMB/night."
+    },
+    "clothing": {
+      "summer": "Casual beach wear. Swimsuit if swimming (check water quality). Sandals for waterfront and market walking.",
+      "winter": "Light jacket. Waterfront can be windy. Restaurants indoors.",
+      "essentials": [
+        "Cash (some restaurants prefer cash)",
+        "Appetite (main reason to come)",
+        "Camera (fish market is photogenic)",
+        "Towel if swimming",
+        "Sunscreen"
+      ]
+    },
+    "activities": [
+      {
+        "name": "Seafood Feast",
+        "desc": "The main event. Walk the seafood street, pick your dinner from the tanks, and enjoy one of the best seafood meals in Shenzhen. The atmosphere on weekend evenings is buzzing and authentically local."
+      },
+      {
+        "name": "Harbor Walk",
+        "desc": "Stroll along the working waterfront and watch fishing boats come and go. The harbor is most active in the early morning (5-7 AM) when boats return with the night's catch."
+      },
+      {
+        "name": "Local Life",
+        "desc": "Explore the back streets of Nanao town — wet markets, family-run shops, and the rhythms of a coastal community. Great for street photography and cultural observation."
+      },
+      {
+        "name": "Island Ferry",
+        "desc": "From Nanao pier, ferries run to several outlying islands including Sanmen Island (三门岛). A half-day island trip adds adventure to the seafood experience."
+      }
+    ],
+    "safety": {
+      "lifeguardHours": "Limited seasonal coverage.",
+      "hazards": "Water quality varies. Harbor has boat traffic - swim only in designated areas.",
+      "waterQualitySource": "Grade II-III. Less consistent due to harbor proximity.",
+      "emergencyContact": "Town clinic. Dapeng Hospital (30 min). Emergency: 110/120."
+    },
+    "photoSpots": "The harbor at dawn (5-7 AM) when fishing boats return with colorful flags and nets. The seafood street at night when the restaurants are lit up and busy. The waterfront looking toward the outlying islands on a clear day. Street photography in the back lanes of the old town.",
+    "bestTimeToVisit": "Weekday lunch for freshest seafood without crowds. Early morning for fish market. Avoid summer weekends.",
+    "tips": [
+      "Come hungry — the seafood is the whole point of visiting Nanao",
+      "Visit on a weekday evening for a quieter, more local dining experience",
+      "Combine with Shuitousha Beach (10 min walk) if you want sand between your toes",
+      "The harbor is most photogenic in the early morning when fishing boats return"
+    ],
+    "history": "Nanao (南澳, literally South Bay) has been a fishing port for centuries, long before Shenzhen became a megacity. It remains the administrative and commercial center of the Dapeng Peninsula and is one of the few places in Shenzhen where traditional coastal livelihoods are still visible alongside modern development. The seafood street began attracting city diners in the 1990s and has grown into a regional dining destination.",
+    "whenToAvoid": "Weekend dinner hours (6-9 PM Sat-Sun) — the seafood street is packed and wait times can exceed an hour. Chinese New Year — many restaurants close for the holiday. Typhoon season (Aug-Sep) — fishing boats stay in harbor and fresh seafood availability drops."
+  },
+  {
+    "id": "shuitousha",
+    "name": "Shuitousha",
+    "nameCN": "水头沙",
+    "distance": "65 min",
+    "fee": "Free",
+    "feeNum": 0,
+    "bestFor": [
+      "Quiet beach day",
+      "Local vibe"
+    ],
+    "rating": 3.7,
+    "crowdLevel": "quiet",
+    "crowdLabel": "Usually quiet",
+    "location": [
+      22.5268,
+      114.5156
+    ],
+    "slug": "shuitousha",
+    "description": "A small, lesser-known beach near Nanao. Quiet and unpretentious. Zero facilities but total tranquility.",
+    "longDescription": "Shuitousha Beach (水头沙) is Shenzhen's anti-beach — and for a certain kind of visitor, that is exactly its appeal. Barely 300 meters of mixed sand and rock tucked behind Nanao town, Shuitousha has zero facilities, zero vendors, and on most weekdays, zero other people. It will not win any beauty contests, but it will give you something rarer in Shenzhen than white sand or resort pools: absolute, uninterrupted solitude.\n\nThe beach sits at the end of a short path from the road, hidden from view by a small rise. The sand is coarse and mixed with pebbles, the water is calm but unpatrolled, and there is not a single shop, shower, or trash can in sight. This is not a beach for swimming laps or posting on Instagram — it is a beach for sitting on a towel, reading a book, and hearing nothing but waves and wind for hours.\n\nShuitousha's location 10 minutes on foot from Nanao town gives it a unique advantage: you can bring a picnic from the Nanao wet market, find your spot on the empty sand, and when you are ready for a proper meal, walk back to the seafood street for dinner. It is the ultimate low-effort escape — no planning, no tickets, no crowds, just a quiet strip of coastline that most people drive past without noticing.\n\nThe beach is unpatrolled and has no lifeguards. Swimming is at your own risk, and the general guidance is to stay close to shore and never swim alone. The lack of shade means you need to bring your own umbrella or beach tent, especially in summer. Come prepared, expect nothing, and you will find one of the most peaceful corners of Shenzhen's coastline.",
+    "openingHours": "Always accessible. No formal hours or facilities.",
+    "familyFriendly": false,
+    "accessibility": "Not accessible. Uneven ground, no paved paths.",
+    "transport": {
+      "bus": "E11 to Nanao, then short walk (15 min) or taxi (starting fare)",
+      "taxiFromFutian": "~155 RMB (65 min)",
+      "taxiFromLuohu": "~115 RMB (50 min)",
+      "taxiFromNanshan": "~175 RMB (75 min)",
+      "driveTime": "50-65 min",
+      "parking": "Informal roadside. Free but limited."
+    },
+    "facilities": {
+      "showers": "None",
+      "lockers": "None",
+      "umbrellas": "None",
+      "lifeguards": "No",
+      "food": "None",
+      "restrooms": "None on-site",
+      "changingRooms": "None",
+      "firstAid": "None"
+    },
+    "features": {
+      "sandType": "Mixed sand, natural state",
+      "waterQuality": "Grade II",
+      "waveType": "Calm",
+      "bestSeason": "May-September",
+      "swimZone": "No formal zone"
+    },
+    "food": {
+      "onSite": "Nothing. Zero vendors, zero shops. Bring everything you need.",
+      "nearby": "Nanao town and its famous seafood street are a 10-15 minute walk away. The Nanao wet market (morning hours) is the best place to buy supplies for a beach picnic — fresh fruit, bread, snacks, and drinks. For a proper meal, the seafood restaurants along the waterfront offer everything from quick noodle soups to full seafood banquets.",
+      "mustTry": "Build a picnic from the Nanao wet market: fresh tropical fruit (mango, lychee in season), steamed buns (包子), cold drinks, and maybe some takeaway grilled seafood from a waterfront restaurant",
+      "priceRange": "Picnic supplies from the market: 30-80 RMB per person. Seafood dinner at Nanao restaurants: 100-300 RMB per person."
+    },
+    "accommodation": {
+      "nearby": "Nanao town (10-15 min walk) has guesthouses from 100-200 RMB/night and mid-range hotels from 200-400 RMB/night. The proximity means you can walk to the beach for sunrise, spend the day, and walk back to your room without any transport logistics.",
+      "camping": "Possible but entirely unofficial. There are no facilities, no permitted zones, and no support. If you choose to camp, you must bring all gear and take all waste with you. Fires are not permitted.",
+      "priceRange": "Guesthouse: 100-200 RMB/night. Mid-range hotel: 200-400 RMB/night."
+    },
+    "clothing": {
+      "summer": "Swimsuit, full sun protection (zero shade), water shoes for rocks. Bring own umbrella or beach tent.",
+      "winter": "Light jacket for beach walks. Pleasant solitude but too cold for swimming.",
+      "essentials": [
+        "Everything for a beach day (zero facilities)",
+        "Water (2L+ per person)",
+        "Food/picnic",
+        "Sunscreen + hat",
+        "Umbrella or beach tent",
+        "Trash bag",
+        "Toilet paper",
+        "First aid kit"
+      ]
+    },
+    "activities": [
+      {
+        "name": "Solitude & Reading",
+        "desc": "The main activity. Bring a book, a towel, and an umbrella. Find your spot on the empty sand and let the hours disappear. This is the best beach near Shenzhen for doing absolutely nothing."
+      },
+      {
+        "name": "Picnic",
+        "desc": "With zero vendors, a picnic is mandatory. Buy supplies at the Nanao wet market in the morning and set up your feast on the sand. The combination of market-fresh food and an empty beach is hard to beat."
+      },
+      {
+        "name": "Casual Swimming",
+        "desc": "The water is calm but there are no lifeguards. Swim with extreme caution, stay close to shore, and never swim alone. Best for a quick dip rather than extended swimming."
+      },
+      {
+        "name": "Beachcombing",
+        "desc": "The mixed sand and pebble shoreline means interesting finds at low tide — shells, smooth stones, sea glass. A meditative activity for a quiet afternoon."
+      }
+    ],
+    "safety": {
+      "lifeguardHours": "No lifeguards. Ever.",
+      "hazards": "Zero facilities. No shade, no water source. Swim at own risk.",
+      "waterQualitySource": "Grade II. Decent quality.",
+      "emergencyContact": "Nearest help in Nanao (10-15 min). Emergency: 110/120."
+    },
+    "photoSpots": "The empty beach at sunrise. Rocky sections at low tide for texture and foreground interest. The path leading down to the beach through the small rise — a 'reveal' shot. The view toward Nanao harbor from the western end.",
+    "bestTimeToVisit": "Weekday mornings for guaranteed solitude. Sep-Oct for pleasant weather. Combine with Nanao lunch.",
+    "tips": [
+      "Bring absolutely everything — there are zero facilities of any kind",
+      "Pack water (2L+ per person), food, sunscreen, umbrella, and a trash bag",
+      "Walk from Nanao town (10-15 min) — no parking at the beach itself",
+      "Go on a weekday for guaranteed solitude"
+    ],
+    "history": "Shuitousha has no grand history — it has always been a quiet strip of coastline used occasionally by local fishermen and residents. Its obscurity is its defining feature. Unlike every other beach on this guide, Shuitousha has never been developed, never been promoted, and never attracted crowds. It remains exactly what it has always been: a simple, unremarkable, wonderfully empty beach.",
+    "whenToAvoid": "No specific times to avoid — even on summer weekends, Shuitousha rarely has more than a handful of people. The main constraint is weather: avoid typhoon conditions, heavy rain, and extreme heat without shade preparation."
+  },
+  {
+    "id": "shangdong",
+    "name": "Shangdong",
+    "nameCN": "上洞",
+    "distance": "60 min",
+    "fee": "Free",
+    "feeNum": 0,
+    "bestFor": [
+      "Exploration",
+      "Solitude"
+    ],
+    "rating": 3.5,
+    "crowdLevel": "quiet",
+    "crowdLabel": "Almost always empty",
+    "location": [
+      22.5643,
+      114.4876
+    ],
+    "slug": "shangdong",
+    "description": "An off-the-radar beach most Shenzhen residents have never heard of. Rocky coastline, total solitude.",
+    "longDescription": "Shangdong Beach (上洞) is the most remote and least visited beach on this guide — a wild, rugged stretch of coastline near the eastern edge of the Dapeng Peninsula. If Shuitousha is hidden, Shangdong is practically secret. There are no signs, no facilities, no parking lot, and no easy access. Finding it requires determination, and being there feels like discovering something that was not meant to be found.\n\nThe beach is about 400 meters of coarse sand and rock, backed by steep vegetated hills and facing the open South China Sea. The waves here are stronger than at the sheltered western beaches, the water is deep close to shore, and the overall atmosphere is raw and untamed. This is not a swimming beach — the currents are unpredictable, there are no lifeguards, and the rocky sections make entering the water hazardous. It is a beach for walking, exploring, photographing, and experiencing the wilder side of Shenzhen's coastline.\n\nShangdong's remoteness is its defining characteristic. The access involves a combination of driving narrow roads, walking unmarked paths, and a certain amount of scrambling over rocks. There is no phone signal in parts of the approach, and you are unlikely to encounter another person once you arrive. For experienced outdoor enthusiasts, photographers seeking untouched coastal landscapes, and anyone who values solitude above all else, Shangdong delivers an experience that feels impossibly far from a city of 17 million.\n\nThis beach is emphatically not for everyone. Families, casual swimmers, and anyone expecting facilities should stay far away. But for the right person — the adventurer, the solitude-seeker, the photographer chasing raw coastal scenery — Shangdong might be the most rewarding beach in Shenzhen.",
+    "openingHours": "Always accessible. No gate, no hours.",
+    "familyFriendly": false,
+    "accessibility": "Not accessible at all. Rough terrain, no paths, no facilities.",
+    "transport": {
+      "bus": "Limited. Best by car or taxi. Nearest bus stop requires 20+ min walk.",
+      "taxiFromFutian": "~155 RMB (60 min)",
+      "taxiFromLuohu": "~115 RMB (50 min)",
+      "taxiFromNanshan": "~175 RMB (70 min)",
+      "driveTime": "50-60 min",
+      "parking": "Informal roadside. No designated lot."
+    },
+    "facilities": {
+      "showers": "None",
+      "lockers": "None",
+      "umbrellas": "None",
+      "lifeguards": "No",
+      "food": "None",
+      "restrooms": "None",
+      "changingRooms": "None",
+      "firstAid": "None"
+    },
+    "features": {
+      "sandType": "Mixed sand and rock, ~200m",
+      "waterQuality": "Grade I (untouched)",
+      "waveType": "Varies, exposed coastline",
+      "bestSeason": "May-September",
+      "swimZone": "None"
+    },
+    "food": {
+      "onSite": "Nothing. There are no vendors, no shops, and no facilities of any kind within walking distance.",
+      "nearby": "The nearest food is in Dongchong village (15-20 min drive) or Nanao town (25 min drive). Both have restaurants ranging from simple noodle shops to seafood restaurants.",
+      "mustTry": "Pack a substantial picnic. Bring more water than you think you need. After your visit, head to Dongchong village for a well-earned seafood dinner.",
+      "priceRange": "Self-catered: 50-100 RMB per person for picnic supplies. Dongchong restaurant meal: 80-150 RMB per person."
+    },
+    "accommodation": {
+      "nearby": "The nearest accommodation is in Dongchong village (15-20 min drive), which has guesthouses and small hotels (150-350 RMB/night). Xichong (25 min drive) has more options including surf-themed guesthouses and camping.",
+      "camping": "Possible for experienced campers only. No facilities, no permitted zones, no support. Bring all gear, including water, and take everything back. No fires. Inform someone of your plans before going.",
+      "priceRange": "Nearby guesthouse (Dongchong/Xichong): 150-400 RMB/night."
+    },
+    "clothing": {
+      "summer": "Full beach survival kit. Swimwear, sturdy shoes for rocks, full sun protection (zero shade), water shoes. Pack as if going into wilderness.",
+      "winter": "Hiking gear more than beach gear. Dramatic scenery but dangerous for swimming.",
+      "essentials": [
+        "Everything. Seriously.",
+        "Water (3L+ per person)",
+        "Full meal/picnic",
+        "Sunscreen + hat + UV protection",
+        "Sturdy shoes (rocks are sharp)",
+        "Comprehensive first aid kit",
+        "Phone + power bank + offline maps",
+        "Tell someone your plans",
+        "Trash bags",
+        "Toilet paper + hand sanitizer"
+      ]
+    },
+    "activities": [
+      {
+        "name": "Coastal Exploration",
+        "desc": "Walk the length of the beach and explore the rocky sections at both ends. The coastline here is dramatic and unspoiled — you may find small coves and rock pools that are not marked on any map."
+      },
+      {
+        "name": "Landscape Photography",
+        "desc": "The wild, undeveloped coastline offers rare photographic opportunities near Shenzhen. Dramatic skies, textured rocks, and the contrast between green hills and blue sea."
+      },
+      {
+        "name": "Solitude",
+        "desc": "You will almost certainly be the only person on the beach. No sounds except waves, wind, and birds. A profound sense of isolation that is vanishingly rare so close to a major city."
+      },
+      {
+        "name": "Sunrise Watching",
+        "desc": "Shangdong faces east, making it one of the best sunrise spots on the peninsula. Arrive before dawn, navigate by flashlight, and watch the sun rise over the open South China Sea."
+      }
+    ],
+    "safety": {
+      "lifeguardHours": "No lifeguards. Ever.",
+      "hazards": "MOST HAZARDOUS beach near Shenzhen. Sharp rocks, slippery surfaces, zero facilities, no shade, no water, limited signal, no easy emergency access. Swimming extremely dangerous - exposed coastline with unpredictable currents.",
+      "waterQualitySource": "Grade I. Water is clean but conditions are dangerous.",
+      "emergencyContact": "Difficult emergency access. Help in Dapeng (20+ min). Carry comprehensive first aid. Tell someone plans. Emergency: 110/120."
+    },
+    "photoSpots": "Sunrise over the open sea from the eastern end of the beach. The rugged rocky coastline with waves crashing against the rocks. Wide panoramas showing the untouched coastline and green hills behind. Long exposure shots of waves at dusk.",
+    "bestTimeToVisit": "Weekdays for guaranteed solitude. Oct-Nov for best light. Only go in good weather.",
+    "tips": [
+      "This beach is for experienced outdoor enthusiasts only — do not attempt without preparation",
+      "Bring a GPS or offline map — phone signal is unreliable in the approach area",
+      "Wear sturdy shoes — the access involves scrambling over rocks",
+      "Bring 2-3L of water per person and all food — there are no supplies anywhere nearby",
+      "Tell someone where you are going and when you expect to return",
+      "Check tide times — some access points are cut off at high tide"
+    ],
+    "history": "Shangdong has no recorded history of development or settlement — it has always been a remote, undeveloped stretch of coastline. Its name means Upper Cave in Chinese, possibly referring to natural rock formations along the shore. The beach remains unknown to the vast majority of Shenzhen residents and visitors.",
+    "whenToAvoid": "Typhoon season (Aug-Sep) — the exposed coastline makes conditions extremely dangerous. Rainy days — the access path becomes slippery and hazardous. High tide — some access points are submerged. Summer midday — there is zero shade and heat stroke is a real risk."
+  }
+]

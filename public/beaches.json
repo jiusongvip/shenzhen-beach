@@ -1,0 +1,482 @@
+[
+  {
+    "id": "dameisha",
+    "name": "Dameisha",
+    "nameCN": "大梅沙",
+    "distance": "30 min",
+    "fee": "Free",
+    "feeNum": 0,
+    "bestFor": [
+      "Swimming",
+      "Family",
+      "First-timers"
+    ],
+    "rating": 4.2,
+    "crowdLevel": "busy",
+    "crowdLabel": "Busy on weekends",
+    "location": [
+      22.5958,
+      114.3121
+    ],
+    "slug": "dameisha",
+    "description": "Shenzhen most popular and accessible beach. Wide sandy shore with gentle waves, walking distance from Metro Line 8.",
+    "transport": {
+      "metro": "Line 8",
+      "metroExit": "Exit C",
+      "metroWalk": "10 min walk",
+      "bus": "103, 387, M191, M362",
+      "taxiFromFutian": "~80 RMB (40 min)",
+      "taxiFromLuohu": "~50 RMB (25 min)",
+      "driveTime": "30-45 min",
+      "parking": "Paid lot, ~20 RMB/day"
+    },
+    "facilities": {
+      "showers": "10 RMB",
+      "lockers": "20 RMB",
+      "umbrellas": "50 RMB/day",
+      "lifeguards": "09:00-21:00",
+      "food": "Convenience stores, snack stalls",
+      "restrooms": "Free"
+    },
+    "features": {
+      "sandType": "Fine yellow sand",
+      "waterQuality": "Grade II",
+      "waveType": "Gentle",
+      "bestSeason": "May-October",
+      "swimZone": "Designated with lifeguards"
+    },
+    "tips": [
+      "Arrive before 9 AM on weekends",
+      "Bring your own towels and snacks",
+      "Night swimming not permitted"
+    ]
+  },
+  {
+    "id": "xichong",
+    "name": "Xichong",
+    "nameCN": "西涌",
+    "distance": "75 min",
+    "fee": "30 RMB",
+    "feeNum": 30,
+    "bestFor": [
+      "Surfing",
+      "Camping",
+      "Photography"
+    ],
+    "rating": 4.5,
+    "crowdLevel": "quiet",
+    "crowdLabel": "Quiet on weekdays",
+    "location": [
+      22.4857,
+      114.5595
+    ],
+    "slug": "xichong",
+    "description": "Shenzhen longest beach at 4km, best surf spot. Untamed, scenic, worth the extra travel time.",
+    "transport": {
+      "bus": "E11 to Nanao, then M232",
+      "taxiFromFutian": "~180 RMB (75 min)",
+      "taxiFromLuohu": "~140 RMB (60 min)",
+      "driveTime": "60-75 min",
+      "parking": "Several lots, ~30 RMB/day"
+    },
+    "facilities": {
+      "showers": "15 RMB",
+      "lockers": "20 RMB",
+      "umbrellas": "60 RMB/day",
+      "lifeguards": "Seasonal",
+      "food": "Beachside BBQ, seafood",
+      "restrooms": "Available"
+    },
+    "features": {
+      "sandType": "Coarse golden sand, 4km",
+      "waterQuality": "Grade I-II",
+      "waveType": "Moderate, surfable",
+      "bestSeason": "May-October",
+      "swimZone": "Marked by flags"
+    },
+    "tips": [
+      "Best on weekdays",
+      "Surfboard rentals ~100 RMB/hr",
+      "Camping allowed in designated areas"
+    ]
+  },
+  {
+    "id": "xiaomeisha",
+    "name": "Xiaomeisha",
+    "nameCN": "小梅沙",
+    "distance": "40 min",
+    "fee": "50 RMB",
+    "feeNum": 50,
+    "bestFor": [
+      "Resort day",
+      "Families",
+      "Water activities"
+    ],
+    "rating": 4.1,
+    "crowdLevel": "moderate",
+    "crowdLabel": "Moderate year-round",
+    "location": [
+      22.6035,
+      114.3247
+    ],
+    "slug": "xiaomeisha",
+    "description": "Redeveloped resort beach next to Dameisha, with upgraded facilities. Home to Xiaomeisha Sea World.",
+    "transport": {
+      "metro": "Line 8",
+      "metroExit": "Exit B",
+      "metroWalk": "15 min walk",
+      "bus": "103, 387, M362",
+      "taxiFromFutian": "~90 RMB (45 min)",
+      "taxiFromLuohu": "~60 RMB (30 min)",
+      "driveTime": "35-45 min",
+      "parking": "Resort parking, ~30 RMB/day"
+    },
+    "facilities": {
+      "showers": "Included",
+      "lockers": "30 RMB",
+      "umbrellas": "80 RMB/day",
+      "lifeguards": "09:00-21:00",
+      "food": "Resort restaurants, cafes",
+      "restrooms": "Clean, well-maintained"
+    },
+    "features": {
+      "sandType": "Fine white sand",
+      "waterQuality": "Grade II",
+      "waveType": "Gentle, protected bay",
+      "bestSeason": "May-October",
+      "swimZone": "Well-marked"
+    },
+    "tips": [
+      "Entry fee includes basic facilities",
+      "Combine with Sea World",
+      "Resort hotels offer day passes"
+    ]
+  },
+  {
+    "id": "dongchong",
+    "name": "Dongchong",
+    "nameCN": "东涌",
+    "distance": "80 min",
+    "fee": "20 RMB",
+    "feeNum": 20,
+    "bestFor": [
+      "Hiking",
+      "Quiet escape",
+      "Nature"
+    ],
+    "rating": 4.3,
+    "crowdLevel": "quiet",
+    "crowdLabel": "Usually quiet",
+    "location": [
+      22.4972,
+      114.5806
+    ],
+    "slug": "dongchong",
+    "description": "Secluded gem next to Xichong, connected by beautiful coastal hiking trail. Peace and natural scenery.",
+    "transport": {
+      "bus": "E11 to Nanao, then M231",
+      "taxiFromFutian": "~190 RMB (80 min)",
+      "taxiFromLuohu": "~150 RMB (65 min)",
+      "driveTime": "65-80 min",
+      "parking": "Small lot, ~20 RMB/day"
+    },
+    "facilities": {
+      "showers": "10 RMB",
+      "lockers": "Limited",
+      "lifeguards": "Seasonal",
+      "food": "Local seafood",
+      "restrooms": "Basic"
+    },
+    "features": {
+      "sandType": "Coarse sand with pebbles",
+      "waterQuality": "Grade I (excellent)",
+      "waveType": "Moderate",
+      "bestSeason": "April-November",
+      "swimZone": "Limited marked area"
+    },
+    "tips": [
+      "Hike Dongchong-Xichong trail (3-4 hrs)",
+      "Bring everything you need",
+      "Better water than city beaches",
+      "No ATMs - bring cash"
+    ]
+  },
+  {
+    "id": "yangmeikeng",
+    "name": "Yangmeikeng",
+    "nameCN": "杨梅坑",
+    "distance": "70 min",
+    "fee": "Free",
+    "feeNum": 0,
+    "bestFor": [
+      "Scenery",
+      "Cycling",
+      "Photography"
+    ],
+    "rating": 4.4,
+    "crowdLevel": "moderate",
+    "crowdLabel": "Busy on holidays",
+    "location": [
+      22.5423,
+      114.5612
+    ],
+    "slug": "yangmeikeng",
+    "description": "Famous for scenic coastal road - most photogenic coastline near Shenzhen. Popular with cyclists.",
+    "transport": {
+      "bus": "E11 to Nanao, then minibus",
+      "taxiFromFutian": "~170 RMB (70 min)",
+      "taxiFromLuohu": "~130 RMB (55 min)",
+      "driveTime": "55-70 min",
+      "parking": "Near entrance, ~25 RMB/day"
+    },
+    "facilities": {
+      "showers": "10 RMB",
+      "restrooms": "Available",
+      "food": "Seaside restaurants",
+      "lifeguards": "Limited"
+    },
+    "features": {
+      "sandType": "Mixed sand and pebbles",
+      "waterQuality": "Grade I-II",
+      "waveType": "Calm, protected inlet",
+      "bestSeason": "March-November",
+      "swimZone": "Informal"
+    },
+    "tips": [
+      "Rent a bicycle for the coastal road",
+      "Go on a clear day for photos",
+      "Combine with Dapeng Fortress"
+    ]
+  },
+  {
+    "id": "jinshawan",
+    "name": "Jinshawan",
+    "nameCN": "金沙湾",
+    "distance": "65 min",
+    "fee": "Free",
+    "feeNum": 0,
+    "bestFor": [
+      "Resort vibes",
+      "Sunbathing",
+      "Luxury"
+    ],
+    "rating": 4.3,
+    "crowdLevel": "moderate",
+    "crowdLabel": "Mostly resort guests",
+    "location": [
+      22.5782,
+      114.4658
+    ],
+    "slug": "jinshawan",
+    "description": "Newer upscale beach area with international resort hotels. Cleaner and more curated.",
+    "transport": {
+      "bus": "E11 to Dapeng",
+      "taxiFromFutian": "~160 RMB (65 min)",
+      "taxiFromLuohu": "~120 RMB (50 min)",
+      "driveTime": "50-65 min",
+      "parking": "Resort parking"
+    },
+    "facilities": {
+      "showers": "Free (resort)",
+      "lockers": "At resorts",
+      "umbrellas": "Resort rental",
+      "lifeguards": "Yes",
+      "food": "Resort restaurants",
+      "restrooms": "Resort-standard"
+    },
+    "features": {
+      "sandType": "Fine golden sand",
+      "waterQuality": "Grade II",
+      "waveType": "Gentle, protected bay",
+      "bestSeason": "April-October",
+      "swimZone": "Marked"
+    },
+    "tips": [
+      "Stay at resort for full experience",
+      "Public access is free",
+      "More polished experience"
+    ]
+  },
+  {
+    "id": "judiaosha",
+    "name": "Judiaosha",
+    "nameCN": "桔钓沙",
+    "distance": "70 min",
+    "fee": "Free",
+    "feeNum": 0,
+    "bestFor": [
+      "Romantic",
+      "Photography",
+      "Quiet retreat"
+    ],
+    "rating": 4.0,
+    "crowdLevel": "quiet",
+    "crowdLabel": "Usually quiet",
+    "location": [
+      22.5567,
+      114.5438
+    ],
+    "slug": "judiaosha",
+    "description": "Crescent-shaped beach with fine white sand, surrounded by lush hills. Aesthetically beautiful.",
+    "transport": {
+      "bus": "E11 to Nanao",
+      "taxiFromFutian": "~175 RMB (70 min)",
+      "taxiFromLuohu": "~135 RMB (55 min)",
+      "driveTime": "55-70 min"
+    },
+    "facilities": {
+      "showers": "Limited",
+      "restrooms": "Basic",
+      "food": "Few local eateries",
+      "lifeguards": "Not always"
+    },
+    "features": {
+      "sandType": "Fine white sand, crescent",
+      "waterQuality": "Grade I (excellent)",
+      "waveType": "Calm, shallow",
+      "bestSeason": "April-October",
+      "swimZone": "No formal zone"
+    },
+    "tips": [
+      "Golden hour for photos",
+      "Pack food and water",
+      "Swim with caution"
+    ]
+  },
+  {
+    "id": "nanao",
+    "name": "Nanao Beach",
+    "nameCN": "南澳沙滩",
+    "distance": "60 min",
+    "fee": "Free",
+    "feeNum": 0,
+    "bestFor": [
+      "Local experience",
+      "Seafood",
+      "Casual visit"
+    ],
+    "rating": 3.8,
+    "crowdLevel": "moderate",
+    "crowdLabel": "Moderate weekends",
+    "location": [
+      22.5368,
+      114.4982
+    ],
+    "slug": "nanao",
+    "description": "Main beach in Nanao fishing port. Local experience, excellent seafood.",
+    "transport": {
+      "bus": "E11 to Nanao terminus",
+      "taxiFromFutian": "~150 RMB (60 min)",
+      "taxiFromLuohu": "~110 RMB (45 min)",
+      "driveTime": "45-60 min"
+    },
+    "facilities": {
+      "showers": "Basic",
+      "restrooms": "Public",
+      "food": "Excellent seafood",
+      "lifeguards": "Seasonal"
+    },
+    "features": {
+      "sandType": "Mixed sand, rocky areas",
+      "waterQuality": "Grade II-III",
+      "waveType": "Calm, harbor-protected",
+      "bestSeason": "May-October",
+      "swimZone": "Limited"
+    },
+    "tips": [
+      "Best for seafood + beach stroll",
+      "Check morning fish market",
+      "Island boat trips available"
+    ]
+  },
+  {
+    "id": "shuitousha",
+    "name": "Shuitousha",
+    "nameCN": "水头沙",
+    "distance": "65 min",
+    "fee": "Free",
+    "feeNum": 0,
+    "bestFor": [
+      "Quiet beach day",
+      "Local vibe"
+    ],
+    "rating": 3.7,
+    "crowdLevel": "quiet",
+    "crowdLabel": "Usually quiet",
+    "location": [
+      22.5268,
+      114.5156
+    ],
+    "slug": "shuitousha",
+    "description": "Small, lesser-known beach near Nanao. Quiet and unpretentious.",
+    "transport": {
+      "bus": "E11 to Nanao",
+      "taxiFromFutian": "~155 RMB (65 min)",
+      "taxiFromLuohu": "~115 RMB (50 min)",
+      "driveTime": "50-65 min"
+    },
+    "facilities": {
+      "showers": "None",
+      "restrooms": "None on-site",
+      "food": "Walk to Nanao",
+      "lifeguards": "No"
+    },
+    "features": {
+      "sandType": "Mixed, natural",
+      "waterQuality": "Grade II",
+      "waveType": "Calm",
+      "bestSeason": "May-September",
+      "swimZone": "No formal zone"
+    },
+    "tips": [
+      "Come prepared",
+      "Swim at own risk",
+      "Great for quiet picnic"
+    ]
+  },
+  {
+    "id": "shangdong",
+    "name": "Shangdong",
+    "nameCN": "上洞",
+    "distance": "60 min",
+    "fee": "Free",
+    "feeNum": 0,
+    "bestFor": [
+      "Exploration",
+      "Solitude"
+    ],
+    "rating": 3.5,
+    "crowdLevel": "quiet",
+    "crowdLabel": "Almost always empty",
+    "location": [
+      22.5643,
+      114.4876
+    ],
+    "slug": "shangdong",
+    "description": "Off-the-radar beach most residents haven't heard of. Rocky in parts.",
+    "transport": {
+      "bus": "Limited; best by car",
+      "taxiFromFutian": "~155 RMB (60 min)",
+      "taxiFromLuohu": "~115 RMB (50 min)",
+      "driveTime": "50-60 min",
+      "parking": "Informal roadside"
+    },
+    "facilities": {
+      "restrooms": "None",
+      "food": "Bring everything",
+      "lifeguards": "No"
+    },
+    "features": {
+      "sandType": "Mixed sand and rock",
+      "waterQuality": "Grade I (untouched)",
+      "waveType": "Varies",
+      "bestSeason": "May-September",
+      "swimZone": "None"
+    },
+    "tips": [
+      "Off-grid; bring everything",
+      "Swim with extreme caution",
+      "Check tide times"
+    ]
+  }
+]

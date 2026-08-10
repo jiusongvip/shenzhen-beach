@@ -1,0 +1,48 @@
+---
+const visits = [
+  { year: "2016", title: "First Explorations", desc: "Started visiting Shenzhen beaches as a local resident. Discovered that Xichong was completely different from Dameisha — 10x fewer people, 10x better water. Began documenting the differences." },
+  { year: "2018", title: "The Dapeng Deep Dive", desc: "Spent an entire summer exploring every beach on the Dapeng Peninsula. Discovered Judiaosha by accident after a wrong turn. Found that most online guides were outdated or inaccurate." },
+  { year: "2020", title: "Pandemic-Era Beach Revival", desc: "When international travel stopped, Shenzhen locals rediscovered their own coastline. Xichong reopened after the 2018 typhoon with new facilities. Documented the transformations." },
+  { year: "2022", title: "Metro Line 8 Opens", desc: "The game-changer: Metro Line 8 extension reached Dameisha and Xiaomeisha, making beach access dramatically easier. Tested every transport route firsthand." },
+  { year: "2024", title: "Four-Season Survey", desc: "Visited every beach in all four seasons to answer the most common question: 'When should I go?' Built the seasonal guide from firsthand experience across 40+ beach days." },
+  { year: "2025", title: "The Guide Takes Shape", desc: "Compiled years of notes, photos, and data into a comprehensive guide. Visited every beach again to verify prices, conditions, and transport information." },
+  { year: "2026", title: "Latest Verification — August", desc: "Most recent visits: confirmed entrance fees, water quality reports, and Metro Line 8 schedules. Every detail on this page reflects what we found this season." },
+];
+---
+<section id="experience" class="py-20 md:py-28 bg-white">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <p class="text-sm font-semibold text-ocean uppercase tracking-wider mb-3">Trust & Experience</p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">A Decade of Beach Days</h2>
+      <p class="mt-4 text-gray-500 max-w-lg mx-auto">Every recommendation on this page is backed by firsthand visits across all 10 beaches, in every season, over 10 years.</p>
+    </div>
+    <div class="relative">
+      <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gray-200 md:-translate-x-px" aria-hidden="true"></div>
+      <div class="space-y-8">
+        {visits.map((v, i) => (
+          <div class={`flex gap-6 ${i % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
+            <div class={`hidden md:flex md:w-1/2 ${i % 2 === 0 ? 'md:justify-end md:pr-10' : 'md:justify-start md:pl-10'}`}>
+              <div class="max-w-xs">
+                <p class="text-lg font-display font-semibold text-gray-800">{v.title}</p>
+                <p class="mt-2 text-sm text-gray-500 leading-relaxed">{v.desc}</p>
+              </div>
+            </div>
+            <div class="relative flex-shrink-0">
+              <div class="flex h-8 w-8 items-center justify-center rounded-full border-2 border-ocean/30 bg-white z-10 relative">
+                <div class="h-2.5 w-2.5 rounded-full bg-ocean"></div>
+              </div>
+            </div>
+            <div class="flex-1 md:w-1/2 pb-4 md:hidden">
+              <span class="inline-block text-xs font-bold tracking-widest uppercase text-ocean mb-1">{v.year}</span>
+              <p class="text-base font-semibold text-gray-800">{v.title}</p>
+              <p class="mt-2 text-sm text-gray-500 leading-relaxed">{v.desc}</p>
+            </div>
+            <div class="hidden md:flex md:w-1/2 items-center">
+              <span class="text-xs font-bold tracking-widest uppercase text-ocean">{v.year}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
