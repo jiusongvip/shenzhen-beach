@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import BeachToolkit from "../components/BeachToolkit.astro";
 import beaches from "../data/beaches.json";
 
 interface Props {
@@ -55,7 +56,7 @@ const faqLd = {
 
 const schema = imageObj ? [jsonLd, imageObj, faqLd] : [jsonLd, faqLd];
 const pageTitle = `${b.name} Beach (${b.nameCN}) - Transport, Food & Tips | Shenzhen Beaches`;
-const pageDesc = `Complete guide to ${b.name} Beach (${b.nameCN}): how to get there, entrance fee, food & dining, nearby hotels, activities, and tips. Rated ${b.rating}/5. Updated August 2026.`;
+const pageDesc = `Honest guide to ${b.name} Beach (${b.nameCN}): is it worth it, who it's for, top rival beaches, a half/full-day plan, real costs, transport, food and tips. Rated ${b.rating}/5. Verified ${b.lastVerified || "2026"}.`;
 
 const absoluteOgImage = ogImage ? new URL(ogImage, Astro.site).href : undefined;
 
@@ -122,6 +123,45 @@ const halfStar = b.rating - fullStars >= 0.5;
       <div><span class="text-xs text-gray-400 uppercase block mb-1">Family Friendly</span><span class="text-sm font-semibold text-gray-800">{b.familyFriendly ? "Yes" : "Not ideal"}</span></div>
     </div>
 
+    {b.verdict && (
+      <section class="mb-12" aria-label="Should you visit">
+        <div class="rounded-xl border-l-4 border-accent bg-white border border-gray-200 border-l-accent p-5 md:p-6">
+          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-2">The verdict</p>
+          <p class="text-lg md:text-xl font-semibold text-gray-900 leading-snug">{b.verdict}</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4 mt-4">
+          <div class="rounded-xl border border-emerald-200 bg-emerald-50 p-5">
+            <p class="text-sm font-semibold text-emerald-800 mb-3">Perfect for</p>
+            <ul class="space-y-1.5">
+              {(b.perfectFor || []).map((p: string) => (
+                <li class="flex gap-2 text-sm text-emerald-900"><span class="text-emerald-600 shrink-0 mt-0.5">&#10003;</span> {p}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="rounded-xl border border-red-200 bg-red-50 p-5">
+            <p class="text-sm font-semibold text-red-800 mb-3">Not for</p>
+            <ul class="space-y-1.5">
+              {(b.notFor || []).map((p: string) => (
+                <li class="flex gap-2 text-sm text-red-900"><span class="text-red-500 shrink-0 mt-0.5">&#10007;</span> {p}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+    )}
+
+    {b.fieldNote && (
+      <section class="mb-12" aria-label="Editor field note">
+        <div class="rounded-xl border border-amber-200 bg-amber-50 p-5 flex gap-4">
+          <span class="text-2xl shrink-0" aria-hidden="true">&#127754;</span>
+          <div>
+            <p class="text-sm font-semibold text-amber-800 mb-1">Editor's field note {b.lastVerified ? `&middot; Verified ${b.lastVerified}` : ""}</p>
+            <p class="text-sm text-amber-900 leading-relaxed">{b.fieldNote}</p>
+          </div>
+        </div>
+      </section>
+    )}
+
     <section class="mb-12">
       <h2 class="text-2xl font-bold mb-4">Overview</h2>
       <div class="text-gray-600 leading-relaxed space-y-3">
@@ -130,6 +170,94 @@ const halfStar = b.rating - fullStars >= 0.5;
         ))}
       </div>
     </section>
+
+    {b.dayPlan && (
+      <section class="mb-12" aria-label="How to plan your day">
+        <h2 class="text-2xl font-bold mb-1">How to Plan Your Day</h2>
+        <p class="text-sm text-gray-500 mb-4">A concrete plan for {b.name}, based on our visits. Start {b.dayPlan.bestStart}</p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-xl border border-gray-200 bg-white p-5">
+            <p class="text-sm font-semibold text-ocean mb-3">Half-day plan (4-5 hours)</p>
+            <ol class="space-y-2.5">
+              {(b.dayPlan.halfDay || []).map((step: string, i: number) => (
+                <li class="flex gap-3 text-sm text-gray-700">
+                  <span class="shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-ocean/10 text-ocean text-xs font-bold mt-0.5">{i + 1}</span>
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <div class="rounded-xl border border-gray-200 bg-white p-5">
+            <p class="text-sm font-semibold text-ocean mb-3">Full-day plan (7+ hours)</p>
+            <ol class="space-y-2.5">
+              {(b.dayPlan.fullDay || []).map((step: string, i: number) => (
+                <li class="flex gap-3 text-sm text-gray-700">
+                  <span class="shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-accent/10 text-accent text-xs font-bold mt-0.5">{i + 1}</span>
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+        {(b.dayPlan.crowdAvoidance || b.dayPlan.budgetTip) && (
+          <div class="grid md:grid-cols-2 gap-4 mt-4">
+            {b.dayPlan.crowdAvoidance && (
+              <div class="rounded-xl border border-blue-200 bg-blue-50 p-4">
+                <p class="text-xs font-semibold text-blue-800 uppercase tracking-wider mb-1">Avoiding the crowds</p>
+                <p class="text-sm text-blue-900 leading-relaxed">{b.dayPlan.crowdAvoidance}</p>
+              </div>
+            )}
+            {b.dayPlan.budgetTip && (
+              <div class="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+                <p class="text-xs font-semibold text-emerald-800 uppercase tracking-wider mb-1">Money tip</p>
+                <p class="text-sm text-emerald-900 leading-relaxed">{b.dayPlan.budgetTip}</p>
+              </div>
+            )}
+          </div>
+        )}
+      </section>
+    )}
+
+    <BeachToolkit beach={b} />
+
+    {b.comparable?.length > 0 && (
+      <section class="mb-12" aria-label="How this beach compares">
+        <h2 class="text-2xl font-bold mb-1">How {b.name} Compares to Its Rivals</h2>
+        <p class="text-sm text-gray-500 mb-4">The beaches visitors most often weigh against {b.name} — and which one to pick in each situation.</p>
+        <div class="space-y-4">
+          {b.comparable.map((c: {id: string; why: string; chooseThisWhen: string; chooseOtherWhen: string}) => {
+            const other = beaches.find(x => x.id === c.id);
+            if (!other) return null;
+            return (
+              <div class="rounded-xl border border-gray-200 bg-white p-5">
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                  <span class="font-semibold text-gray-900">{b.name}</span>
+                  <span class="text-xs text-gray-400">vs</span>
+                  <a href={`/beaches/${other.slug}`} class="font-semibold text-ocean hover:underline">{other.name} <span class="text-xs font-normal text-gray-400">({other.nameCN})</span></a>
+                  <span class="text-xs text-gray-400 ml-auto">&#9733; {b.rating} vs &#9733; {other.rating}</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-3">{c.why}</p>
+                <div class="grid md:grid-cols-2 gap-3 text-sm">
+                  <div class="rounded-lg bg-ocean/5 border border-ocean/20 p-3">
+                    <p class="text-xs font-semibold text-ocean mb-1">Choose {b.name} when</p>
+                    <p class="text-gray-700">{c.chooseThisWhen}</p>
+                  </div>
+                  <div class="rounded-lg bg-gray-50 border border-gray-200 p-3">
+                    <p class="text-xs font-semibold text-gray-600 mb-1">Choose {other.name} when</p>
+                    <p class="text-gray-700">{c.chooseOtherWhen}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <a href="/#compare" class="inline-flex items-center gap-1 mt-4 text-sm text-ocean hover:underline">
+          Compare all 10 beaches at a glance
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </section>
+    )}
+
 
     <section class="mb-12">
       <h2 class="text-2xl font-bold mb-4">How to Get to {b.name} Beach</h2>

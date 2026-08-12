@@ -1,0 +1,225 @@
+---
+interface Props {
+  beach: any;
+}
+const { beach: b } = Astro.props;
+const uid = "beach_" + b.id;
+
+const taxiOptions = [
+  ["Futian", b.transport?.taxiFromFutian],
+  ["Luohu", b.transport?.taxiFromLuohu],
+  ["Nanshan", b.transport?.taxiFromNanshan],
+].filter(([, v]) => v) as [string, string][];
+
+const parkingText = (b.transport?.parking || "").toString();
+const metroText = (b.transport?.metro || "").toString();
+const busText = (b.transport?.bus || "").toString();
+---
+
+<section id="b-tools" class="mb-12" data-beach-id={b.id} data-beach={JSON.stringify({
+  id: b.id,
+  entryFee: b.feeNum || 0,
+  taxi: taxiOptions.map(([zone, t]) => [zone, t]),
+  parking: parkingText,
+  hasMetro: !!metroText,
+  bus: busText,
+  accommodation: b.accommodation?.priceRange || "",
+  food: b.food?.priceRange || "",
+  mealBudget: { cheap: 50, mid: 150, splurge: 300 },
+})}>
+  <h2 class="text-2xl font-bold mb-1">Plan Your Trip to {b.name}</h2>
+  <p class="text-sm text-gray-500 mb-6">Two quick tools built from our verified data — pack right and know what it'll cost before you go.</p>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-white border border-gray-200 rounded-xl p-5">
+      <h3 class="font-semibold text-ocean mb-1">Packing Checklist</h3>
+      <p class="text-xs text-gray-500 mb-3">Tick as you pack — your progress is saved in this browser.</p>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="flex-1 h-2 rounded-full bg-gray-100 overflow-hidden">
+          <div data-checklist-progress class="h-2 rounded-full bg-accent transition-all" style="width:0%"></div>
+        </div>
+        <span data-checklist-count class="text-xs font-medium text-gray-600">0/{b.clothing?.essentials?.length || 0}</span>
+      </div>
+      <ul class="space-y-2 max-h-72 overflow-y-auto pr-1">
+        {(b.clothing?.essentials || []).map((item: string, i: number) => (
+          <li>
+            <label class="flex items-start gap-2 text-sm text-gray-700 cursor-pointer select-none">
+              <input data-checklist type="checkbox" data-idx={i} class="mt-0.5 accent-accent" />
+              <span>{item.replace(/^Everything\. Seriously\.\s*/, "")}</span>
+            </label>
+          </li>
+        ))}
+      </ul>
+      <button data-checklist-reset type="button" class="mt-4 text-xs text-gray-400 hover:text-accent underline-offset-2 hover:underline">Reset checklist</button>
+    </div>
+
+    <div class="bg-white border border-gray-200 rounded-xl p-5">
+      <h3 class="font-semibold text-ocean mb-1">Day-Cost Estimator</h3>
+      <p class="text-xs text-gray-500 mb-3">Approximate total per person for one day.</p>
+
+      <div class="space-y-3 text-sm">
+        <div class="flex items-center justify-between gap-3">
+          <label class="text-gray-600 shrink-0" for={`${uid}-ppl`}>People</label>
+          <select data-cost-ppl id={`${uid}-ppl`} class="border border-gray-200 rounded-lg px-2 py-1 text-sm bg-white">
+            <option value="1">Just me</option>
+            <option value="2" selected>2 people</option>
+            <option value="3">3 people</option>
+            <option value="4">4 people</option>
+          </select>
+        </div>
+
+        <div class="flex items-center justify-between gap-3">
+          <label class="text-gray-600 shrink-0" for={`${uid}-mode`}>Getting there</label>
+          <select data-cost-mode id={`${uid}-mode`} class="border border-gray-200 rounded-lg px-2 py-1 text-sm bg-white">
+            <option value="transit">Public transit</option>
+            {taxiOptions.length > 0 && <option value="taxi">Taxi (round trip)</option>}
+            <option value="drive">Drive + parking</option>
+          </select>
+        </div>
+
+        {taxiOptions.length > 0 && (
+          <div class="flex items-center justify-between gap-3">
+            <label class="text-gray-600 shrink-0" for={`${uid}-zone`}>From</label>
+            <select data-cost-zone id={`${uid}-zone`} class="border border-gray-200 rounded-lg px-2 py-1 text-sm bg-white">
+              {taxiOptions.map(([zone]) => (
+                <option value={zone}>{zone}</option>
+              ))}
+            </select>
+          </div>
+        )}
+
+        <div class="flex items-center justify-between gap-3">
+          <label class="text-gray-600 shrink-0" for={`${uid}-eat`}>Food budget</label>
+          <select data-cost-eat id={`${uid}-eat`} class="border border-gray-200 rounded-lg px-2 py-1 text-sm bg-white">
+            <option value="cheap">Budget (~50 RMB)</option>
+            <option value="mid" selected>Standard (~150 RMB)</option>
+            <option value="splurge">Splurge (~300 RMB)</option>
+          </select>
+        </div>
+
+        <div class="flex items-center justify-between gap-3">
+          <label class="text-gray-600 shrink-0" for={`${uid}-stay`}>Overnight</label>
+          <select data-cost-stay id={`${uid}-stay`} class="border border-gray-200 rounded-lg px-2 py-1 text-sm bg-white">
+            <option value="none" selected>No</option>
+            <option value="budget">Budget room</option>
+            <option value="resort">Resort / nicer room</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mt-5 p-4 rounded-xl bg-ocean/5 border border-ocean/20">
+        <div class="text-xs text-gray-500 mb-1">Estimated cost per person</div>
+        <div data-cost-total class="text-2xl font-bold text-gray-900">—</div>
+        <div data-cost-breakdown class="text-xs text-gray-500 mt-1 leading-relaxed"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    const root = document.getElementById("b-tools");
+    if (!root) return;
+    const dataAttr = root.dataset.beach;
+    if (!dataAttr) return;
+    const b = JSON.parse(dataAttr);
+
+    const num = (s: string | undefined): number => {
+      if (!s) return 0;
+      const m = String(s).match(/(\d+(?:\.\d+)?)/);
+      return m ? parseFloat(m[0]) : 0;
+    };
+    const rangeMin = (s: string | undefined): number => {
+      if (!s) return 0;
+      const m = String(s).match(/:\s*(\d+(?:\.\d+)?)/);
+      return m ? parseFloat(m[1]) : 0;
+    };
+
+    const taxiCost = (): { cost: number; label: string } => {
+      const zoneSel = root.querySelector<HTMLSelectElement>("[data-cost-zone]");
+      const zone = zoneSel?.value || b.taxi?.[0]?.[0] || "";
+      const t = (b.taxi || []).find((x: unknown[]) => x[0] === zone);
+      const c = num((t as string[]) ? (t as string[])[1] : "");
+      return { cost: c * 2, label: `Taxi ${zone} round trip: ~${c * 2} RMB` };
+    };
+    const transitCost = (): { cost: number; label: string } => {
+      if (b.hasMetro) return { cost: 14, label: "Metro round trip: ~14 RMB" };
+      const c = num(b.bus);
+      const base = c > 0 && c <= 30 ? c : 12;
+      return { cost: base * 2 + 10, label: `Bus transfers round trip: ~${base * 2 + 10} RMB` };
+    };
+    const driveCost = (): { cost: number; label: string } => {
+      const p = b.parking ? num(b.parking) : 25;
+      return { cost: p + 60, label: `Parking ~${p} RMB + fuel ~60 RMB` };
+    };
+
+    const eatCostBase = (mode: string): number => b.mealBudget[mode] || 150;
+
+    const fmt = (n: number) => (n >= 10000 ? Math.round(n / 1000) + "k" : Math.round(n).toLocaleString());
+
+    const update = () => {
+      const pplSel = root.querySelector<HTMLSelectElement>("[data-cost-ppl]");
+      const modeSel = root.querySelector<HTMLSelectElement>("[data-cost-mode]");
+      const eatSel = root.querySelector<HTMLSelectElement>("[data-cost-eat]");
+      const staySel = root.querySelector<HTMLSelectElement>("[data-cost-stay]");
+      const ppl = parseInt(pplSel?.value || "1", 10);
+      const mode = modeSel?.value || "transit";
+      const eat = eatSel?.value || "mid";
+      const stayMode = staySel?.value || "none";
+
+      const transport = mode === "taxi" ? taxiCost() : mode === "drive" ? driveCost() : transitCost();
+      const eatCost = eatCostBase(eat);
+      const stayCost = stayMode === "none" ? { cost: 0, label: "" } : stayCostFor(stayMode);
+      const entrySum = b.entryFee * ppl;
+      const perPerson = transport.cost / ppl + eatCost + stayCost.cost + b.entryFee;
+      const total = transport.cost + eatCost * ppl + stayCost.cost + entrySum;
+
+      const parts = [];
+      parts.push(entrySum > 0 ? `Entry: ${b.entryFee} RMB × ${ppl}` : "Entry: free");
+      parts.push(transport.label);
+      parts.push(`Food: ~${eatCost} RMB × ${ppl}`);
+      if (stayCost.label) parts.push(stayCost.label);
+
+      const totalEl = root.querySelector("[data-cost-total]");
+      const bdEl = root.querySelector("[data-cost-breakdown]");
+      if (totalEl) totalEl.textContent = "≈ " + fmt(total) + " RMB total" + (ppl > 1 ? " · " + fmt(perPerson) + " / person" : "");
+      if (bdEl) bdEl.textContent = parts.join(" · ");
+    };
+
+    const stayCostFor = (mode: string): { cost: number; label: string } => {
+      if (mode === "budget") return { cost: rangeMin(b.accommodation) || 150, label: `Budget room ~${rangeMin(b.accommodation) || 150} RMB` };
+      if (mode === "resort") {
+        const m = b.accommodation.match(/Resort[^.]*?(\d+)/);
+        const c = m ? parseFloat(m[1]) : 800;
+        return { cost: c, label: `Resort ~${c} RMB/night` };
+      }
+      return { cost: 0, label: "" };
+    };
+
+    const boxes = Array.from(root.querySelectorAll<HTMLInputElement>("[data-checklist]"));
+    const progressEl = root.querySelector("[data-checklist-progress]") as HTMLElement;
+    const countEl = root.querySelector("[data-checklist-count]");
+    const resetBtn = root.querySelector<HTMLButtonElement>("[data-checklist-reset]");
+    const storageKey = "sb-pack-" + b.id;
+
+    const renderPack = () => {
+      const done = boxes.filter(x => x.checked).length;
+      if (progressEl) progressEl.style.width = boxes.length ? ((done / boxes.length) * 100).toFixed(0) + "%" : "0%";
+      if (countEl) countEl.textContent = `${done}/${boxes.length}`;
+      try { localStorage.setItem(storageKey, boxes.map(x => (x.checked ? "1" : "0")).join("")); } catch {}
+    };
+
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (saved && saved.length === boxes.length) boxes.forEach((x, i) => (x.checked = saved[i] === "1"));
+    } catch {}
+
+    renderPack();
+    boxes.forEach(x => x.addEventListener("change", renderPack));
+    resetBtn?.addEventListener("click", () => { boxes.forEach(x => (x.checked = false)); renderPack(); });
+
+    root.querySelectorAll<HTMLSelectElement>("[data-cost-ppl],[data-cost-mode],[data-cost-zone],[data-cost-eat],[data-cost-stay]")
+      .forEach(s => s.addEventListener("change", update));
+    update();
+  })();
+</script>

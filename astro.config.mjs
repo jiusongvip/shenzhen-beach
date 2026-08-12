@@ -23,7 +23,7 @@ export default defineConfig({
   site: "https://shenzhen-beach.com",
   trailingSlash: "never",
   integrations: [sitemap({
-    lastmod: new Date("2026-08-10"),
+    lastmod: new Date("2026-08-12"),
     serialize(item) {
       const site = "https://shenzhen-beach.com";
       let img = "";
