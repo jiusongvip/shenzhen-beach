@@ -20,12 +20,12 @@ const beachImages = {
 // Legacy SEO URLs 301-redirect to the matching #section on the homepage,
 // consolidating ranking authority into one page.
 export default defineConfig({
-  site: "https://shenzhen-beach.com",
-  trailingSlash: "never",
+  site: "https://www.shenzhen-beach.com",
+  trailingSlash: "always",
   integrations: [sitemap({
     lastmod: new Date("2026-08-12"),
     serialize(item) {
-      const site = "https://shenzhen-beach.com";
+      const site = "https://www.shenzhen-beach.com";
       let img = "";
       if (item.url === site) {
         img = site + "/images/hero-xichong.webp";

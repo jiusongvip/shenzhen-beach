@@ -8,7 +8,9 @@ const baseName = "Shenzhen Beaches";
 const fullTitle = title.includes("Shenzhen") ? title : `${title} | ${baseName}`;
 
 // Canonical URL
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href.replace(/\/$/, "");
+const canonicalUrl = Astro.url.pathname === "/"
+  ? new URL("/", Astro.site).href.replace(/\/$/, "")
+  : new URL(Astro.url.pathname, Astro.site).href;
 
 // Default structured data for homepage
 const isHome = Astro.url.pathname === "/" || Astro.url.pathname === "";
