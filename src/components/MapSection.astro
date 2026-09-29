@@ -4,22 +4,37 @@
   <div class="max-w-7xl mx-auto px-4">
     <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-2">Interactive Map</h2>
     <p class="text-gray-600 mb-8">Color-coded by crowd level. Click a marker to jump to the beach guide.</p>
-    <div id="leaflet-map" class="w-full h-[500px] rounded-xl border border-gray-200 overflow-hidden z-0"></div>
+    <div id="leaflet-map" class="relative w-full h-[500px] rounded-xl border border-gray-200 overflow-hidden z-0">
+      <div id="map-fallback" class="absolute inset-0 flex items-center justify-center text-sm text-gray-600 bg-gray-50">All 10 beaches are listed in the comparison table above.</div>
+    </div>
   </div>
 </section>
 <script>
   (function initMap() {
     const mapEl = document.getElementById("leaflet-map");
     if (!mapEl) return;
-    if (typeof L === "undefined") {
-      const s = document.createElement("script");
-      s.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
-      s.onload = startMap;
-      document.head.appendChild(s);
+    function boot() {
+      if (typeof L === "undefined") {
+        const s = document.createElement("script");
+        s.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+        s.onload = startMap;
+        document.head.appendChild(s);
+      } else {
+        startMap();
+      }
+    }
+    // Tiles, markers and Leaflet itself are only worth their bytes once the
+    // reader is about to see the map, not on first paint.
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries, obs) => {
+        if (entries.some(e => e.isIntersecting)) { obs.disconnect(); boot(); }
+      }, { rootMargin: "400px 0px" });
+      io.observe(mapEl);
     } else {
-      startMap();
+      boot();
     }
     function startMap() {
+      document.getElementById("map-fallback")?.remove();
       const map = L.map("leaflet-map").setView([22.55, 114.4], 11);
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "&copy; OpenStreetMap"
