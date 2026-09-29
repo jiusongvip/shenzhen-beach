@@ -110,7 +110,6 @@ const effectiveOgImage = ogImage || defaultOgImage;
     <link rel="alternate" hreflang="en" href={canonicalUrl} />
     <link rel="alternate" type="application/rss+xml" title="Shenzhen Beaches Guide" href="/rss.xml" />
   {!noindex && <link rel="canonical" href={canonicalUrl} />}
-  <link rel="preload" href="/fonts/geist-latin-subset.woff2" as="font" type="font/woff2" crossorigin />
   <script type="application/ld+json" set:html={JSON.stringify({"@graph": allJsonLd})}></script>
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
