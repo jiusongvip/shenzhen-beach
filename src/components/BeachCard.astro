@@ -29,13 +29,13 @@ const beachImages: Record<string, string> = {
       {beaches.map(b => (
         <a
           id={`card-${b.id}`}
-          href={`/beaches/${b.slug}`}
+          href={`/beaches/${b.slug}/`}
           class="group block border border-gray-200 rounded-xl overflow-hidden bg-white transition-all duration-200 hover:border-accent/40 hover:shadow-lg hover:-translate-y-0.5"
         >
           <!-- Beach Photo -->
           {beachImages[b.id] ? (
             <div class="aspect-[16/10] overflow-hidden bg-gray-100">
-              <img src={beachImages[b.id]} srcset={`${beachImages[b.id].replace('.webp', '-400w.webp')} 400w, ${beachImages[b.id].replace('.webp', '-800w.webp')} 800w, ${beachImages[b.id]} 1200w`} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" alt={`${b.name} Beach (${b.nameCN})`} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="600" height="375" loading="lazy" decoding="async" />
+              <img src={beachImages[b.id]} srcset={`${beachImages[b.id].replace('.webp', '-400w.webp')} 400w, ${beachImages[b.id]} 800w`} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" alt={`${b.name} Beach (${b.nameCN})`} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="800" height="534" loading="lazy" decoding="async" />
             </div>
           ) : (
             <div class={`aspect-[16/10] flex items-center justify-center ${b.id === "shuitousha" ? "bg-gradient-to-br from-ocean/20 to-ocean/5" : "bg-gradient-to-br from-sand-dark/50 to-sand/30"}`}>

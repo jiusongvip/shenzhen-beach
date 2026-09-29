@@ -56,7 +56,7 @@ const itineraries = [
           </div>
           <div class="grid sm:grid-cols-2 gap-4">
             {itin.beaches.map((b) => (
-              <a href={`/beaches/${b.slug}`} class="group block rounded-xl border border-gray-100 bg-stone-50 p-5 hover:border-ocean/30 hover:shadow-sm transition-all no-underline">
+              <a href={`/beaches/${b.slug}/`} class="group block rounded-xl border border-gray-100 bg-stone-50 p-5 hover:border-ocean/30 hover:shadow-sm transition-all no-underline">
                 <div class="flex items-center justify-between mb-2">
                   <span class="font-semibold text-gray-800 group-hover:text-ocean transition-colors">{b.name}</span>
                   <span class="text-xs font-medium text-gray-400">{b.time}</span>

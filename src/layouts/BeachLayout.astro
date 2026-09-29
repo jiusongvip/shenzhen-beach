@@ -27,7 +27,7 @@ const jsonLd = {
   "@context": "https://schema.org", "@type": "TouristAttraction",
   "name": `${b.name} Beach`, "alternateName": b.nameCN,
   "description": b.longDescription || b.description,
-  "url": new URL(`/beaches/${b.slug}`, Astro.site).href,
+  "url": new URL(`/beaches/${b.slug}/`, Astro.site).href,
   "publicAccess": true, "isAccessibleForFree": b.feeNum === 0,
   "touristType": b.bestFor,
   "geo": { "@type": "GeoCoordinates", "latitude": b.location[0], "longitude": b.location[1] },
@@ -55,8 +55,21 @@ const faqLd = {
 };
 
 const schema = imageObj ? [jsonLd, imageObj, faqLd] : [jsonLd, faqLd];
-const pageTitle = `${b.name} Beach (${b.nameCN}) - Transport, Food & Tips | Shenzhen Beaches`;
-const pageDesc = `Honest guide to ${b.name} Beach (${b.nameCN}): is it worth it, who it's for, top rival beaches, a half/full-day plan, real costs, transport, food and tips. Rated ${b.rating}/5. Verified ${b.lastVerified || "2026"}.`;
+const pageTitle = `${b.name} Beach (${b.nameCN}) - Transport, Tips | Shenzhen`;
+
+// Pack whole sentences of the beach's own summary into the SERP-safe window.
+function packSentences(text: string, budget: number) {
+  let out = "";
+  for (const part of text.split(/(?<=\.)\s+/)) {
+    const candidate = out ? `${out} ${part}` : part;
+    if (candidate.length > budget) break;
+    out = candidate;
+  }
+  return out || text.split(/(?<=\.)\s+/)[0];
+}
+const descTail = " Metro, fees and verdict.";
+const descLead = `${b.name} Beach (${b.nameCN}) — `;
+const pageDesc = `${descLead}${packSentences(b.description, 158 - descLead.length - descTail.length)}${descTail}`;
 
 const absoluteOgImage = ogImage ? new URL(ogImage, Astro.site).href : undefined;
 
@@ -96,7 +109,7 @@ const halfStar = b.rating - fullStars >= 0.5;
     <div class="mb-10">
       {beachImage && (
         <div class="aspect-[21/9] rounded-xl overflow-hidden mb-6 bg-gray-100 shadow-md">
-          <img src={beachImage} srcset={`${beachImage.replace('.webp', '-400w.webp')} 400w, ${beachImage.replace('.webp', '-800w.webp')} 800w, ${beachImage} 1200w`} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 768px" alt={`${b.name} Beach (${b.nameCN})`} class="w-full h-full object-cover" width="1200" height="514" loading="eager" decoding="async" />
+          <img src={beachImage} srcset={`${beachImage.replace('.webp', '-400w.webp')} 400w, ${beachImage} 800w`} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 768px" alt={`${b.name} Beach (${b.nameCN})`} class="w-full h-full object-cover" width="800" height="534" loading="eager" decoding="async" />
         </div>
       )}
       <div class="flex flex-wrap items-baseline gap-3">
@@ -233,7 +246,7 @@ const halfStar = b.rating - fullStars >= 0.5;
                 <div class="flex flex-wrap items-center gap-2 mb-3">
                   <span class="font-semibold text-gray-900">{b.name}</span>
                   <span class="text-xs text-gray-400">vs</span>
-                  <a href={`/beaches/${other.slug}`} class="font-semibold text-ocean hover:underline">{other.name} <span class="text-xs font-normal text-gray-400">({other.nameCN})</span></a>
+                  <a href={`/beaches/${other.slug}/`} class="font-semibold text-ocean underline underline-offset-2">{other.name} <span class="text-xs font-normal text-gray-400">({other.nameCN})</span></a>
                   <span class="text-xs text-gray-400 ml-auto">&#9733; {b.rating} vs &#9733; {other.rating}</span>
                 </div>
                 <p class="text-sm text-gray-600 mb-3">{c.why}</p>
@@ -437,7 +450,7 @@ const halfStar = b.rating - fullStars >= 0.5;
           <h2 class="text-2xl font-bold mb-4">You Might Also Like</h2>
       <div class="grid sm:grid-cols-3 gap-4">
         {beaches.filter(x => x.id !== b.id).slice(0, 3).map((other: any) => (
-          <a href={`/beaches/${other.slug}`} class="block bg-white border border-gray-200 rounded-xl p-4 hover:border-accent hover:shadow-sm transition-all no-underline">
+          <a href={`/beaches/${other.slug}/`} class="block bg-white border border-gray-200 rounded-xl p-4 hover:border-accent hover:shadow-sm transition-all no-underline">
             <span class="font-semibold text-gray-800">{other.name}</span>
             <span class="text-xs text-gray-400 ml-1">{other.nameCN}</span>
             <p class="text-xs text-gray-500 mt-1">{other.bestFor?.slice(0,2).join(", ")}</p>

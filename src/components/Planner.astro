@@ -110,7 +110,7 @@ const questions = [
             document.getElementById("planner-result")!.style.display = "";
             document.getElementById("planner-beach-name")!.textContent = rec.beach;
             document.getElementById("planner-reason")!.textContent = rec.reason;
-            (document.getElementById("planner-link") as HTMLAnchorElement).href = "/beaches/" + rec.slug;
+            (document.getElementById("planner-link") as HTMLAnchorElement).href = "/beaches/" + rec.slug + "/";
           }
         }, 300);
       });

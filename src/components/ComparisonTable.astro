@@ -7,14 +7,15 @@ import beaches from "../data/beaches.json";
     <p class="text-gray-600 mb-8">Sort and filter. Click any row to jump to details below.</p>
     <div class="overflow-x-auto bg-white rounded-xl border border-gray-200 shadow-sm">
       <table class="w-full text-sm">
+        <caption class="sr-only">Comparison of all 10 Shenzhen beaches: name, distance from the city centre, entry fee, best for, rating, and crowd level.</caption>
         <thead>
           <tr class="border-b border-gray-200 bg-gray-50 text-left">
-            <th class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent" data-sort="name">Beach <span class="sort-arrow text-xs ml-0.5"></span></th>
-            <th class="px-4 py-3 font-semibold hidden md:table-cell cursor-pointer select-none hover:text-accent" data-sort="distance">Distance <span class="sort-arrow text-xs ml-0.5"></span></th>
-            <th class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent" data-sort="fee">Fee <span class="sort-arrow text-xs ml-0.5"></span></th>
-            <th class="px-4 py-3 font-semibold hidden lg:table-cell">Best For</th>
-            <th class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent" data-sort="rating">Rating <span class="sort-arrow text-xs ml-0.5"></span></th>
-            <th class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent" data-sort="crowd">Crowds <span class="sort-arrow text-xs ml-0.5"></span></th>
+            <th scope="col" class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent" data-sort="name">Beach <span class="sort-arrow text-xs ml-0.5"></span></th>
+            <th scope="col" class="px-4 py-3 font-semibold hidden md:table-cell cursor-pointer select-none hover:text-accent" data-sort="distance">Distance <span class="sort-arrow text-xs ml-0.5"></span></th>
+            <th scope="col" class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent" data-sort="fee">Fee <span class="sort-arrow text-xs ml-0.5"></span></th>
+            <th scope="col" class="px-4 py-3 font-semibold hidden lg:table-cell">Best For</th>
+            <th scope="col" class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent" data-sort="rating">Rating <span class="sort-arrow text-xs ml-0.5"></span></th>
+            <th scope="col" class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent" data-sort="crowd">Crowds <span class="sort-arrow text-xs ml-0.5"></span></th>
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-100">
@@ -52,7 +53,7 @@ import beaches from "../data/beaches.json";
 
     headers.forEach(th => {
       th.addEventListener("click", function() {
-        const col = th.dataset.sort!;
+        const col = th.dataset.sort;
         sortDir[col] = !sortDir[col];
         const asc = sortDir[col];
         const rows = Array.from(tbody.querySelectorAll("tr"));

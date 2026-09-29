@@ -9,9 +9,9 @@ const activityLinks = [
 ];
 
 const quickPicks = [
-  { label: "Easiest", beach: "Dameisha", slug: "dameisha", img: "/images/dameisha.webp", desc: "Metro Line 8, free entry, great for first-timers and families" },
-  { label: "Best Overall", beach: "Xichong", slug: "xichong", img: "/images/hero-xichong.webp", desc: "Longest beach, best surf, cleanest water — the real gem" },
-  { label: "Quiet Escape", beach: "Judiaosha", slug: "judiaosha", img: "/images/judiaosha.webp", desc: "Crescent bay, white sand, almost empty even on weekends" },
+  { label: "Easiest", beach: "Dameisha", slug: "dameisha", img: "/images/dameisha-400w.webp", desc: "Metro Line 8, free entry, great for first-timers and families" },
+  { label: "Best Overall", beach: "Xichong", slug: "xichong", img: "/images/hero-xichong-400w.webp", desc: "Longest beach, best surf, cleanest water — the real gem" },
+  { label: "Quiet Escape", beach: "Judiaosha", slug: "judiaosha", img: "/images/judiaosha-400w.webp", desc: "Crescent bay, white sand, almost empty even on weekends" },
 ];
 ---
 <section class="relative min-h-[100dvh] flex items-end pb-0">
@@ -19,7 +19,7 @@ const quickPicks = [
   <div class="absolute inset-0 z-0">
     <img
       src="/images/hero-xichong.webp"
-      srcset="/images/hero-xichong-400w.webp 400w, /images/hero-xichong-800w.webp 800w, /images/hero-xichong.webp 1920w"
+      srcset="/images/hero-xichong-400w.webp 400w, /images/hero-xichong-800w.webp 800w, /images/hero-xichong-1200w.webp 1200w, /images/hero-xichong.webp 1920w"
       sizes="100vw"
       alt="Xichong Beach Shenzhen — golden sand stretching along the coastline with green hills and blue ocean"
       class="w-full h-full object-cover"
@@ -45,8 +45,8 @@ const quickPicks = [
         <div class="flex flex-wrap gap-2.5 mb-8">
           {activityLinks.map(a => (
             a.hash
-              ? <a href="#beaches" class="px-4 py-2.5 rounded-full bg-accent text-white text-sm font-medium hover:bg-accent-dark transition-colors no-underline shadow-lg">Show all 10 beaches</a>
-              : <a href={`/beaches/${a.slug}`} class="px-4 py-2.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-white text-sm font-medium hover:bg-white/25 transition-colors no-underline">{a.label}</a>
+              ? <a href="#beaches" class="px-4 py-2.5 rounded-full bg-accent-deep text-white text-sm font-medium hover:bg-accent-dark transition-colors no-underline shadow-lg">Show all 10 beaches</a>
+              : <a href={`/beaches/${a.slug}/`} class="px-4 py-2.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-white text-sm font-medium hover:bg-white/25 transition-colors no-underline">{a.label}</a>
           ))}
         </div>
       </div>
@@ -54,7 +54,7 @@ const quickPicks = [
       <!-- Quick Answer Strip -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
         {quickPicks.map(q => (
-          <a href={`/beaches/${q.slug}`} class="group relative overflow-hidden rounded-xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 no-underline block">
+          <a href={`/beaches/${q.slug}/`} class="group relative overflow-hidden rounded-xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 no-underline block">
             <div class="flex items-center gap-4 p-3.5">
               <div class="w-16 h-16 sm:w-14 sm:h-14 rounded-lg overflow-hidden flex-shrink-0">
                 <img src={q.img} alt={`${q.beach} Beach`} class="w-full h-full object-cover" width="80" height="80" loading="lazy" />

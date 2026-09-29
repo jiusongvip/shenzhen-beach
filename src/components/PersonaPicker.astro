@@ -32,7 +32,7 @@ const personas = [
     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
       {personas.map(p => (
         <a
-          href={`/beaches/${p.slug}`}
+          href={`/beaches/${p.slug}/`}
           class="text-left p-4 rounded-xl border border-gray-200 bg-white hover:border-accent hover:shadow-sm transition-all group block"
         >
           <div class="text-xs font-semibold text-accent mb-1">{p.label}</div>

@@ -20,7 +20,7 @@ import beaches from "../data/beaches.json";
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
           {beaches.map(b => (
             <a
-              href={`/beaches/${b.slug}`}
+              href={`/beaches/${b.slug}/`}
               class="text-left p-3 bg-sand rounded-lg border border-gray-200 hover:border-accent hover:bg-white transition-colors text-sm block"
             >
               <div class="text-lg font-semibold text-gray-900">{b.nameCN}</div>

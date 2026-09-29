@@ -27,16 +27,19 @@
       fetch("/beaches.json").then(r => r.json()).then(beaches => {
         const colors = { busy: "#e0683a", moderate: "#e8a040", quiet: "#1a5f7a" };
         beaches.forEach(b => {
+          const name = b.name + " Beach (" + b.nameCN + ")";
           const marker = L.marker(b.location, {
+            title: name,
+            alt: name,
             icon: L.divIcon({
               className: "custom-marker",
-              html: "<div style=\"width:14px;height:14px;border-radius:50%;background:" + colors[b.crowdLevel] + ";border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.3)\"></div>",
-              iconSize: [14,14], iconAnchor: [7,7]
+              html: "<div style=\"width:16px;height:16px;border-radius:50%;background:" + colors[b.crowdLevel] + ";border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.3);margin:16px auto\"></div>",
+              iconSize: [48,48], iconAnchor: [24,24]
             })
           }).addTo(map);
-          marker.bindPopup("<strong>" + b.name + " (" + b.nameCN + ")</strong><br/><span class=\"text-sm text-gray-500\">" + b.crowdLabel + "</span><br/><a href=\"/beaches/" + b.slug + "\" class=\"inline-block mt-1 text-xs font-medium text-white rounded hover:opacity-90 transition-opacity\" style=\"background:#e0683a;padding:3px 10px;border-radius:4px;text-decoration:none;margin-top:4px;display:inline-block;\">View full guide &rarr;</a>");
+          marker.bindPopup("<strong>" + name + "</strong><br/><span class=\"text-sm text-gray-500\">" + b.crowdLabel + "</span><br/><a href=\"/beaches/" + b.slug + "/\" class=\"inline-block mt-1 text-xs font-medium text-white rounded hover:opacity-90 transition-opacity\" style=\"background:#e0683a;padding:3px 10px;border-radius:4px;text-decoration:none;margin-top:4px;display:inline-block;\">View full guide &rarr;</a>");
           marker.on("click", function() {
-            window.location.href = "/beaches/" + b.slug;
+            window.location.href = "/beaches/" + b.slug + "/";
           });
         });
       }).catch(function() { console.warn("Failed to load beaches.json"); });

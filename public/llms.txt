@@ -13,13 +13,13 @@
   - #faq — 8 frequently asked questions with inline links to relevant sections
 
 ## Beach Detail Pages
-- [Dameisha Beach (大梅沙)](https://www.shenzhen-beach.com/beaches/dameisha): Free public beach, Metro Line 8 access, best for families and first-timers.
-- [Xichong Beach (西涌)](https://www.shenzhen-beach.com/beaches/xichong): Longest beach, best surf in the region, cleanest water. 30 RMB entry.
-- [Xiaomeisha Beach (小梅沙)](https://www.shenzhen-beach.com/beaches/xiaomeisha): Resort beach with paid entry, upscale facilities, family-friendly.
-- [Dongchong Beach (东涌)](https://www.shenzhen-beach.com/beaches/dongchong): Quiet beach with hiking trail to Xichong, surfable waves. 20 RMB entry.
-- [Yangmeikeng Beach (杨梅坑)](https://www.shenzhen-beach.com/beaches/yangmeikeng): Scenic cycling path, photography hotspot, free entry.
-- [Jinshawan Beach (金沙湾)](https://www.shenzhen-beach.com/beaches/jinshawan): Luxury resort beach, quiet, free entry.
-- [Judiaosha Beach (桔钓沙)](https://www.shenzhen-beach.com/beaches/judiaosha): Crescent bay, white sand, romantic escape, free entry.
-- [Nanao Beach (南澳沙滩)](https://www.shenzhen-beach.com/beaches/nanao): Local fishing town atmosphere, seafood focus, free entry.
-- [Shuitousha Beach (水头沙)](https://www.shenzhen-beach.com/beaches/shuitousha): Small secluded beach, peaceful atmosphere, free entry.
-- [Shangdong Beach (上洞)](https://www.shenzhen-beach.com/beaches/shangdong): Off-path local beach, undeveloped and quiet, free entry.
+- [Dameisha Beach (大梅沙)](https://www.shenzhen-beach.com/beaches/dameisha/): Free public beach, Metro Line 8 access, best for families and first-timers.
+- [Xichong Beach (西涌)](https://www.shenzhen-beach.com/beaches/xichong/): Longest beach, best surf in the region, cleanest water. 30 RMB entry.
+- [Xiaomeisha Beach (小梅沙)](https://www.shenzhen-beach.com/beaches/xiaomeisha/): Resort beach with paid entry, upscale facilities, family-friendly.
+- [Dongchong Beach (东涌)](https://www.shenzhen-beach.com/beaches/dongchong/): Quiet beach with hiking trail to Xichong, surfable waves. 20 RMB entry.
+- [Yangmeikeng Beach (杨梅坑)](https://www.shenzhen-beach.com/beaches/yangmeikeng/): Scenic cycling path, photography hotspot, free entry.
+- [Jinshawan Beach (金沙湾)](https://www.shenzhen-beach.com/beaches/jinshawan/): Luxury resort beach, quiet, free entry.
+- [Judiaosha Beach (桔钓沙)](https://www.shenzhen-beach.com/beaches/judiaosha/): Crescent bay, white sand, romantic escape, free entry.
+- [Nanao Beach (南澳沙滩)](https://www.shenzhen-beach.com/beaches/nanao/): Local fishing town atmosphere, seafood focus, free entry.
+- [Shuitousha Beach (水头沙)](https://www.shenzhen-beach.com/beaches/shuitousha/): Small secluded beach, peaceful atmosphere, free entry.
+- [Shangdong Beach (上洞)](https://www.shenzhen-beach.com/beaches/shangdong/): Off-path local beach, undeveloped and quiet, free entry.

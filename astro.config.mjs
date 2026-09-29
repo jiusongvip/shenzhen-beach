@@ -22,6 +22,9 @@ const beachImages = {
 export default defineConfig({
   site: "https://www.shenzhen-beach.com",
   trailingSlash: "always",
+  build: {
+    inlineStylesheets: "always",
+  },
   integrations: [sitemap({
     lastmod: new Date("2026-08-12"),
     serialize(item) {
