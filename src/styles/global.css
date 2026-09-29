@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
-/* Geist variable (wght 100–900), latin subset, self-hosted so the first paint can use it
-   directly instead of swapping in a late third-party stylesheet — that swap was the whole CLS. */
+/* Geist variable (wght 100–900), subset to the Latin characters this site uses and self-hosted:
+   the Google Fonts stylesheet arrived late and its swap reflowed the hero — that was the whole CLS. */
 @font-face {
   font-family: "Geist";
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url("/fonts/geist-latin-var.woff2") format("woff2-variations");
+  src: url("/fonts/geist-latin-subset.woff2") format("woff2");
 }
 
 @theme {
