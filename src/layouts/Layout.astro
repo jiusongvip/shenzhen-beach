@@ -67,13 +67,27 @@ const effectiveOgImage = ogImage || defaultOgImage;
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-C5PF297J8F"></script>
+  <!-- Google tag (gtag.js) — the loader is injected only after the page has loaded, so it
+       never competes with the LCP image for bandwidth; calls before that queue in dataLayer. -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
   <script is:inline>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-C5PF297J8F');
+    function loadGtag(){
+      if (document.querySelector('script[data-gtag]')) return;
+      var s = document.createElement('script');
+      s.async = true;
+      s.setAttribute('data-gtag', '');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-C5PF297J8F';
+      document.head.appendChild(s);
+    }
+    if ('requestIdleCallback' in window) {
+      window.addEventListener('load', function(){ requestIdleCallback(loadGtag, { timeout: 4000 }); }, { once: true });
+    } else {
+      window.addEventListener('load', loadGtag, { once: true });
+    }
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
