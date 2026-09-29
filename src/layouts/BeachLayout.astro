@@ -100,7 +100,7 @@ const halfStar = b.rating - fullStars >= 0.5;
 <Layout title={pageTitle} description={pageDesc} ogImage={absoluteOgImage} jsonLd={schema}>
   <Nav />
   <main class="max-w-4xl mx-auto px-4 py-8 md:py-12">
-    <nav class="text-sm text-gray-400 mb-6" aria-label="Breadcrumb">
+    <nav class="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
       <a href="/" class="hover:text-ocean">Shenzhen Beaches</a>
       <span class="mx-2">/</span>
       <span class="text-gray-600">{b.name} Beach</span>
@@ -114,7 +114,7 @@ const halfStar = b.rating - fullStars >= 0.5;
       )}
       <div class="flex flex-wrap items-baseline gap-3">
         <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">{b.name} Beach</h1>
-        <span class="text-xl text-gray-400">{b.nameCN}</span>
+        <span class="text-xl text-gray-500">{b.nameCN}</span>
       </div>
       <div class="flex flex-wrap items-center gap-4 mt-3 text-sm">
         <span class="flex items-center gap-0.5">
@@ -130,16 +130,16 @@ const halfStar = b.rating - fullStars >= 0.5;
     </div>
 
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10 p-5 bg-sand rounded-xl border border-gray-200">
-      <div><span class="text-xs text-gray-400 uppercase block mb-1">Hours</span><span class="text-sm font-semibold text-gray-800">{b.openingHours || "Daylight"}</span></div>
-      <div><span class="text-xs text-gray-400 uppercase block mb-1">Entry Fee</span><span class="text-sm font-semibold text-gray-800">{b.fee}</span></div>
-      <div><span class="text-xs text-gray-400 uppercase block mb-1">Water Quality</span><span class="text-sm font-semibold text-gray-800">{b.features?.waterQuality || "—"}</span></div>
-      <div><span class="text-xs text-gray-400 uppercase block mb-1">Family Friendly</span><span class="text-sm font-semibold text-gray-800">{b.familyFriendly ? "Yes" : "Not ideal"}</span></div>
+      <div><span class="text-xs text-gray-500 uppercase block mb-1">Hours</span><span class="text-sm font-semibold text-gray-800">{b.openingHours || "Daylight"}</span></div>
+      <div><span class="text-xs text-gray-500 uppercase block mb-1">Entry Fee</span><span class="text-sm font-semibold text-gray-800">{b.fee}</span></div>
+      <div><span class="text-xs text-gray-500 uppercase block mb-1">Water Quality</span><span class="text-sm font-semibold text-gray-800">{b.features?.waterQuality || "—"}</span></div>
+      <div><span class="text-xs text-gray-500 uppercase block mb-1">Family Friendly</span><span class="text-sm font-semibold text-gray-800">{b.familyFriendly ? "Yes" : "Not ideal"}</span></div>
     </div>
 
     {b.verdict && (
       <section class="mb-12" aria-label="Should you visit">
         <div class="rounded-xl border-l-4 border-accent bg-white border border-gray-200 border-l-accent p-5 md:p-6">
-          <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-2">The verdict</p>
+          <p class="text-xs font-semibold text-accent-deep uppercase tracking-wider mb-2">The verdict</p>
           <p class="text-lg md:text-xl font-semibold text-gray-900 leading-snug">{b.verdict}</p>
         </div>
         <div class="grid md:grid-cols-2 gap-4 mt-4">
@@ -205,7 +205,7 @@ const halfStar = b.rating - fullStars >= 0.5;
             <ol class="space-y-2.5">
               {(b.dayPlan.fullDay || []).map((step: string, i: number) => (
                 <li class="flex gap-3 text-sm text-gray-700">
-                  <span class="shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-accent/10 text-accent text-xs font-bold mt-0.5">{i + 1}</span>
+                  <span class="shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-accent/10 text-accent-deep text-xs font-bold mt-0.5">{i + 1}</span>
                   <span>{step}</span>
                 </li>
               ))}
@@ -245,9 +245,9 @@ const halfStar = b.rating - fullStars >= 0.5;
               <div class="rounded-xl border border-gray-200 bg-white p-5">
                 <div class="flex flex-wrap items-center gap-2 mb-3">
                   <span class="font-semibold text-gray-900">{b.name}</span>
-                  <span class="text-xs text-gray-400">vs</span>
-                  <a href={`/beaches/${other.slug}/`} class="font-semibold text-ocean underline underline-offset-2">{other.name} <span class="text-xs font-normal text-gray-400">({other.nameCN})</span></a>
-                  <span class="text-xs text-gray-400 ml-auto">&#9733; {b.rating} vs &#9733; {other.rating}</span>
+                  <span class="text-xs text-gray-500">vs</span>
+                  <a href={`/beaches/${other.slug}/`} class="font-semibold text-ocean underline underline-offset-2">{other.name} <span class="text-xs font-normal text-gray-500">({other.nameCN})</span></a>
+                  <span class="text-xs text-gray-500 ml-auto">&#9733; {b.rating} vs &#9733; {other.rating}</span>
                 </div>
                 <p class="text-sm text-gray-600 mb-3">{c.why}</p>
                 <div class="grid md:grid-cols-2 gap-3 text-sm">
@@ -299,7 +299,7 @@ const halfStar = b.rating - fullStars >= 0.5;
         </div>
       </div>
       <div class="mt-4 bg-accent/5 border border-accent/20 rounded-xl p-5">
-        <h3 class="font-semibold text-accent mb-1">What to Try</h3>
+        <h3 class="font-semibold text-accent-deep mb-1">What to Try</h3>
         <p class="text-sm text-gray-700">{b.food?.mustTry || "Fresh local seafood."}</p>
         <p class="text-xs text-gray-500 mt-2">Price range: {b.food?.priceRange || "Varies."}</p>
       </div>
@@ -316,7 +316,7 @@ const halfStar = b.rating - fullStars >= 0.5;
           <p class="text-sm text-gray-700">{b.accommodation.camping}</p>
         </div>
       )}
-      <p class="text-xs text-gray-400 mt-3">Price range: {b.accommodation?.priceRange || "Varies by season."}</p>
+      <p class="text-xs text-gray-500 mt-3">Price range: {b.accommodation?.priceRange || "Varies by season."}</p>
     </section>
 
     <section class="mb-12">
@@ -336,7 +336,7 @@ const halfStar = b.rating - fullStars >= 0.5;
           <h3 class="font-semibold text-ocean mb-2">Packing Checklist</h3>
           <ul class="grid sm:grid-cols-2 gap-2 text-sm text-gray-600">
             {b.clothing.essentials.map((item: string) => (
-              <li class="flex gap-2"><span class="text-accent">&#10003;</span> {item}</li>
+              <li class="flex gap-2"><span class="text-accent-deep">&#10003;</span> {item}</li>
             ))}
           </ul>
         </div>
@@ -440,7 +440,7 @@ const halfStar = b.rating - fullStars >= 0.5;
         <h2 class="text-2xl font-bold mb-4">Visitor Tips</h2>
         <ul class="space-y-2">
           {b.tips.map((tip: string) => (
-            <li class="flex gap-2 text-sm text-gray-600"><span class="text-accent shrink-0 mt-0.5">&#8226;</span> {tip}</li>
+            <li class="flex gap-2 text-sm text-gray-600"><span class="text-accent-deep shrink-0 mt-0.5">&#8226;</span> {tip}</li>
           ))}
         </ul>
       </section>
@@ -452,9 +452,9 @@ const halfStar = b.rating - fullStars >= 0.5;
         {beaches.filter(x => x.id !== b.id).slice(0, 3).map((other: any) => (
           <a href={`/beaches/${other.slug}/`} class="block bg-white border border-gray-200 rounded-xl p-4 hover:border-accent hover:shadow-sm transition-all no-underline">
             <span class="font-semibold text-gray-800">{other.name}</span>
-            <span class="text-xs text-gray-400 ml-1">{other.nameCN}</span>
+            <span class="text-xs text-gray-500 ml-1">{other.nameCN}</span>
             <p class="text-xs text-gray-500 mt-1">{other.bestFor?.slice(0,2).join(", ")}</p>
-            <p class="text-xs text-gray-400 mt-2">&#9733; {other.rating} &middot; {other.fee}</p>
+            <p class="text-xs text-gray-500 mt-2">&#9733; {other.rating} &middot; {other.fee}</p>
           </a>
         ))}
       </div>

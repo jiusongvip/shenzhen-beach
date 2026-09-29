@@ -10,18 +10,18 @@ import beaches from "../data/beaches.json";
         <caption class="sr-only">Comparison of all 10 Shenzhen beaches: name, distance from the city centre, entry fee, best for, rating, and crowd level.</caption>
         <thead>
           <tr class="border-b border-gray-200 bg-gray-50 text-left">
-            <th scope="col" class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent" data-sort="name">Beach <span class="sort-arrow text-xs ml-0.5"></span></th>
-            <th scope="col" class="px-4 py-3 font-semibold hidden md:table-cell cursor-pointer select-none hover:text-accent" data-sort="distance">Distance <span class="sort-arrow text-xs ml-0.5"></span></th>
-            <th scope="col" class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent" data-sort="fee">Fee <span class="sort-arrow text-xs ml-0.5"></span></th>
+            <th scope="col" class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent-deep" data-sort="name">Beach <span class="sort-arrow text-xs ml-0.5"></span></th>
+            <th scope="col" class="px-4 py-3 font-semibold hidden md:table-cell cursor-pointer select-none hover:text-accent-deep" data-sort="distance">Distance <span class="sort-arrow text-xs ml-0.5"></span></th>
+            <th scope="col" class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent-deep" data-sort="fee">Fee <span class="sort-arrow text-xs ml-0.5"></span></th>
             <th scope="col" class="px-4 py-3 font-semibold hidden lg:table-cell">Best For</th>
-            <th scope="col" class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent" data-sort="rating">Rating <span class="sort-arrow text-xs ml-0.5"></span></th>
-            <th scope="col" class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent" data-sort="crowd">Crowds <span class="sort-arrow text-xs ml-0.5"></span></th>
+            <th scope="col" class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent-deep" data-sort="rating">Rating <span class="sort-arrow text-xs ml-0.5"></span></th>
+            <th scope="col" class="px-4 py-3 font-semibold cursor-pointer select-none hover:text-accent-deep" data-sort="crowd">Crowds <span class="sort-arrow text-xs ml-0.5"></span></th>
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-100">
           {beaches.map(b => (
             <tr class="beach-card hover:bg-gray-50 cursor-pointer" data-tags={b.bestFor.join(",")} data-id={b.id} onclick={`document.getElementById('card-${b.id}')?.scrollIntoView({behavior:'smooth'});setTimeout(()=>document.getElementById('card-${b.id}')?.classList.add('open'),300)`}>
-              <td class="px-4 py-3 font-medium">{b.name} <span class="text-gray-400 text-xs ml-1">{b.nameCN}</span></td>
+              <td class="px-4 py-3 font-medium">{b.name} <span class="text-gray-500 text-xs ml-1">{b.nameCN}</span></td>
               <td class="px-4 py-3 hidden md:table-cell text-gray-600">{b.distance}</td>
               <td class="px-4 py-3 text-gray-600">{b.fee}</td>
               <td class="px-4 py-3 hidden lg:table-cell text-gray-600">{b.bestFor.slice(0,2).join(", ")}</td>

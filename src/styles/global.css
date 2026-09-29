@@ -38,7 +38,7 @@
   iframe, .no-print { display: none !important; }
   body { font-size: 12pt; color: #000; background: #fff; }
   a { color: #000; text-decoration: underline; }
-  .bg-ocean, .bg-accent { background: none !important; color: #000 !important; }
+  .bg-ocean, .bg-accent, .bg-accent-deep { background: none !important; color: #000 !important; }
   .text-white { color: #000 !important; }
   section { page-break-inside: avoid; margin-bottom: 1rem !important; padding: 0.5rem 0 !important; }
   h1 { font-size: 20pt; }
