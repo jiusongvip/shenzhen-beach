@@ -67,8 +67,9 @@ const effectiveOgImage = ogImage || defaultOgImage;
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) — injected 1s after the page has fully loaded and at low fetch
-       priority, so its ~177 KiB never competes with the LCP image; earlier gtag() calls queue in dataLayer. -->
+  <!-- Google tag (gtag.js) — injected only after the page has loaded AND the main thread is idle,
+       so its ~177 KiB fetch plus parse never competes with LCP or blocks interaction; earlier gtag()
+       calls queue in dataLayer. -->
   <link rel="preconnect" href="https://www.googletagmanager.com" />
   <script is:inline>
     window.dataLayer = window.dataLayer || [];
@@ -84,7 +85,12 @@ const effectiveOgImage = ogImage || defaultOgImage;
       s.src = 'https://www.googletagmanager.com/gtag/js?id=G-C5PF297J8F';
       document.head.appendChild(s);
     }
-    window.addEventListener('load', function(){ setTimeout(loadGtag, 1000); }, { once: true });
+    function scheduleGtag(){
+      if ('requestIdleCallback' in window) { requestIdleCallback(loadGtag, { timeout: 6000 }); return; }
+      setTimeout(loadGtag, 2500);
+    }
+    if (document.readyState === 'complete') scheduleGtag();
+    else window.addEventListener('load', scheduleGtag, { once: true });
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
