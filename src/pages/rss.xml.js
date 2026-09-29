@@ -2,7 +2,7 @@ import rss from '@astrojs/rss';
 
 export async function GET(context) {
   return rss({
-    title: 'Shenzhen Beaches Guide',
+    title: 'Shenzhen Beaches',
     description: 'Independent travel guide to the best beaches in Shenzhen, China. Compare all 10 beaches with real photos, transport guides, and honest reviews.',
     site: context.site,
     items: [

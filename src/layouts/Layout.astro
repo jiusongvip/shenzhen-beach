@@ -3,14 +3,20 @@ import "../styles/global.css";
 export interface Props { title: string; description: string; ogImage?: string; jsonLd?: Record<string, unknown> | Record<string, unknown>[]; noindex?: boolean; author?: string; dateModified?: string; }
 const { title, description, ogImage, jsonLd, noindex, author = "Shenzhen Beaches Team", dateModified = "2026-08-10" } = Astro.props;
 
+// Single brand string reused by <title>, og:site_name and every schema node.
+const brand = "Shenzhen Beaches";
 // Smart title: avoid duplicating "Shenzhen" in page title
-const baseName = "Shenzhen Beaches";
-const fullTitle = title.includes("Shenzhen") ? title : `${title} | ${baseName}`;
+const fullTitle = title.includes("Shenzhen") ? title : `${title} | ${brand}`;
 
 // Canonical URL
 const canonicalUrl = Astro.url.pathname === "/"
   ? new URL("/", Astro.site).href.replace(/\/$/, "")
   : new URL(Astro.url.pathname, Astro.site).href;
+
+const siteUrl = new URL("/", Astro.site).href;
+const orgId = `${siteUrl}#organization`;
+const personId = `${siteUrl}#team`;
+const websiteId = `${siteUrl}#website`;
 
 // Default structured data for homepage
 const isHome = Astro.url.pathname === "/" || Astro.url.pathname === "";
@@ -18,6 +24,7 @@ const defaultJsonLd = isHome ? [
   {
     "@context": "https://schema.org",
     "@type": "TouristDestination",
+    "@id": `${siteUrl}#destination`,
     "name": "Shenzhen Beaches",
     "description": "A comprehensive guide to all 10 beaches in Shenzhen, China. Interactive map, comparison tool, transport guides, entrance fees, and honest reviews.",
     "url": new URL("/", Astro.site).href,
@@ -36,26 +43,52 @@ const defaultJsonLd = isHome ? [
     "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.2", "bestRating": "5", "reviewCount": "10" }
   },
   { "@context": "https://schema.org", "@type": "ImageObject", "contentUrl": (new URL("/images/hero-xichong.webp", Astro.site)).href, "description": "Xichong Beach Shenzhen panoramic view", "representativeOfPage": true },
-  { "@context": "https://schema.org", "@type": "WebSite", "name": "Shenzhen Beaches", "url": new URL("/", Astro.site).href, "description": "Complete guide to beaches in Shenzhen, China.", "dateModified": "2026-08-10", "inLanguage": "en" },
-  { "@context": "https://schema.org", "@type": "Person", "name": "Shenzhen Beaches Team", "description": "Shenzhen locals who have visited every beach across all seasons.", "url": new URL("/", Astro.site).href, "knowsAbout": ["Shenzhen beaches", "Dapeng Peninsula", "coastal travel", "surfing Shenzhen"] },
-  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Shenzhen Beaches", "item": new URL("/", Astro.site).href }] }
+  { "@context": "https://schema.org", "@type": "WebSite", "@id": websiteId, "url": siteUrl, "name": brand, "description": "Complete guide to beaches in Shenzhen, China.", "dateModified": "2026-08-10", "inLanguage": "en", "publisher": { "@id": orgId } },
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": brand, "item": siteUrl }] }
 ] : null;
 
-const finalJsonLd = jsonLd || defaultJsonLd;
+// Site-wide author entity: every page declares it so bylines and dates resolve to one identity.
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": personId,
+  "name": "Shenzhen Beaches Team",
+  "description": "Shenzhen locals who have visited every beach across all seasons.",
+  "url": new URL("/about/", Astro.site).href,
+  "knowsAbout": ["Shenzhen beaches", "Dapeng Peninsula", "coastal travel", "surfing Shenzhen"]
+};
 
 // Organization schema for every page
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Shenzhen Beaches Guide",
-  "url": new URL("/", Astro.site).href,
-  "description": "Independent guide to Shenzhen beaches. Honest reviews, no booking fees. Updated weekly with firsthand visits.",
+  "@id": orgId,
+  "name": brand,
+  "alternateName": "Shenzhen Beaches Guide",
+  "url": siteUrl,
+  "description": "Independent guide to Shenzhen beaches. Honest reviews, no booking fees. Updated with firsthand visits.",
   "logo": new URL("/favicon.svg", Astro.site).href,
   "foundingDate": "2025",
   "email": "hello@shenzhen-beach.com"
 };
 
-const allJsonLd = [orgSchema];
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": canonicalUrl,
+  "url": canonicalUrl,
+  "name": fullTitle,
+  "description": description,
+  "inLanguage": "en",
+  "isPartOf": { "@id": websiteId },
+  "about": isHome ? { "@id": `${siteUrl}#destination` } : undefined,
+  "author": { "@id": personId },
+  "creator": { "@id": personId },
+  "publisher": { "@id": orgId },
+  "dateModified": dateModified
+};
+
+const allJsonLd = [orgSchema, personSchema, webPageSchema];
 if (jsonLd) allJsonLd.push(...(Array.isArray(jsonLd) ? jsonLd : [jsonLd]));
 else if (defaultJsonLd) allJsonLd.push(...defaultJsonLd);
 
@@ -111,10 +144,11 @@ const effectiveOgImage = ogImage || defaultOgImage;
     {effectiveOgImage && <meta name="twitter:image" content={effectiveOgImage} />}
     <meta name="author" content={author} />
     <meta name="last-modified" content={dateModified} />
-    <meta property="og:site_name" content="Shenzhen Beaches" />
+    <meta property="og:site_name" content={brand} />
     <meta property="og:locale" content="en_US" />
     <link rel="alternate" hreflang="en" href={canonicalUrl} />
-    <link rel="alternate" type="application/rss+xml" title="Shenzhen Beaches Guide" href="/rss.xml" />
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+    <link rel="alternate" type="application/rss+xml" title={brand} href="/rss.xml" />
   {!noindex && <link rel="canonical" href={canonicalUrl} />}
   <script type="application/ld+json" set:html={JSON.stringify({"@graph": allJsonLd})}></script>
   <script is:inline>
