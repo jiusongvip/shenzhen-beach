@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+/* Geist variable (wght 100–900), latin subset, self-hosted so the first paint can use it
+   directly instead of swapping in a late third-party stylesheet — that swap was the whole CLS. */
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/geist-latin-var.woff2") format("woff2-variations");
+}
+
 @theme {
   --color-accent: #e0683a;
   --color-accent-dark: #c45230;
