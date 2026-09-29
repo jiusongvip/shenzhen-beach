@@ -301,7 +301,7 @@ const halfStar = b.rating - fullStars >= 0.5;
       <div class="mt-4 bg-accent/5 border border-accent/20 rounded-xl p-5">
         <h3 class="font-semibold text-accent-deep mb-1">What to Try</h3>
         <p class="text-sm text-gray-700">{b.food?.mustTry || "Fresh local seafood."}</p>
-        <p class="text-xs text-gray-500 mt-2">Price range: {b.food?.priceRange || "Varies."}</p>
+        <p class="text-xs text-gray-600 mt-2">Price range: {b.food?.priceRange || "Varies."}</p>
       </div>
     </section>
 
@@ -316,7 +316,7 @@ const halfStar = b.rating - fullStars >= 0.5;
           <p class="text-sm text-gray-700">{b.accommodation.camping}</p>
         </div>
       )}
-      <p class="text-xs text-gray-500 mt-3">Price range: {b.accommodation?.priceRange || "Varies by season."}</p>
+      <p class="text-xs text-gray-600 mt-3">Price range: {b.accommodation?.priceRange || "Varies by season."}</p>
     </section>
 
     <section class="mb-12">
