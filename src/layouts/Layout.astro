@@ -91,7 +91,7 @@ const effectiveOgImage = ogImage || defaultOgImage;
   {noindex && <meta name="robots" content="noindex, follow" />}
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  {isHome && <link rel="preload" as="image" fetchpriority="high" href="/images/hero-xichong-800w.webp?v=2" imagesrcset="/images/hero-xichong-400w.webp?v=2 400w, /images/hero-xichong-800w.webp?v=2 800w, /images/hero-xichong-1200w.webp?v=2 1200w, /images/hero-xichong.webp 1920w" imagesizes="100vw" />}
+  {isHome && <link rel="preload" as="image" type="image/avif" fetchpriority="high" href="/images/hero-xichong-800w.avif" imagesrcset="/images/hero-xichong-400w.avif 400w, /images/hero-xichong-800w.avif 800w, /images/hero-xichong-1200w.avif 1200w, /images/hero-xichong-1920w.avif 1920w" imagesizes="100vw" />}
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
   <meta property="og:title" content={fullTitle} />

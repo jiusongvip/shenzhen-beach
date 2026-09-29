@@ -17,18 +17,25 @@ const quickPicks = [
 <section class="relative min-h-[100dvh] flex items-end pb-0">
   <!-- Hero Background Image -->
   <div class="absolute inset-0 z-0">
-    <img
-      src="/images/hero-xichong.webp"
-      srcset="/images/hero-xichong-400w.webp?v=2 400w, /images/hero-xichong-800w.webp?v=2 800w, /images/hero-xichong-1200w.webp?v=2 1200w, /images/hero-xichong.webp 1920w"
-      sizes="100vw"
-      alt="Xichong Beach Shenzhen — golden sand stretching along the coastline with green hills and blue ocean"
-      class="w-full h-full object-cover"
-      width="1920"
-      height="1080"
-      loading="eager"
-      fetchpriority="high"
-      decoding="async"
-    />
+    <picture>
+      <source
+        type="image/avif"
+        srcset="/images/hero-xichong-400w.avif 400w, /images/hero-xichong-800w.avif 800w, /images/hero-xichong-1200w.avif 1200w, /images/hero-xichong-1920w.avif 1920w"
+        sizes="100vw"
+      />
+      <img
+        src="/images/hero-xichong.webp"
+        srcset="/images/hero-xichong-400w.webp?v=2 400w, /images/hero-xichong-800w.webp?v=2 800w, /images/hero-xichong-1200w.webp?v=2 1200w, /images/hero-xichong.webp 1920w"
+        sizes="100vw"
+        alt="Xichong Beach Shenzhen — golden sand stretching along the coastline with green hills and blue ocean"
+        class="w-full h-full object-cover"
+        width="1920"
+        height="1080"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
     <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/65"></div>
   </div>
 
