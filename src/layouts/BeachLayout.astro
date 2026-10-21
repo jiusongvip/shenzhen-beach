@@ -55,7 +55,13 @@ const faqLd = {
 };
 
 const schema = imageObj ? [jsonLd, imageObj, faqLd] : [jsonLd, faqLd];
-const pageTitle = `${b.name} Beach (${b.nameCN}) - Transport, Tips | Shenzhen`;
+const metaOverrides: Record<string, { title: string; desc: string }> = {
+  dameisha: {
+    title: "Dameisha Beach (大梅沙) Shenzhen: Free Entry & Metro Line 8",
+    desc: "Dameisha Beach in Shenzhen is free, directly served by Metro Line 8, and has a 1.8 km sandy bay with summer lifeguards. Fees, transport and tips.",
+  },
+};
+const pageTitle = metaOverrides[b.id]?.title ?? `${b.name} Beach (${b.nameCN}) - Transport, Tips | Shenzhen`;
 
 // Pack whole sentences of the beach's own summary into the SERP-safe window.
 function packSentences(text: string, budget: number) {
@@ -69,7 +75,7 @@ function packSentences(text: string, budget: number) {
 }
 const descTail = " Metro, fees and verdict.";
 const descLead = `${b.name} Beach (${b.nameCN}) — `;
-const pageDesc = `${descLead}${packSentences(b.description, 158 - descLead.length - descTail.length)}${descTail}`;
+const pageDesc = metaOverrides[b.id]?.desc ?? `${descLead}${packSentences(b.description, 158 - descLead.length - descTail.length)}${descTail}`;
 
 const absoluteOgImage = ogImage ? new URL(ogImage, Astro.site).href : undefined;
 
